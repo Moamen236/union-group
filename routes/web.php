@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -10,30 +11,16 @@ use App\Http\Controllers\Auth\LoginController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('user.pages.index', ['title' => 'Home']);
-})->name('user.index');
-
-Route::get('/shop', function () {
-    return view('user.pages.shop', ['title' => 'Shop']);
-})->name('user.shop');
-
-Route::get('/product-detail/{slug?}', function ($slug = null) {
-    return view('user.pages.product-detail', ['title' => 'Product Detail', 'slug' => $slug]);
-})->name('user.product-detail');
-
-Route::get('/about', function () {
-    return view('user.pages.about', ['title' => 'About Us']);
-})->name('user.about');
-
-Route::get('/contact', function () {
-    return view('user.pages.contact', ['title' => 'Contact']);
-})->name('user.contact');
-
-Route::post('/contact', function () {
-    // Handle contact form submission
-    return redirect()->route('user.contact')->with('success', 'Message sent successfully!');
-})->name('user.contact.submit');
+Route::controller(UserController::class)->group(function () {
+    Route::get('/', 'index')->name('user.index');
+    Route::get('/shop', 'shop')->name('user.shop');
+    Route::get('/product/{slug}', 'productDetail')->name('user.product-detail');
+    Route::get('/projects', 'projects')->name('user.projects');
+    Route::get('/certificates', 'certificates')->name('user.certificates');
+    Route::get('/about', 'about')->name('user.about');
+    Route::get('/contact', 'contact')->name('user.contact');
+    Route::post('/contact', 'contactSubmit')->name('user.contact.submit');
+});
 
 /*
 |--------------------------------------------------------------------------

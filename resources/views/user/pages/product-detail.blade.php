@@ -2,349 +2,451 @@
 
 @section('content')
 
-  <!--======= SUB BANNER =========-->
-  <section class="sub-bnr" data-stellar-background-ratio="0.5">
-    <div class="position-center-center">
-      <div class="container">
-        <h4>WOOD CHAIR</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula.
-          Sed feugiat, tellus vel tristique posuere, diam</p>
-        <ol class="breadcrumb">
-          <li><a href="{{ route('user.index') }}">Home</a></li>
-          <li><a href="{{ route('user.shop') }}">Shop</a></li>
-          <li class="active">Product Detail</li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- Content -->
-  <div id="content">
-
-    <!-- Popular Products -->
-    <section class="padding-top-100 padding-bottom-100">
-      <div class="container">
-
-        <!-- SHOP DETAIL -->
-        <div class="shop-detail">
-          <div class="row">
-
-            <!-- Popular Images Slider -->
-            <div class="col-md-7">
-
-              <!-- Images Slider -->
-              <div class="images-slider">
-                <ul class="slides">
-                  <li data-thumb="{{ asset('user/images/large-img-1.jpg') }}"> <img class="img-responsive" src="{{ asset('user/images/large-img-1.jpg') }}"  alt=""> </li>
-                  <li data-thumb="{{ asset('user/images/large-img-2.jpg') }}"> <img class="img-responsive" src="{{ asset('user/images/large-img-2.jpg') }}"  alt=""> </li>
-                  <li data-thumb="{{ asset('user/images/large-img-3.jpg') }}"> <img class="img-responsive" src="{{ asset('user/images/large-img-3.jpg') }}"  alt=""> </li>
-                </ul>
-              </div>
+    <!--======= SUB BANNER =========-->
+    <section class="sub-bnr" data-stellar-background-ratio="0.5">
+        <div class="position-center-center">
+            <div class="container">
+                <h4>{{ $product->name }}</h4>
+                <p>{{ $product->category ? $product->category->name : '' }}</p>
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('user.index') }}">{{ __('Home') }}</a></li>
+                    <li><a href="{{ route('user.shop') }}">{{ __('Shop') }}</a></li>
+                    @if ($product->category)
+                        <li><a
+                                href="{{ route('user.shop', ['category' => $product->category->slug]) }}">{{ $product->category->name }}</a>
+                        </li>
+                    @endif
+                    <li class="active">{{ $product->name }}</li>
+                </ol>
             </div>
+        </div>
+    </section>
 
-            <!-- COntent -->
-            <div class="col-md-5">
-              <h4>wood chair</h4>
-              <span class="price"><small>$</small>299</span>
+    <!-- Content -->
+    <div id="content">
 
-              <!-- Sale Tags -->
-              <div class="on-sale"> 10% <span>OFF</span> </div>
-              <ul class="item-owner">
-                <li>Designer :<span> ABC Art</span></li>
-                <li>Brand:<span> LimeWood</span></li>
-              </ul>
+        <!-- Product Detail -->
+        <section class="padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="shop-detail">
+                    <div class="row">
 
-              <!-- Item Detail -->
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus ligula a scelerisque gravida. Nullam laoreet tortor ac maximus alique met, consectetur adipiscing elit. Vestibulum finibus ligula a scelerisque gravida. Nullam</p>
+                        <!-- Product Images Slider -->
+                        <div class="col-md-7">
+                            <div class="images-slider" id="product-slider">
+                                <ul class="slides">
+                                    @if ($product->images->count() > 0)
+                                        @foreach ($product->images as $image)
+                                            <li data-thumb="{{ asset('storage/' . $image->image) }}"
+                                                data-color-id="{{ $image->color_id ?? 'all' }}">
+                                                <img class="img-responsive" src="{{ asset('storage/' . $image->image) }}"
+                                                    alt="{{ $product->name }}">
+                                            </li>
+                                        @endforeach
+                                    @else
+                                        <li data-thumb="{{ asset('user/images/product-placeholder.jpg') }}">
+                                            <img class="img-responsive"
+                                                src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                                alt="{{ $product->name }}">
+                                        </li>
+                                    @endif
+                                </ul>
+                            </div>
+                        </div>
 
-              <!-- Short By -->
-              <div class="some-info">
-                <ul class="row margin-top-30">
-                  <li class="col-xs-4">
-                    <div class="quinty">
-                      <!-- QTY -->
-                      <select class="selectpicker">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                      </select>
+                        <!-- Product Content -->
+                        <div class="col-md-5">
+                            <h4>{{ $product->name }}</h4>
+
+                            @if ($product->code)
+                                <span class="price">{{ __('Code') }}: {{ $product->code }}</span>
+                            @endif
+
+                            @if ($product->is_favorite)
+                                <div class="on-sale" style="position: relative; display: inline-block; margin-left: 10px;">
+                                    <i class="fa fa-star"></i> {{ __('Featured') }}
+                                </div>
+                            @endif
+
+                            <ul class="item-owner margin-top-20">
+                                @if ($product->category)
+                                    <li>{{ __('Category') }}: <span>{{ $product->category->name }}</span></li>
+                                @endif
+                                @if ($product->code)
+                                    <li>{{ __('Product Code') }}: <span>{{ $product->code }}</span></li>
+                                @endif
+                            </ul>
+
+                            <!-- Product Description -->
+                            @if ($product->description)
+                                <div class="product-description margin-top-20">
+                                    <p>{{ $product->description }}</p>
+                                </div>
+                            @endif
+
+                            <!-- Product Colors -->
+                            @if ($product->colors->count() > 0)
+                                <div class="product-colors-section margin-top-30">
+                                    <h6 class="colors-title">{{ __('Available Colors') }}</h6>
+                                    <div class="color-swatches">
+                                        <button type="button" class="color-swatch active" data-color-id="all"
+                                            title="{{ __('All Colors') }}">
+                                            <span class="swatch-all">
+                                                <i class="fa fa-th"></i>
+                                            </span>
+                                            <span class="color-name">{{ __('All') }}</span>
+                                        </button>
+                                        @foreach ($product->colors as $color)
+                                            <button type="button" class="color-swatch" data-color-id="{{ $color->id }}"
+                                                title="{{ $color->name }}">
+                                                <span class="swatch-color"
+                                                    style="background: {{ $color->hex_code }};"></span>
+                                                <span class="color-name">{{ $color->name }}</span>
+                                            </button>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
+
+                            <!-- Contact Button -->
+                            <div class="margin-top-30">
+                                <a href="{{ route('user.contact') }}" class="btn">{{ __('Contact for Inquiry') }}</a>
+                            </div>
+
+                            <!-- Share Product -->
+                            <div class="inner-info margin-top-30">
+                                <h6>{{ __('SHARE THIS PRODUCT') }}</h6>
+                                <ul class="social_icons">
+                                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->url()) }}"
+                                            target="_blank"><i class="icon-social-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->url()) }}&text={{ urlencode($product->name) }}"
+                                            target="_blank"><i class="icon-social-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ urlencode(request()->url()) }}&title={{ urlencode($product->name) }}"
+                                            target="_blank"><i class="icon-social-linkedin"></i></a></li>
+                                    <li><a href="https://wa.me/?text={{ urlencode($product->name . ' - ' . request()->url()) }}"
+                                            target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                  </li>
+                </div>
 
-                  <!-- COLORS -->
-                  <li class="col-xs-8">
-                    <ul class="colors-shop">
-                      <li><span class="margin-right-20">Colors</span></li>
-                      <li><a href="#." style="background:#958170;"></a></li>
-                      <li><a href="#." style="background:#c9a688;"></a></li>
-                      <li><a href="#." style="background:#c9c288;"></a></li>
-                      <li><a href="#." style="background:#a7c988;"></a></li>
-                      <li><a href="#." style="background:#9ed66b;"></a></li>
-                      <li><a href="#." style="background:#6bd6b1;"></a></li>
-                      <li><a href="#." style="background:#82c2dc;"></a></li>
-                      <li><a href="#." style="background:#8295dc;"></a></li>
+                <!--======= PRODUCT TABS =========-->
+                <div class="item-decribe margin-top-50">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs animate fadeInUp" data-wow-delay="0.4s" role="tablist">
+                        <li role="presentation" class="active"><a href="#descr" role="tab"
+                                data-toggle="tab">{{ __('DESCRIPTION') }}</a></li>
+                        @if ($product->features)
+                            <li role="presentation"><a href="#features" role="tab"
+                                    data-toggle="tab">{{ __('FEATURES') }}</a></li>
+                        @endif
                     </ul>
-                  </li>
 
-                  <!-- ADD TO CART -->
-                  <li class="col-xs-6"> <a href="#." class="btn">ADD TO CART</a> </li>
+                    <!-- Tab panes -->
+                    <div class="tab-content animate fadeInUp" data-wow-delay="0.4s">
+                        <!-- DESCRIPTION -->
+                        <div role="tabpanel" class="tab-pane fade in active" id="descr">
+                            @if ($product->description)
+                                <p>{{ $product->description }}</p>
+                            @else
+                                <p>{{ __('No description available for this product.') }}</p>
+                            @endif
+                        </div>
 
-                  <!-- LIKE -->
-                  <li class="col-xs-6"> <a href="#." class="like-us"><i class="icon-heart"></i></a> </li>
-                </ul>
+                        <!-- FEATURES -->
+                        @if ($product->features)
+                            <div role="tabpanel" class="tab-pane fade" id="features">
+                                <h6>{{ __('PRODUCT FEATURES') }}</h6>
+                                <ul>
+                                    @foreach (explode("\n", $product->features) as $feature)
+                                        @if (trim($feature))
+                                            <li>
+                                                <p>{{ trim(str_replace('•', '', $feature)) }}</p>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <!-- INFOMATION -->
-                <div class="inner-info">
-                  <h6>DELIVERY INFORMATION</h6>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum finibus ligula a scelerisque gravida. Nullam laoreet tortor ac maximus alique met, consectetur adipiscing elit. </p>
-                  <h6>SHIPPING & RETURNS</h6>
-                  <h6>SHARE THIS PRODUCT</h6>
+        <!-- Related Products -->
+        @if ($relatedProducts->count() > 0)
+            <section class="light-gray-bg padding-top-150 padding-bottom-150">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h4>{{ __('Related Products') }}</h4>
+                        <span>{{ __('You may also be interested in these products from the same category.') }}</span>
+                    </div>
 
-                  <!-- Social Icons -->
-                  <ul class="social_icons">
+                    <div class="papular-block block-slide">
+                        @foreach ($relatedProducts as $relatedProduct)
+                            <div class="item">
+                                <div class="item-img">
+                                    @if ($relatedProduct->mainImage())
+                                        <img class="img-1" src="{{ $relatedProduct->main_image_url }}"
+                                            alt="{{ $relatedProduct->name }}">
+                                        <img class="img-2" src="{{ $relatedProduct->main_image_url }}"
+                                            alt="{{ $relatedProduct->name }}">
+                                    @else
+                                        <img class="img-1" src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                            alt="{{ $relatedProduct->name }}">
+                                        <img class="img-2" src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                            alt="{{ $relatedProduct->name }}">
+                                    @endif
+                                    <div class="overlay">
+                                        <div class="position-center-center">
+                                            <div class="inn">
+                                                @if ($relatedProduct->mainImage())
+                                                    <a href="{{ $relatedProduct->main_image_url }}" data-lighter><i
+                                                            class="icon-magnifier"></i></a>
+                                                @endif
+                                                <a href="{{ route('user.product-detail', $relatedProduct->slug) }}"><i
+                                                        class="icon-eye"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-name">
+                                    <a
+                                        href="{{ route('user.product-detail', $relatedProduct->slug) }}">{{ $relatedProduct->name }}</a>
+                                    <p>{{ $relatedProduct->category ? $relatedProduct->category->name : '' }}</p>
+                                </div>
+                                @if ($relatedProduct->code)
+                                    <span class="price">{{ $relatedProduct->code }}</span>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        <!-- About Section -->
+        <section class="small-about padding-top-150 padding-bottom-150">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('About Union Group') }}</h4>
+                    <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
+                    </p>
+                </div>
+                <ul class="social_icons">
                     <li><a href="#."><i class="icon-social-facebook"></i></a></li>
                     <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                    <li><a href="#."><i class="icon-social-tumblr"></i></a></li>
+                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
+                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
                     <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-                    <li><a href="#."><i class="icon-social-dribbble"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--======= PRODUCT DESCRIPTION =========-->
-        <div class="item-decribe">
-          <!-- Nav tabs -->
-          <ul class="nav nav-tabs animate fadeInUp" data-wow-delay="0.4s" role="tablist">
-            <li role="presentation" class="active"><a href="#descr" role="tab" data-toggle="tab">DESCRIPTION</a></li>
-            <li role="presentation"><a href="#review" role="tab" data-toggle="tab">REVIEW (03)</a></li>
-            <li role="presentation"><a href="#tags" role="tab" data-toggle="tab">INFORMATION</a></li>
-          </ul>
-
-          <!-- Tab panes -->
-          <div class="tab-content animate fadeInUp" data-wow-delay="0.4s">
-            <!-- DESCRIPTION -->
-            <div role="tabpanel" class="tab-pane fade in active" id="descr">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed lectus id nisi interdum mollis. Nam congue tellus quis elit mattis congue. Aenean eu massa sed mauris hendrerit ornare sed eget ante.
-                Vestibulum id eros quam. Nunc volutpat at magna gravida eleifend. Phasellus sit amet nisi tempus, tincidunt elit ac, tempor metus. <br>
-              </p>
-              <h6>THE SIMPLE FACTS</h6>
-              <ul>
-                <li>
-                  <p>Praesent faucibus, leo vitae maximus dictum,</p>
-                </li>
-                <li>
-                  <p> Donec porta ut lectus </p>
-                </li>
-                <li>
-                  <p> Phasellus maximus velit id nisl</p>
-                </li>
-                <li>
-                  <p> Quisque a tellus et sapien aliquam sus</p>
-                </li>
-                <li>
-                  <p> Donec porta ut lectus </p>
-                </li>
-                <li>
-                  <p> Phasellus maximus velit id nisl</p>
-                </li>
-              </ul>
-            </div>
-
-            <!-- REVIEW -->
-            <div role="tabpanel" class="tab-pane fade" id="review">
-              <h6>3 REVIEWS FOR SHIP YOUR IDEA</h6>
-
-              <!-- REVIEW PEOPLE 1 -->
-              <div class="media">
-                <div class="media-left">
-                  <!--  Image -->
-                  <div class="avatar"> <a href="#"> <img class="media-object" src="{{ asset('user/images/avatar-1.jpg') }}" alt=""> </a> </div>
-                </div>
-                <!--  Details -->
-                <div class="media-body">
-                  <p class="font-playfair">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua."</p>
-                  <h6>TYRION LANNISTER <span class="pull-right">MAY 10, 2016</span> </h6>
-                </div>
-              </div>
-
-              <!-- REVIEW PEOPLE 1 -->
-
-              <div class="media">
-                <div class="media-left">
-                  <!--  Image -->
-                  <div class="avatar"> <a href="#"> <img class="media-object" src="{{ asset('user/images/avatar-2.jpg') }}" alt=""> </a> </div>
-                </div>
-                <!--  Details -->
-                <div class="media-body">
-                  <p class="font-playfair">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua."</p>
-                  <h6>TYRION LANNISTER <span class="pull-right">MAY 10, 2016</span> </h6>
-                </div>
-              </div>
-
-              <!-- ADD REVIEW -->
-              <h6 class="margin-t-40">ADD REVIEW</h6>
-              <form>
-                <ul class="row">
-                  <li class="col-sm-6">
-                    <label> *NAME
-                      <input type="text" value="" placeholder="">
-                    </label>
-                  </li>
-                  <li class="col-sm-6">
-                    <label> *EMAIL
-                      <input type="email" value="" placeholder="">
-                    </label>
-                  </li>
-                  <li class="col-sm-12">
-                    <label> *YOUR REVIEW
-                      <textarea></textarea>
-                    </label>
-                  </li>
-                  <li class="col-sm-6">
-                    <!-- Rating Stars -->
-                    <div class="stars"> <span>YOUR RATING</span> <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
-                  </li>
-                  <li class="col-sm-6">
-                    <button type="submit" class="btn btn-dark btn-small pull-right no-margin">POST REVIEW</button>
-                  </li>
                 </ul>
-              </form>
             </div>
+        </section>
 
-            <!-- TAGS -->
-            <div role="tabpanel" class="tab-pane fade" id="tags"> </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Popular Products -->
-    <section class="light-gray-bg padding-top-150 padding-bottom-150">
-      <div class="container">
-
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>YOU MAY LIKE IT</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula.
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
-
-        <!-- Popular Item Slide -->
-        <div class="papular-block block-slide">
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-1.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-1.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
+        <!-- Newsletter -->
+        <section class="news-letter padding-top-150 padding-bottom-150">
+            <div class="container">
+                <div class="heading light-head text-center margin-bottom-30">
+                    <h4>{{ __('NEWSLETTER') }}</h4>
+                    <span>{{ __('Subscribe to our newsletter to receive the latest updates on new products, projects, and industry news.') }}</span>
                 </div>
-              </div>
+                <form>
+                    <input type="email" placeholder="{{ __('Enter your email address') }}" required>
+                    <button type="submit">{{ __('SUBSCRIBE') }}</button>
+                </form>
             </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">stone cup</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-2.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-2.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">gray bag</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-3.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-3.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">chiar</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-4.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-4.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#."><i class="icon-basket"></i></a> <a href="#." ><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">STool</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="small-about padding-top-150 padding-bottom-150">
-      <div class="container">
-
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>about ecoshop</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
-        </div>
-
-        <!-- Social Icons -->
-        <ul class="social_icons">
-          <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-          <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-          <li><a href="#."><i class="icon-social-tumblr"></i></a></li>
-          <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-          <li><a href="#."><i class="icon-social-dribbble"></i></a></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- News Letter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
-  </div>
+        </section>
+    </div>
 
 @endsection
+
+@push('styles')
+    <style>
+        .product-description {
+            line-height: 1.8;
+        }
+
+        .on-sale {
+            background: #f39c12;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+
+        /* Color Swatches Styles */
+        .product-colors-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .colors-title {
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #333;
+        }
+
+        .color-swatches {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px;
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 70px;
+        }
+
+        .color-swatch:hover {
+            border-color: #999;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .color-swatch.active {
+            border-color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .swatch-color {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .swatch-all {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 25%, #48dbfb 50%, #ff9ff3 75%, #54a0ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 16px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .color-name {
+            margin-top: 6px;
+            font-size: 11px;
+            color: #666;
+            text-align: center;
+            max-width: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .color-swatch.active .color-name {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Slide visibility animation */
+        .images-slider .slides li {
+            transition: opacity 0.3s ease;
+        }
+
+        .images-slider .slides li.color-hidden {
+            display: none !important;
+        }
+    </style>
+@endpush
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const colorSwatches = document.querySelectorAll('.color-swatch');
+            const slider = document.querySelector('#product-slider');
+
+            if (colorSwatches.length === 0 || !slider) return;
+
+            // Store all original slides
+            const allSlides = Array.from(slider.querySelectorAll('.slides li'));
+            const allSlideData = allSlides.map((slide, index) => ({
+                element: slide,
+                colorId: slide.getAttribute('data-color-id'),
+                thumb: slide.getAttribute('data-thumb'),
+                imgSrc: slide.querySelector('img').getAttribute('src')
+            }));
+
+            colorSwatches.forEach(swatch => {
+                swatch.addEventListener('click', function() {
+                    const colorId = this.getAttribute('data-color-id');
+
+                    // Update active state
+                    colorSwatches.forEach(s => s.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter images based on color
+                    filterSlidesByColor(colorId);
+                });
+            });
+
+            function filterSlidesByColor(colorId) {
+                // Get the flexslider instance
+                const flexslider = slider.querySelector('.flex-viewport');
+
+                if (colorId === 'all') {
+                    // Show all slides
+                    allSlides.forEach(slide => {
+                        slide.classList.remove('color-hidden');
+                    });
+                } else {
+                    // Filter slides - show only matching color or unassigned images
+                    allSlides.forEach(slide => {
+                        const slideColorId = slide.getAttribute('data-color-id');
+                        if (slideColorId === colorId || slideColorId === 'all') {
+                            slide.classList.remove('color-hidden');
+                        } else {
+                            slide.classList.add('color-hidden');
+                        }
+                    });
+                }
+
+                // Try to refresh flexslider if it exists
+                if (typeof jQuery !== 'undefined' && jQuery('#product-slider').data('flexslider')) {
+                    const flex = jQuery('#product-slider').data('flexslider');
+
+                    // Find first visible slide
+                    let firstVisibleIndex = 0;
+                    allSlides.forEach((slide, index) => {
+                        if (!slide.classList.contains('color-hidden') && firstVisibleIndex === 0) {
+                            firstVisibleIndex = index;
+                        }
+                    });
+
+                    // Navigate to first visible slide
+                    flex.flexAnimate(firstVisibleIndex);
+
+                    // Update thumbnails visibility
+                    const thumbNav = slider.querySelector('.flex-control-thumbs');
+                    if (thumbNav) {
+                        const thumbs = thumbNav.querySelectorAll('li');
+                        thumbs.forEach((thumb, index) => {
+                            if (allSlides[index].classList.contains('color-hidden')) {
+                                thumb.style.display = 'none';
+                            } else {
+                                thumb.style.display = '';
+                            }
+                        });
+                    }
+                }
+            }
+        });
+    </script>
+@endpush

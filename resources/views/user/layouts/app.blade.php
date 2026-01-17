@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>{{ $title ?? 'ECOSHOP' }} - ECOSHOP</title>
+<meta name="description" content="{{ __('Union Group - Leading manufacturer of premium paints, coatings, and industrial solutions in the Middle East.') }}">
+<meta name="author" content="Union Group">
+<title>{{ $title ?? __('Home') }} - {{ __('Union Group') }}</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('user/rs-plugin/css/settings.css') }}" media="screen" />

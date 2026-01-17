@@ -2,491 +2,259 @@
 
 @section('content')
 
-  <!--======= HOME MAIN SLIDER =========-->
-  <section class="home-slider">
+    <!--======= HOME MAIN SLIDER =========-->
+    <section class="home-slider">
+        <div class="tp-banner-container">
+            <div class="tp-banner">
+                <ul>
+                    <!-- SLIDE 1 -->
+                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+                        <img src="{{ asset('user/images/slide-bg-1.jpg') }}" alt="slider" data-bgposition="center center"
+                            data-bgfit="cover" data-bgrepeat="no-repeat">
+                        <div class="tp-caption font-playfair sfb tp-resizeme" data-x="left" data-hoffset="0"
+                            data-y="center" data-voffset="-200" data-speed="800" data-start="500"
+                            data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1"
+                            data-endelementdelay="0.1" data-endspeed="300"
+                            style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
+                            {{ __('Premium Paints & Coatings') }}</div>
+                        <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
+                            data-y="center" data-voffset="-50" data-speed="800" data-start="800"
+                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
+                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                            style="z-index: 6; font-size:100px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                            {{ __('UNION') }}</div>
+                        <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
+                            data-y="center" data-voffset="60" data-speed="800" data-start="1300"
+                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
+                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                            style="z-index: 6; font-size:100px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                            {{ __('GROUP') }}</div>
+                        <div class="tp-caption lfb tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
+                            data-voffset="180" data-speed="800" data-start="2200" data-easing="Power3.easeInOut"
+                            data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0"
+                            style="z-index: 8;"><a href="{{ route('user.shop') }}"
+                                class="btn">{{ __('EXPLORE PRODUCTS') }}</a></div>
+                    </li>
 
-    <!-- SLIDE Start -->
-    <div class="tp-banner-container">
-      <div class="tp-banner">
-        <ul>
-          <!-- SLIDE  -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-            <!-- MAIN IMAGE -->
-            <img src="{{ asset('user/images/slide-bg-1.jpg') }}"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-            <!-- LAYERS -->
-            <!-- LAYER NR. 1 -->
-            <div class="tp-caption font-playfair sfb tp-resizeme"
-                data-x="left" data-hoffset="0"
-                data-y="center" data-voffset="-200"
-                data-speed="800"
-                data-start="500"
-                data-easing="Power3.easeInOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">The Latest Product from ecoshop</div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfl font-extra-bold tp-resizeme"
-                data-x="left" data-hoffset="0"
-                data-y="center" data-voffset="-120"
-                data-speed="800"
-                data-start="800"
-                data-easing="Power3.easeInOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.07"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 6; font-size:80px; color:#2d3a4b; text-transform:uppercase; white-space: nowrap;"><small class="font-regular">$</small>299 </div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfr font-extra-bold tp-resizeme"
-                data-x="left" data-hoffset="0"
-                data-y="center" data-voffset="0"
-                data-speed="800"
-                data-start="800"
-                data-easing="Power3.easeInOut"
-                data-splitin="chars"
-                data-splitout="none"
-                data-elementdelay="0.07"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 6; font-size:120px; color:#fff; text-transform:uppercase; white-space: nowrap;">featured </div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfr font-extra-bold tp-resizeme"
-                data-x="left" data-hoffset="0"
-                data-y="center" data-voffset="110"
-                data-speed="800"
-                data-start="1300"
-                data-easing="Power3.easeInOut"
-                data-splitin="chars"
-                data-splitout="none"
-                data-elementdelay="0.07"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 6; font-size:120px; color:#fff; text-transform:uppercase; white-space: nowrap;">cycle </div>
-            <!-- LAYER NR. 4 -->
-            <div class="tp-caption lfb tp-resizeme"
-                data-x="left" data-hoffset="0"
-                data-y="center" data-voffset="240"
-                data-speed="800"
-                data-start="2200"
-                data-easing="Power3.easeInOut"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                data-scrolloffset="0"
-                style="z-index: 8;"><a href="{{ route('user.shop') }}" class="btn">SHOP NOW</a> </div>
-          </li>
+                    <!-- SLIDE 2 -->
+                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+                        <img src="{{ asset('user/images/slide-bg-2.jpg') }}" alt="slider" data-bgposition="center center"
+                            data-bgfit="cover" data-bgrepeat="no-repeat">
+                        <div class="tp-caption font-playfair sfb tp-resizeme" data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="-150" data-speed="800" data-start="500"
+                            data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1"
+                            data-endelementdelay="0.1" data-endspeed="300"
+                            style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
+                            {{ __('Quality You Can Trust') }}</div>
+                        <div class="tp-caption sfr font-regular tp-resizeme letter-space-4" data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="-50" data-speed="800" data-start="800"
+                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
+                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                            style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                            {{ __('INDUSTRIAL') }}</div>
+                        <div class="tp-caption sfr font-extra-bold tp-resizeme letter-space-4" data-x="center"
+                            data-hoffset="0" data-y="center" data-voffset="60" data-speed="800" data-start="1300"
+                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
+                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                            style="z-index: 6; font-size:120px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                            {{ __('COATINGS') }}</div>
+                        <div class="tp-caption lfb tp-scrollbelowslider tp-resizeme" data-x="center" data-hoffset="0"
+                            data-y="center" data-voffset="180" data-speed="800" data-start="2200"
+                            data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1"
+                            data-endspeed="300" data-scrolloffset="0" style="z-index: 8;"><a
+                                href="{{ route('user.shop') }}" class="btn">{{ __('VIEW CATALOG') }}</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-          <!-- SLIDE  -->
-          <li data-transition="random" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
-            <!-- MAIN IMAGE -->
-            <img src="{{ asset('user/images/slide-bg-2.jpg') }}"  alt="slider"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-            <!-- LAYERS -->
-            <!-- LAYER NR. 1 -->
-            <div class="tp-caption font-playfair sfb tp-resizeme"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-150"
-                data-speed="800"
-                data-start="500"
-                data-easing="Power3.easeInOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">The Latest Product from ecoshop</div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfr font-regular tp-resizeme letter-space-4"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="-50"
-                data-speed="800"
-                data-start="800"
-                data-easing="Power3.easeInOut"
-                data-splitin="chars"
-                data-splitout="none"
-                data-elementdelay="0.07"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">look beautiful </div>
-            <!-- LAYER NR. 2 -->
-            <div class="tp-caption sfr font-extra-bold tp-resizeme letter-space-4"
-                data-x="center" data-hoffset="0"
-                data-y="center" data-voffset="60"
-                data-speed="800"
-                data-start="1300"
-                data-easing="Power3.easeInOut"
-                data-splitin="chars"
-                data-splitout="none"
-                data-elementdelay="0.07"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 6; font-size:140px; color:#fff; text-transform:uppercase; white-space: nowrap;">this season </div>
-            <!-- LAYER NR. 4 -->
-            <div class="tp-caption sfb font-extra-bold tp-resizeme"
-                data-x="center" data-hoffset="120"
-                data-y="center" data-voffset="200"
-                data-speed="800"
-                data-start="2200"
-                data-easing="Power3.easeInOut"
-                data-splitin="none"
-                data-splitout="none"
-                data-elementdelay="0.07"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                style="z-index: 6; font-size:60px; color:#fff; text-transform:uppercase; white-space: nowrap;"><small class="font-regular">$</small> 299 </div>
-            <!-- LAYER NR. 4 -->
-            <div class="tp-caption lfb tp-scrollbelowslider tp-resizeme"
-                data-x="center" data-hoffset="-120"
-                data-y="center" data-voffset="200"
-                data-speed="800"
-                data-start="2200"
-                data-easing="Power3.easeInOut"
-                data-elementdelay="0.1"
-                data-endelementdelay="0.1"
-                data-endspeed="300"
-                data-scrolloffset="0"
-                style="z-index: 8;"><a href="{{ route('user.shop') }}" class="btn">BUY NOW</a> </div>
-          </li>
-        </ul>
-      </div>
+    <!-- Content -->
+    <div id="content">
+
+        <!-- Product Categories -->
+        @if ($categories->count() > 0)
+            <section class="padding-top-100 padding-bottom-100">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h4>{{ __('Our Product Categories') }}</h4>
+                        <span>{{ __('Discover our comprehensive range of premium paints, coatings, and specialty products designed for every application.') }}</span>
+                    </div>
+
+                    <div class="arrival-block">
+                        @foreach ($categories as $category)
+                            <div class="item">
+                                @if ($category->image)
+                                    <img class="img-1" src="{{ $category->image_url }}" alt="{{ $category->name }}">
+                                    <img class="img-2" src="{{ $category->image_url }}" alt="{{ $category->name }}">
+                                @else
+                                    <img class="img-1" src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                        alt="{{ $category->name }}">
+                                    <img class="img-2" src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                        alt="{{ $category->name }}">
+                                @endif
+                                <div class="overlay">
+                                    <span class="price">{{ $category->products_count }} {{ __('Products') }}</span>
+                                    <div class="position-center-center">
+                                        <a href="{{ route('user.shop', ['category' => $category->slug]) }}"><i
+                                                class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                                <div class="item-name">
+                                    <a
+                                        href="{{ route('user.shop', ['category' => $category->slug]) }}">{{ $category->name }}</a>
+                                    <p>{{ Str::limit($category->description, 50) }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        <!-- Featured Products -->
+        @if ($featuredProducts->count() > 0)
+            <section class="padding-top-50 padding-bottom-150">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h4>{{ __('Featured Products') }}</h4>
+                        <span>{{ __('Explore our most popular and highly-rated products trusted by professionals and homeowners alike.') }}</span>
+                    </div>
+
+                    <div class="papular-block block-slide">
+                        @foreach ($featuredProducts as $product)
+                            <div class="item">
+                                <div class="item-img">
+                                    @if ($product->mainImage())
+                                        <img class="img-1" src="{{ $product->main_image_url }}"
+                                            alt="{{ $product->name }}">
+                                        <img class="img-2" src="{{ $product->main_image_url }}"
+                                            alt="{{ $product->name }}">
+                                    @else
+                                        <img class="img-1" src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                            alt="{{ $product->name }}">
+                                        <img class="img-2" src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                            alt="{{ $product->name }}">
+                                    @endif
+                                    <div class="overlay">
+                                        <div class="position-center-center">
+                                            <div class="inn">
+                                                @if ($product->mainImage())
+                                                    <a href="{{ $product->main_image_url }}" data-lighter><i
+                                                            class="icon-magnifier"></i></a>
+                                                @endif
+                                                <a href="{{ route('user.product-detail', $product->slug) }}"
+                                                    data-toggle="tooltip" data-placement="top"
+                                                    title="{{ __('View Details') }}"><i class="icon-eye"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-name">
+                                    <a href="{{ route('user.product-detail', $product->slug) }}">{{ $product->name }}</a>
+                                    <p>{{ $product->category ? $product->category->name : '' }}</p>
+                                </div>
+                                @if ($product->code)
+                                    <span class="price">{{ $product->code }}</span>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        <!-- Projects Section -->
+        @if ($projects->count() > 0)
+            <section class="light-gray-bg padding-top-150 padding-bottom-150">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h4>{{ __('Our Projects') }}</h4>
+                        <span>{{ __('See how our products have been used in landmark projects across the region.') }}</span>
+                    </div>
+                    <div class="knowledge-share">
+                        <ul class="row">
+                            @foreach ($projects->take(4) as $project)
+                                <li class="col-md-6">
+                                    <div class="date">
+                                        <span>{{ $project->completion_date ? $project->completion_date->format('M') : '' }}</span>
+                                        <span
+                                            class="huge">{{ $project->completion_date ? $project->completion_date->format('Y') : '' }}</span>
+                                    </div>
+                                    <a href="{{ route('user.about') }}#projects">{{ $project->name }}</a>
+                                    <p>{{ Str::limit($project->description, 150) }}</p>
+                                    <span>{{ __('Client') }}: <strong>{{ $project->client }}</strong></span>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    <div class="text-center margin-top-30">
+                        <a href="{{ route('user.about') }}#projects" class="btn">{{ __('View All Projects') }}</a>
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        <!-- Certificates Section -->
+        @if ($certificates->count() > 0)
+            <section class="testimonial padding-top-100 padding-bottom-100">
+                <div class="container">
+                    <div class="heading text-center">
+                        <h4>{{ __('Our Certifications') }}</h4>
+                        <span>{{ __('We are proud to hold international quality certifications that guarantee the excellence of our products.') }}</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="single-slide">
+                                @foreach ($certificates->take(3) as $certificate)
+                                    <div class="testi-in">
+                                        <i class="fa fa-certificate"></i>
+                                        <p>{{ $certificate->name }}</p>
+                                        <h5>{{ $certificate->issuer }}</h5>
+                                        @if ($certificate->issue_date)
+                                            <small>{{ __('Issued') }}:
+                                                {{ $certificate->issue_date->format('M Y') }}</small>
+                                        @endif
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endif
+
+        <!-- About Section -->
+        <section class="small-about padding-top-150 padding-bottom-150">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('About Union Group') }}</h4>
+                    <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
+                    </p>
+                </div>
+                <ul class="social_icons">
+                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
+                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
+                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
+                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
+                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="news-letter padding-top-150 padding-bottom-150">
+            <div class="container">
+                <div class="heading light-head text-center margin-bottom-30">
+                    <h4>{{ __('NEWSLETTER') }}</h4>
+                    <span>{{ __('Subscribe to our newsletter to receive the latest updates on new products, projects, and industry news.') }}</span>
+                </div>
+                <form>
+                    <input type="email" placeholder="{{ __('Enter your email address') }}" required>
+                    <button type="submit">{{ __('SUBSCRIBE') }}</button>
+                </form>
+            </div>
+        </section>
     </div>
-  </section>
-
-  <!-- Content -->
-  <div id="content">
-
-    <!-- New Arrival -->
-    <section class="padding-top-100 padding-bottom-100">
-      <div class="container">
-
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>new arrival</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula.
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
-      </div>
-
-      <!-- New Arrival -->
-      <div class="arrival-block">
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-1.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-1.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">wooden chair</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-2.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-2.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">MINIMALIST WOO TOYS</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-3.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-3.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">Concrete Shaving Kit</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-4.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-4.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">PARAGON PENDANT</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-5.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-5.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">crative lamp</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-6.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-6.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">ECO FRIENDLY</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-7.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-7.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">GEOMETRY STOOL</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="item">
-          <!-- Images -->
-          <img class="img-1" src="{{ asset('user/images/item-img-1-8.jpg') }}" alt=""> <img class="img-2" src="{{ asset('user/images/item-img-1-1-1.jpg') }}" alt="">
-          <!-- Overlay  -->
-          <div class="overlay">
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span>
-            <div class="position-center-center"> <a href="{{ asset('user/images/item-img-1-8.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> </div>
-          </div>
-          <!-- Item Name -->
-          <div class="item-name"> <a href="{{ route('user.product-detail') }}">CERAMIC STONE VASE</a>
-            <p>Lorem ipsum dolor sit amet</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Popular Products -->
-    <section class="padding-top-50 padding-bottom-150">
-      <div class="container">
-
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>popular products</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula.
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
-
-        <!-- Popular Item Slide -->
-        <div class="papular-block block-slide">
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-1.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-1.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-basket"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To WishList"><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">stone cup</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-2.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-2.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-basket"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To WishList"><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">gray bag</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-3.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-3.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-basket"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To WishList"><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">chiar</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-
-          <!-- Item -->
-          <div class="item">
-            <!-- Item img -->
-            <div class="item-img"> <img class="img-1" src="{{ asset('user/images/product-4.jpg') }}" alt="" > <img class="img-2" src="{{ asset('user/images/product-2.jpg') }}" alt="" >
-              <!-- Overlay -->
-              <div class="overlay">
-                <div class="position-center-center">
-                  <div class="inn"><a href="{{ asset('user/images/product-4.jpg') }}" data-lighter><i class="icon-magnifier"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To Cart"><i class="icon-basket"></i></a> <a href="#." data-toggle="tooltip" data-placement="top" title="Add To WishList"><i class="icon-heart"></i></a></div>
-                </div>
-              </div>
-            </div>
-            <!-- Item Name -->
-            <div class="item-name"> <a href="{{ route('user.product-detail') }}">STool</a>
-              <p>Lorem ipsum dolor sit amet</p>
-            </div>
-            <!-- Price -->
-            <span class="price"><small>$</small>299</span> </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Knowledge Share -->
-    <section class="light-gray-bg padding-top-150 padding-bottom-150">
-      <div class="container">
-
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>knowledge share</h4>
-          <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula.
-          Sed feugiat, tellus vel tristique posuere, diam</span> </div>
-        <div class="knowledge-share">
-          <ul class="row">
-
-            <!-- Post 1 -->
-            <li class="col-md-6">
-              <div class="date"> <span>December</span> <span class="huge">27</span> </div>
-              <a href="#.">Donec commo is vulputate</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. Sed feugiat, tellus vel tristique posuere, diam</p>
-              <span>By <strong>Admin</strong></span> </li>
-
-            <!-- Post 2 -->
-            <li class="col-md-6">
-              <div class="date"> <span>December</span> <span class="huge">09</span> </div>
-              <a href="#.">Donec commo is vulputate</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus maximus vehicula. Sed feugiat, tellus vel tristique posuere, diam</p>
-              <span>By <strong>Admin</strong></span> </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonial -->
-    <section class="testimonial padding-top-100">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-6">
-
-            <!-- SLide -->
-            <div class="single-slide">
-
-              <!-- Slide -->
-              <div class="testi-in"> <i class="fa fa-quote-left"></i>
-                <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sapien lacus, eu posuere odio luctus non. Nulla lacinia, eros vel fermentum consectetur, risus p</p>
-                <h5>john smith</h5>
-              </div>
-
-              <!-- Slide -->
-              <div class="testi-in"> <i class="fa fa-quote-left"></i>
-                <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sapien lacus, eu posuere odio luctus non. Nulla lacinia, eros vel fermentum consectetur, risus p</p>
-                <h5>john smith</h5>
-              </div>
-
-              <!-- Slide -->
-              <div class="testi-in"> <i class="fa fa-quote-left"></i>
-                <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sapien lacus, eu posuere odio luctus non. Nulla lacinia, eros vel fermentum consectetur, risus p</p>
-                <h5>john smith</h5>
-              </div>
-            </div>
-          </div>
-
-          <!-- Img -->
-          <div class="col-sm-6"> <img class="img-responsive" src="{{ asset('user/images/testi-avatar.jpg') }}" alt=""> </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="small-about padding-top-150 padding-bottom-150">
-      <div class="container">
-
-        <!-- Main Heading -->
-        <div class="heading text-center">
-          <h4>about ecoshop</h4>
-          <p>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odio luctus non. Nulla lacinia,
-            eros vel fermentum consectetur, risus purus tempc, et iaculis odio dolor in ex. </p>
-        </div>
-
-        <!-- Social Icons -->
-        <ul class="social_icons">
-          <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-          <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-          <li><a href="#."><i class="icon-social-tumblr"></i></a></li>
-          <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-          <li><a href="#."><i class="icon-social-dribbble"></i></a></li>
-        </ul>
-      </div>
-    </section>
-    <section class="news-letter padding-top-150 padding-bottom-150">
-      <div class="container">
-        <div class="heading light-head text-center margin-bottom-30">
-          <h4>NEWSLETTER</h4>
-          <span>Phasellus lacinia fermentum bibendum. Interdum et malesuada fames ac ante ipsumien lacus, eu posuere odi </span> </div>
-        <form>
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit">SEND ME</button>
-        </form>
-      </div>
-    </section>
-  </div>
 
 @endsection
