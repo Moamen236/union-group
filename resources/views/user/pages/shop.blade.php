@@ -107,7 +107,7 @@
                                                 @if ($product->mainImage())
                                                     <img class="img-1" src="{{ $product->main_image_url }}"
                                                         alt="{{ $product->name }}">
-                                                    <img class="img-2" src="{{ $product->main_image_url }}"
+                                                    <img class="img-2" src="{{ $product->second_image_url ?? $product->main_image_url }}"
                                                         alt="{{ $product->name }}">
                                                 @else
                                                     <img class="img-1"

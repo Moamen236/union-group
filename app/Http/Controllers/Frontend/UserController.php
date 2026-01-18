@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Project;
 use App\Models\Certificate;
 use App\Models\ProductCategory;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -16,6 +17,11 @@ class UserController extends Controller
      */
     public function index()
     {
+        // Get active sliders
+        $sliders = Slider::active()
+            ->ordered()
+            ->get();
+
         // Get featured/favorite products
         $featuredProducts = Product::with(['category', 'images'])
             ->active()
@@ -51,6 +57,7 @@ class UserController extends Controller
 
         return view('user.pages.index', [
             'title' => __('Home'),
+            'sliders' => $sliders,
             'featuredProducts' => $featuredProducts,
             'latestProducts' => $latestProducts,
             'categories' => $categories,

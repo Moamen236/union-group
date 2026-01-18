@@ -7,63 +7,70 @@
         <div class="tp-banner-container">
             <div class="tp-banner">
                 <ul>
-                    <!-- SLIDE 1 -->
-                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                        <img src="{{ asset('user/images/slide-bg-1.jpg') }}" alt="slider" data-bgposition="center center"
-                            data-bgfit="cover" data-bgrepeat="no-repeat">
-                        <div class="tp-caption font-playfair sfb tp-resizeme" data-x="left" data-hoffset="0"
-                            data-y="center" data-voffset="-200" data-speed="800" data-start="500"
-                            data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1"
-                            data-endelementdelay="0.1" data-endspeed="300"
-                            style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
-                            {{ __('Premium Paints & Coatings') }}</div>
-                        <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
-                            data-y="center" data-voffset="-50" data-speed="800" data-start="800"
-                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
-                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
-                            style="z-index: 6; font-size:100px; color:#fff; text-transform:uppercase; white-space: nowrap;">
-                            {{ __('UNION') }}</div>
-                        <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
-                            data-y="center" data-voffset="60" data-speed="800" data-start="1300"
-                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
-                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
-                            style="z-index: 6; font-size:100px; color:#fff; text-transform:uppercase; white-space: nowrap;">
-                            {{ __('GROUP') }}</div>
-                        <div class="tp-caption lfb tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
-                            data-voffset="180" data-speed="800" data-start="2200" data-easing="Power3.easeInOut"
-                            data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0"
-                            style="z-index: 8;"><a href="{{ route('user.shop') }}"
-                                class="btn">{{ __('EXPLORE PRODUCTS') }}</a></div>
-                    </li>
+                    @forelse ($sliders as $index => $slider)
+                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+                            <img src="{{ $slider->image_url }}" alt="{{ $slider->title }}" data-bgposition="center center"
+                                data-bgfit="cover" data-bgrepeat="no-repeat">
 
-                    <!-- SLIDE 2 -->
-                    <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                        <img src="{{ asset('user/images/slide-bg-2.jpg') }}" alt="slider" data-bgposition="center center"
-                            data-bgfit="cover" data-bgrepeat="no-repeat">
-                        <div class="tp-caption font-playfair sfb tp-resizeme" data-x="center" data-hoffset="0"
-                            data-y="center" data-voffset="-150" data-speed="800" data-start="500"
-                            data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1"
-                            data-endelementdelay="0.1" data-endspeed="300"
-                            style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
-                            {{ __('Quality You Can Trust') }}</div>
-                        <div class="tp-caption sfr font-regular tp-resizeme letter-space-4" data-x="center" data-hoffset="0"
-                            data-y="center" data-voffset="-50" data-speed="800" data-start="800"
-                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
-                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
-                            style="z-index: 6; font-size:78px; color:#fff; text-transform:uppercase; white-space: nowrap;">
-                            {{ __('INDUSTRIAL') }}</div>
-                        <div class="tp-caption sfr font-extra-bold tp-resizeme letter-space-4" data-x="center"
-                            data-hoffset="0" data-y="center" data-voffset="60" data-speed="800" data-start="1300"
-                            data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
-                            data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
-                            style="z-index: 6; font-size:120px; color:#fff; text-transform:uppercase; white-space: nowrap;">
-                            {{ __('COATINGS') }}</div>
-                        <div class="tp-caption lfb tp-scrollbelowslider tp-resizeme" data-x="center" data-hoffset="0"
-                            data-y="center" data-voffset="180" data-speed="800" data-start="2200"
-                            data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1"
-                            data-endspeed="300" data-scrolloffset="0" style="z-index: 8;"><a
-                                href="{{ route('user.shop') }}" class="btn">{{ __('VIEW CATALOG') }}</a></div>
-                    </li>
+                            @if ($slider->subtitle)
+                                <div class="tp-caption font-playfair sfb tp-resizeme"
+                                    data-x="{{ $index % 2 == 0 ? 'left' : 'center' }}" data-hoffset="0"
+                                    data-y="center" data-voffset="-150" data-speed="800" data-start="500"
+                                    data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
+                                    data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
+                                    style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
+                                    {{ $slider->subtitle }}
+                                </div>
+                            @endif
+
+                            @if ($slider->title)
+                                <div class="tp-caption sfr font-extra-bold tp-resizeme"
+                                    data-x="{{ $index % 2 == 0 ? 'left' : 'center' }}" data-hoffset="0"
+                                    data-y="center" data-voffset="0" data-speed="800" data-start="800"
+                                    data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
+                                    data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                                    style="z-index: 6; font-size:80px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                                    {{ $slider->title }}
+                                </div>
+                            @endif
+
+                            @if ($slider->button_text && $slider->button_url)
+                                <div class="tp-caption lfb tp-resizeme"
+                                    data-x="{{ $index % 2 == 0 ? 'left' : 'center' }}" data-hoffset="0"
+                                    data-y="center" data-voffset="120" data-speed="800" data-start="1500"
+                                    data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1"
+                                    data-endspeed="300" data-scrolloffset="0" style="z-index: 8;">
+                                    <a href="{{ $slider->button_url }}" class="btn">{{ $slider->button_text }}</a>
+                                </div>
+                            @endif
+                        </li>
+                    @empty
+                        <!-- Default slide when no sliders in database -->
+                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
+                            <img src="{{ asset('user/images/slider.jpg') }}" alt="slider" data-bgposition="center center"
+                                data-bgfit="cover" data-bgrepeat="no-repeat">
+                            <div class="tp-caption font-playfair sfb tp-resizeme" data-x="left" data-hoffset="0"
+                                data-y="center" data-voffset="-150" data-speed="800" data-start="500"
+                                data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1"
+                                data-endelementdelay="0.1" data-endspeed="300"
+                                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
+                                {{ __('Premium Paints & Coatings') }}
+                            </div>
+                            <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
+                                data-y="center" data-voffset="0" data-speed="800" data-start="800"
+                                data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
+                                data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                                style="z-index: 6; font-size:80px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                                {{ __('UNION GROUP') }}
+                            </div>
+                            <div class="tp-caption lfb tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
+                                data-voffset="120" data-speed="800" data-start="1500" data-easing="Power3.easeInOut"
+                                data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" data-scrolloffset="0"
+                                style="z-index: 8;">
+                                <a href="{{ route('user.shop') }}" class="btn">{{ __('EXPLORE PRODUCTS') }}</a>
+                            </div>
+                        </li>
+                    @endforelse
                 </ul>
             </div>
         </div>
@@ -128,7 +135,7 @@
                                     @if ($product->mainImage())
                                         <img class="img-1" src="{{ $product->main_image_url }}"
                                             alt="{{ $product->name }}">
-                                        <img class="img-2" src="{{ $product->main_image_url }}"
+                                        <img class="img-2" src="{{ $product->second_image_url ?? $product->main_image_url }}"
                                             alt="{{ $product->name }}">
                                     @else
                                         <img class="img-1" src="{{ asset('user/images/product-placeholder.jpg') }}"

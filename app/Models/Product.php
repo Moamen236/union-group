@@ -155,4 +155,29 @@ class Product extends LocalizableModel
         $mainImage = $this->mainImage();
         return $mainImage ? asset('storage/' . $mainImage->image) : null;
     }
+
+    /**
+     * Get second image (for hover effect)
+     */
+    public function secondImage()
+    {
+        $mainImage = $this->mainImage();
+
+        // Get an image that's not the main one
+        $secondImage = $this->images()
+            ->when($mainImage, fn($q) => $q->where('id', '!=', $mainImage->id))
+            ->first();
+
+        // Fall back to main image if no second image exists
+        return $secondImage ?? $mainImage;
+    }
+
+    /**
+     * Get second image URL (for hover effect)
+     */
+    public function getSecondImageUrlAttribute(): ?string
+    {
+        $secondImage = $this->secondImage();
+        return $secondImage ? asset('storage/' . $secondImage->image) : null;
+    }
 }

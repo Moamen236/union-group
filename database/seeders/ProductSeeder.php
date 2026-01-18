@@ -3,15 +3,22 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
+use App\Models\ProductImage;
 use App\Models\ProductCategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
+    /**
+     * Available local images in storage/app/public/images/products/
+     */
+    private array $localImages = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'];
+
     public function run(): void
     {
         $products = [
@@ -27,6 +34,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• تغطية ممتازة - حتى 12 متر مربع لكل لتر\n• تركيبة منخفضة المركبات العضوية المتطايرة\n• سطح قابل للغسل\n• خصائص مضادة للبكتيريا\n• ضمان 5 سنوات",
                 'is_favorite' => true,
                 'order' => 1,
+                'images' => ['1.jpg', '2.jpg', '3.jpg'],
             ],
             [
                 'category_slug' => 'paints-coatings',
@@ -39,6 +47,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• تركيبة مقاومة للأشعة فوق البنفسجية\n• طارد للماء\n• مقاوم للتشققات\n• تقنية التنظيف الذاتي\n• ضمان 10 سنوات",
                 'is_favorite' => true,
                 'order' => 2,
+                'images' => ['4.jpg', '5.jpg'],
             ],
             [
                 'category_slug' => 'paints-coatings',
@@ -51,6 +60,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• لمسة حريرية أنيقة\n• قابلية غسل فائقة\n• مقاوم للبقع\n• سهولة التطبيق\n• مجموعة ألوان واسعة",
                 'is_favorite' => false,
                 'order' => 3,
+                'images' => ['6.jpg', '7.jpg'],
             ],
 
             // Wood Finishes
@@ -65,6 +75,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• تغلغل عميق\n• يعزز ألياف الخشب\n• حماية من الأشعة فوق البنفسجية\n• مقاوم للماء\n• متوفر بـ 12 درجة لونية",
                 'is_favorite' => true,
                 'order' => 1,
+                'images' => ['8.jpg', '1.jpg', '2.jpg'],
             ],
             [
                 'category_slug' => 'wood-finishes',
@@ -77,6 +88,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• لمسة نهائية شفافة تمامًا\n• مقاوم للخدش\n• مقاوم للحرارة\n• سهل التطبيق\n• لامع أو ساتان",
                 'is_favorite' => false,
                 'order' => 2,
+                'images' => ['3.jpg', '4.jpg'],
             ],
 
             // Waterproofing
@@ -91,6 +103,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• عزل مائي 100%\n• مقاوم للحرارة\n• غشاء مرن\n• مستقر ضد الأشعة فوق البنفسجية\n• ضمان 15 سنة",
                 'is_favorite' => true,
                 'order' => 1,
+                'images' => ['5.jpg', '6.jpg'],
             ],
             [
                 'category_slug' => 'waterproofing',
@@ -103,6 +116,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• عزل مائي سلبي\n• تقنية بلورية\n• خصائص ذاتية الإصلاح\n• قابل للتنفس\n• حماية دائمة",
                 'is_favorite' => false,
                 'order' => 2,
+                'images' => ['7.jpg', '8.jpg'],
             ],
 
             // Industrial Coatings
@@ -117,6 +131,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• مقاوم للمواد الكيميائية\n• مقاوم للتآكل\n• لمسة نهائية سلسة\n• سهل التنظيف\n• خيارات مضادة للانزلاق متوفرة",
                 'is_favorite' => true,
                 'order' => 1,
+                'images' => ['1.jpg', '2.jpg', '3.jpg'],
             ],
             [
                 'category_slug' => 'industrial-coatings',
@@ -129,6 +144,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• تركيبة غنية بالزنك\n• التصاق ممتاز\n• سريع الجفاف\n• قابل للطلاء\n• مقاوم لرذاذ الملح",
                 'is_favorite' => false,
                 'order' => 2,
+                'images' => ['4.jpg', '5.jpg'],
             ],
 
             // Decorative Finishes
@@ -143,6 +159,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• لمسة نهائية تشبه الرخام\n• ألوان قابلة للتخصيص\n• سطح متين\n• صديق للبيئة\n• أنماط فريدة",
                 'is_favorite' => true,
                 'order' => 1,
+                'images' => ['6.jpg', '7.jpg'],
             ],
             [
                 'category_slug' => 'decorative-finishes',
@@ -155,6 +172,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• لمعان معدني حقيقي\n• درجات معدنية متعددة\n• سهولة التطبيق\n• قابل للغسل\n• لمعان طويل الأمد",
                 'is_favorite' => false,
                 'order' => 2,
+                'images' => ['8.jpg', '1.jpg'],
             ],
 
             // Primers & Sealers
@@ -169,6 +187,7 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• استخدام متعدد الأسطح\n• يحجب البقع\n• سريع الجفاف\n• رائحة منخفضة\n• تغطية ممتازة",
                 'is_favorite' => false,
                 'order' => 1,
+                'images' => ['2.jpg', '3.jpg'],
             ],
             [
                 'category_slug' => 'primers-sealers',
@@ -181,17 +200,22 @@ class ProductSeeder extends Seeder
                 'features_ar' => "• حاجز للرطوبة\n• قابل للتنفس\n• يمنع التزهر\n• طويل الأمد\n• سهل التطبيق",
                 'is_favorite' => false,
                 'order' => 2,
+                'images' => ['4.jpg', '5.jpg'],
             ],
         ];
 
+        // Ensure the directory exists
+        Storage::disk('public')->makeDirectory('products');
+
         foreach ($products as $productData) {
             $categorySlug = $productData['category_slug'];
-            unset($productData['category_slug']);
+            $localImages = $productData['images'] ?? [];
+            unset($productData['category_slug'], $productData['images']);
 
             $category = ProductCategory::where('slug', $categorySlug)->first();
 
             if ($category) {
-                Product::updateOrCreate(
+                $product = Product::updateOrCreate(
                     ['code' => $productData['code']],
                     array_merge($productData, [
                         'category_id' => $category->id,
@@ -199,7 +223,52 @@ class ProductSeeder extends Seeder
                         'status' => true,
                     ])
                 );
+
+                // Add images for the product
+                $this->createProductImages($product, $localImages);
             }
+        }
+    }
+
+    /**
+     * Create product images
+     */
+    private function createProductImages(Product $product, array $localImages): void
+    {
+        // Delete existing images for this product to avoid duplicates on re-seed
+        $product->images()->delete();
+
+        foreach ($localImages as $index => $localImage) {
+            $extension = pathinfo($localImage, PATHINFO_EXTENSION);
+            $imagePath = "products/{$product->slug}-{$index}.{$extension}";
+
+            // Copy local image to products folder
+            $this->copyLocalImage($localImage, $imagePath);
+
+            ProductImage::create([
+                'product_id' => $product->id,
+                'image' => $imagePath,
+                'alt_en' => $product->name_en,
+                'alt_ar' => $product->name_ar,
+                'is_main' => $index === 0, // First image is main
+                'order' => $index + 1,
+            ]);
+        }
+    }
+
+    /**
+     * Copy local image from images/products folder to destination
+     */
+    private function copyLocalImage(string $sourceImage, string $destPath): void
+    {
+        try {
+            $sourcePath = "images/products/{$sourceImage}";
+            if (Storage::disk('public')->exists($sourcePath)) {
+                $imageContent = Storage::disk('public')->get($sourcePath);
+                Storage::disk('public')->put($destPath, $imageContent);
+            }
+        } catch (\Exception $e) {
+            // Silently fail - image will just be missing
         }
     }
 }

@@ -8,18 +8,18 @@
     <div class="mb-6">
         <div class="flex items-center justify-center">
             <div class="flex items-center">
-                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-white font-semibold">1</div>
-                <span class="ml-2 text-sm font-medium text-brand-600">Product Info</span>
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 dark:bg-gray-700 dark:text-gray-400 font-semibold">1</div>
+                <span class="ml-2 text-sm font-medium text-black dark:text-white">Product Info</span>
             </div>
             <div class="mx-4 h-1 w-16 bg-gray-200 dark:bg-gray-700"></div>
             <div class="flex items-center">
                 <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 dark:bg-gray-700 dark:text-gray-400 font-semibold">2</div>
-                <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">Colors</span>
+                <span class="ml-2 text-sm font-medium text-black dark:text-white">Colors</span>
             </div>
             <div class="mx-4 h-1 w-16 bg-gray-200 dark:bg-gray-700"></div>
             <div class="flex items-center">
                 <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 dark:bg-gray-700 dark:text-gray-400 font-semibold">3</div>
-                <span class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">Images</span>
+                <span class="ml-2 text-sm font-medium text-black dark:text-white">Images</span>
             </div>
         </div>
     </div>
