@@ -101,30 +101,26 @@
                                     </li>
                                     <li>
                                         <i class="icon-call-end"></i>
-                                        <a href="tel:+966112345678">+966 11 234 5678</a>
+                                        <strong>{{ __('Customer Services') }}:</strong><br>
+                                        <a href="tel:022331414">022331414</a> ,
+                                        <a href="tel:022353598">022353598</a> ,
+                                        <a href="tel:01016194660">01016194660</a>
+                                    </li>
+                                    <li>
+                                        <i class="icon-call-end"></i>
+                                        <strong>{{ __('Sales') }}:</strong><br>
+                                        <a href="tel:01026578943">01026578943</a> ,
+                                        <a href="tel:01026347675">01026347675</a>
                                     </li>
                                     <li>
                                         <i class="fa fa-whatsapp"></i>
-                                        <a href="https://wa.me/966501234567" target="_blank">+966 50 123 4567</a>
+                                        <strong>{{ __('WhatsApp') }}:</strong><br>
+                                        <a href="https://wa.me/201016194660" target="_blank">01016194660</a>
                                     </li>
                                     <li>
                                         <i class="icon-envelope"></i>
                                         <a href="mailto:info@uniongroup.com">info@uniongroup.com</a>
                                     </li>
-                                    <li>
-                                        <p>{{ __('Working Hours') }}:<br>
-                                            {{ __('Sunday - Thursday: 8:00 AM - 5:00 PM') }}<br>
-                                            {{ __('Friday - Saturday: Closed') }}</p>
-                                    </li>
-                                </ul>
-
-                                <h6 class="margin-top-30">{{ __('Follow Us') }}</h6>
-                                <ul class="social_icons" style="text-align: left;">
-                                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-                                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
-                                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
-                                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -132,9 +128,6 @@
                 </div>
             </div>
         </section>
-
-        <!--======= MAP =========-->
-        <div id="map"></div>
 
         <!-- About -->
         <section class="small-about padding-top-150 padding-bottom-150">
@@ -144,17 +137,10 @@
                     <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
                     </p>
                 </div>
-                <ul class="social_icons">
-                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
-                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
-                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-                </ul>
             </div>
         </section>
 
-        <!-- Newsletter -->
+        {{-- <!-- Newsletter -->
         <section class="news-letter padding-top-150 padding-bottom-150">
             <div class="container">
                 <div class="heading light-head text-center margin-bottom-30">
@@ -166,7 +152,7 @@
                     <button type="submit">{{ __('SUBSCRIBE') }}</button>
                 </form>
             </div>
-        </section>
+        </section> --}}
     </div>
 
 @endsection
@@ -207,40 +193,4 @@
             border-color: #dc3545 !important;
         }
     </style>
-@endpush
-
-@push('scripts')
-    <!-- Begin Map Script -->
-    <script type='text/javascript' src='https://maps.google.com/maps/api/js?sensor=false'></script>
-    <script type="text/javascript">
-        /*==========  Map  ==========*/
-        var map;
-
-        function initialize_map() {
-            if ($('#map').length) {
-                // Riyadh, Saudi Arabia coordinates
-                var myLatLng = new google.maps.LatLng(24.7136, 46.6753);
-                var mapOptions = {
-                    zoom: 14,
-                    center: myLatLng,
-                    scrollwheel: false,
-                    panControl: false,
-                    zoomControl: true,
-                    scaleControl: false,
-                    mapTypeControl: false,
-                    streetViewControl: false
-                };
-                map = new google.maps.Map(document.getElementById('map'), mapOptions);
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: 'Union Group',
-                    icon: '{{ asset('user/images/map-locator.png') }}'
-                });
-            } else {
-                return false;
-            }
-        }
-        google.maps.event.addDomListener(window, 'load', initialize_map);
-    </script>
 @endpush

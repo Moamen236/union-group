@@ -95,7 +95,7 @@
       </div>
     </section>
 
-    <!-- Newsletter -->
+    {{-- <!-- Newsletter -->
     <section class="news-letter padding-top-150 padding-bottom-150">
       <div class="container">
         <div class="heading light-head text-center margin-bottom-30">
@@ -107,7 +107,7 @@
           <button type="submit">{{ __('SUBSCRIBE') }}</button>
         </form>
       </div>
-    </section>
+    </section> --}}
   </div>
 
 @endsection

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Certificate;
+use App\Models\ContactMessage;
 use App\Models\ProductCategory;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -226,8 +227,8 @@ class UserController extends Controller
             'message' => 'required|string|max:5000',
         ]);
 
-        // Here you can send email or store in database
-        // For now, just redirect with success message
+        // Store the contact message in the database
+        ContactMessage::create($validated);
 
         return redirect()->route('user.contact')
             ->with('success', __('Thank you for your message. We will get back to you soon!'));

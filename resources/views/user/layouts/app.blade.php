@@ -20,6 +20,7 @@
 <link href="{{ asset('user/css/main.css') }}" rel="stylesheet">
 <link href="{{ asset('user/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('user/css/responsive.css') }}" rel="stylesheet">
+<link href="{{ asset('user/css/custom.css') }}" rel="stylesheet">
 
 <!-- JavaScripts -->
 <script src="{{ asset('user/js/modernizr.js') }}"></script>

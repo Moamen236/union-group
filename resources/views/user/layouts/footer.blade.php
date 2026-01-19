@@ -8,7 +8,7 @@
       <!-- ABOUT Location -->
       <div class="col-md-3">
         <div class="about-footer">
-          <img class="margin-bottom-30" src="{{ asset('user/images/logo-foot.png') }}" alt="{{ __('Union Group') }}">
+          <img class="margin-bottom-30" src="{{ asset('user/images/logo.png') }}" alt="{{ __('Union Group') }}" style="max-width: 100px;">
           <p><i class="icon-pointer"></i> {{ __('Industrial Area, P.O. Box 12345') }}<br>
             {{ __('Riyadh, Saudi Arabia') }}</p>
           <p><i class="icon-call-end"></i> <a href="tel:+966112345678" style="color: inherit;">+966 11 234 5678</a></p>
@@ -33,8 +33,8 @@
           <li><a href="{{ route('user.index') }}">{{ __('Home') }}</a></li>
           <li><a href="{{ route('user.shop') }}">{{ __('Products') }}</a></li>
           <li><a href="{{ route('user.about') }}">{{ __('About Us') }}</a></li>
-          <li><a href="{{ route('user.about') }}#projects">{{ __('Our Projects') }}</a></li>
-          <li><a href="{{ route('user.about') }}#certificates">{{ __('Certifications') }}</a></li>
+          <li><a href="{{ route('user.projects') }}">{{ __('Our Projects') }}</a></li>
+          <li><a href="{{ route('user.certificates') }}">{{ __('Certifications') }}</a></li>
           <li><a href="{{ route('user.contact') }}">{{ __('Contact Us') }}</a></li>
         </ul>
       </div>
