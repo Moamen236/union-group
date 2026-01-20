@@ -127,7 +127,7 @@
                     @include('admin.components.common.common-grid-shape')
                     <div class="flex max-w-xs flex-col items-center">
                         <a href="/" class="mb-4 block">
-                            <img src="{{ asset('admin/images/auth-logo.png') }}" alt="Logo" />
+                            <img src="{{ asset('admin/images/logo/auth-logo.png') }}" alt="Logo" />
                         </a>
                         <p class="text-center text-gray-400 dark:text-white/60">
                             Union Group is one of Egypt's leading manufacturers of premium sanitary fittings
