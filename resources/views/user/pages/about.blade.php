@@ -34,8 +34,8 @@
                         </div>
 
                         <!-- IMG -->
-                        <img class="img-responsive margin-top-80 margin-bottom-80"
-                            src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('About Union Group') }}">
+                        {{-- <img class="img-responsive margin-top-80 margin-bottom-80"
+                            src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('About Union Group') }}"> --}}
 
                         <div class="vision-text">
                             <div class="col-lg-5">
@@ -223,13 +223,13 @@
             <div class="text-center">
                 <a href="{{ route('user.contact') }}" class="btn">{{ __('Contact Us') }}</a>
             </div>
-            <ul class="social_icons margin-top-30">
+            {{-- <ul class="social_icons margin-top-30">
                 <li><a href="#."><i class="icon-social-facebook"></i></a></li>
                 <li><a href="#."><i class="icon-social-twitter"></i></a></li>
                 <li><a href="#."><i class="icon-social-instagram"></i></a></li>
                 <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
                 <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-            </ul>
+            </ul> --}}
         </div>
     </section>
 
