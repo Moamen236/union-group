@@ -239,13 +239,13 @@
                     <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
                     </p>
                 </div>
-                <ul class="social_icons">
+                {{-- <ul class="social_icons">
                     <li><a href="#."><i class="icon-social-facebook"></i></a></li>
                     <li><a href="#."><i class="icon-social-twitter"></i></a></li>
                     <li><a href="#."><i class="icon-social-instagram"></i></a></li>
                     <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
                     <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-                </ul>
+                </ul> --}}
             </div>
         </section>
 
