@@ -128,7 +128,7 @@
                         <span>{{ __('Explore our most popular and highly-rated products trusted by professionals and homeowners alike.') }}</span>
                     </div>
 
-                    <div class="papular-block block-slide">
+                    <div class="papular-block block-slide" dir="ltr">
                         @foreach ($featuredProducts as $product)
                             <div class="item">
                                 <div class="item-img">
@@ -212,7 +212,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="single-slide">
+                            <div class="single-slide" dir="ltr">
                                 @foreach ($certificates->take(3) as $certificate)
                                     <div class="testi-in">
                                         <i class="fa fa-certificate"></i>

@@ -11,6 +11,15 @@ use App\Http\Controllers\Auth\LoginController;
 |--------------------------------------------------------------------------
 */
 
+// Language Switcher
+Route::get('/set-locale/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'ar'])) {
+        session(['locale' => $locale]);
+        app()->setLocale($locale);
+    }
+    return redirect()->back();
+})->name('user.set-locale');
+
 Route::controller(UserController::class)->group(function () {
     Route::get('/', 'index')->name('user.index');
     Route::get('/shop', 'shop')->name('user.shop');

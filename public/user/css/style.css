@@ -723,7 +723,8 @@ header .is-sticky .sticky .nav .dropdown.megamenu .dropdown-menu {
 	color: #fff;
 }
 .ownmenu {
-	float: left;
+	display: flex;
+	flex-wrap: wrap;
 }
 .nav-right i {
 	font-size: 20px;

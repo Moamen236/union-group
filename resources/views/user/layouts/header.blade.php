@@ -92,8 +92,8 @@
                                     {{ app()->getLocale() == 'ar' ? 'العربية' : 'EN' }}
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="{{ url('locale/en') }}">English</a></li>
-                                    <li><a href="{{ url('locale/ar') }}">العربية</a></li>
+                                    <li><a href="{{ route('user.set-locale', 'en') }}">English</a></li>
+                                    <li><a href="{{ route('user.set-locale', 'ar') }}">العربية</a></li>
                                 </ul>
                             </li>
 

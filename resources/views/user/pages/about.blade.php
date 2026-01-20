@@ -82,7 +82,7 @@
                         <span>{{ __('We hold prestigious international certifications that validate our commitment to quality and excellence.') }}</span>
                     </div>
 
-                    <ul class="row">
+                    <ul class="row" style="display: flex; flex-wrap: wrap;">
                         @foreach ($certificates as $certificate)
                             <li class="col-md-4 text-center animate fadeInUp" data-wow-delay="{{ $loop->index * 0.2 }}s">
                                 <article class="certificate-card">
