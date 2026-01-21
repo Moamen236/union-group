@@ -14,7 +14,7 @@
 
                             @if ($slider->subtitle)
                                 <div class="tp-caption font-playfair sfb tp-resizeme"
-                                    data-x="{{ $index % 2 == 0 ? 'left' : 'center' }}" data-hoffset="0"
+                                    data-x="center" data-hoffset="0"
                                     data-y="center" data-voffset="-150" data-speed="800" data-start="500"
                                     data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
                                     data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
@@ -25,10 +25,10 @@
 
                             @if ($slider->title)
                                 <div class="tp-caption sfr font-extra-bold tp-resizeme"
-                                    data-x="{{ $index % 2 == 0 ? 'left' : 'center' }}" data-hoffset="0"
+                                    data-x="center" data-hoffset="0"
                                     data-y="center" data-voffset="0" data-speed="800" data-start="800"
-                                    data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
-                                    data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                                    data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
+                                    data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
                                     style="z-index: 6; font-size:80px; color:#fff; text-transform:uppercase; white-space: nowrap;">
                                     {{ $slider->title }}
                                 </div>
@@ -36,7 +36,7 @@
 
                             @if ($slider->button_text && $slider->button_url)
                                 <div class="tp-caption lfb tp-resizeme"
-                                    data-x="{{ $index % 2 == 0 ? 'left' : 'center' }}" data-hoffset="0"
+                                    data-x="center" data-hoffset="0"
                                     data-y="center" data-voffset="120" data-speed="800" data-start="1500"
                                     data-easing="Power3.easeInOut" data-elementdelay="0.1" data-endelementdelay="0.1"
                                     data-endspeed="300" data-scrolloffset="0" style="z-index: 8;">
@@ -58,8 +58,8 @@
                             </div>
                             <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
                                 data-y="center" data-voffset="0" data-speed="800" data-start="800"
-                                data-easing="Power3.easeInOut" data-splitin="chars" data-splitout="none"
-                                data-elementdelay="0.07" data-endelementdelay="0.1" data-endspeed="300"
+                                data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
+                                data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
                                 style="z-index: 6; font-size:80px; color:#fff; text-transform:uppercase; white-space: nowrap;">
                                 {{ __('UNION GROUP') }}
                             </div>
