@@ -27,6 +27,7 @@ class RolePermissionSeeder extends Seeder
             'manage product images',
             'manage projects',
             'manage certificates',
+            'manage contact messages',
             'manage users',
             'view dashboard',
         ];
@@ -51,6 +52,7 @@ class RolePermissionSeeder extends Seeder
             'manage product images',
             'manage projects',
             'manage certificates',
+            'manage contact messages',
             'view dashboard',
         ];
         $admin = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);

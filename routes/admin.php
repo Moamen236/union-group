@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CertificateController;
+use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductColorController;
@@ -96,5 +97,14 @@ Route::middleware(['auth', 'check.active'])->group(function () {
     Route::middleware(['permission:manage users'])->group(function () {
         Route::resource('users', UserController::class)->names('admin.users');
         Route::post('users/{user}/toggle-status', [UserController::class, 'toggleStatus'])->name('admin.users.toggle-status');
+    });
+
+    // Contact Messages
+    Route::middleware(['permission:manage contact messages'])->group(function () {
+        Route::get('contact-messages', [ContactMessageController::class, 'index'])->name('admin.contact-messages.index');
+        Route::post('contact-messages/mark-all-read', [ContactMessageController::class, 'markAllRead'])->name('admin.contact-messages.mark-all-read');
+        Route::get('contact-messages/{contactMessage}', [ContactMessageController::class, 'show'])->name('admin.contact-messages.show');
+        Route::delete('contact-messages/{contactMessage}', [ContactMessageController::class, 'destroy'])->name('admin.contact-messages.destroy');
+        Route::post('contact-messages/{contactMessage}/toggle-read', [ContactMessageController::class, 'toggleRead'])->name('admin.contact-messages.toggle-read');
     });
 });
