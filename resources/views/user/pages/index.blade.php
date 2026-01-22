@@ -80,7 +80,7 @@
     <div id="content">
 
         <!-- About Section -->
-        <section class="small-about padding-top-150 padding-bottom-150">
+        <section class="small-about padding-top-150">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('About Union Group') }}</h4>
