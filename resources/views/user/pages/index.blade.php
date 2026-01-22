@@ -79,6 +79,24 @@
     <!-- Content -->
     <div id="content">
 
+        <!-- About Section -->
+        <section class="small-about padding-top-150 padding-bottom-150">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('About Union Group') }}</h4>
+                    <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
+                    </p>
+                </div>
+                {{-- <ul class="social_icons">
+                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
+                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
+                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
+                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
+                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
+                </ul> --}}
+            </div>
+        </section>
+
         <!-- Product Categories -->
         @if ($categories->count() > 0)
             <section class="padding-top-100 padding-bottom-100">
@@ -230,24 +248,6 @@
                 </div>
             </section>
         @endif
-
-        <!-- About Section -->
-        <section class="small-about padding-top-150 padding-bottom-150">
-            <div class="container">
-                <div class="heading text-center">
-                    <h4>{{ __('About Union Group') }}</h4>
-                    <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
-                    </p>
-                </div>
-                {{-- <ul class="social_icons">
-                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
-                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
-                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-                </ul> --}}
-            </div>
-        </section>
 
         {{-- <!-- Newsletter -->
         <section class="news-letter padding-top-150 padding-bottom-150">

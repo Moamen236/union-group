@@ -34,8 +34,7 @@
                         </div>
 
                         <!-- IMG -->
-                        {{-- <img class="img-responsive margin-top-80 margin-bottom-80"
-                            src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('About Union Group') }}"> --}}
+                        <div class="padding-top-150 margin-bottom-80"></div>
 
                         <div class="vision-text">
                             <div class="col-lg-5">
@@ -75,7 +74,7 @@
 
         <!-- Certificates Section -->
         @if ($certificates->count() > 0)
-            <section class="our-team padding-top-150 padding-bottom-100" id="certificates">
+            <section class="our-team padding-top-80 padding-bottom-100" id="certificates">
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Our Certifications') }}</h4>
