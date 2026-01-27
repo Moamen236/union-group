@@ -28,6 +28,7 @@ body
       IMPORT FILE
 ========================================================*/
 @import url("../fonts/montserrat-fonts.css");
+@import url("../fonts/univers-next-pro.css");
 @import url("animate.css");
 /*=======================================================
       THEME STYLING START
@@ -41,7 +42,7 @@ body {
 	font-weight: normal;
 	position: relative;
 	font-size: 14px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'universnextproregular', sans-serif;
 }
 /*=======================================================
       WRAPPER
@@ -57,7 +58,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	color: #252525;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'universnextprobold', sans-serif;
 	font-weight: bold;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
@@ -187,25 +188,25 @@ a:hover, a:focus {
 	transform: translate(-50%, -50%);
 }
 .font-playfair {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .font-montserrat {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'universnextproregular', sans-serif;
 }
 .font-montserrat {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'universnextproregular', sans-serif;
 }
 .font-hair-line {
-	font-family: 'montserrathairline';
+	font-family: 'universnextprolight';
 }
 .font-light {
-	font-family: 'montserratlight';
+	font-family: 'universnextprolight';
 }
 .font-regular {
-	font-family: 'montserratregular';
+	font-family: 'universnextproregular';
 }
 .font-extra-bold {
-	font-family: 'montserratbold';
+	font-family: 'universnextprobold';
 }
 .white-bg {
 	background: #fff !important;
@@ -243,7 +244,7 @@ a:hover, a:focus {
 	font-weight: bold;
 	font-size: 18px;
 	border-radius: 0px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'universnextprobold', sans-serif;
 	line-height: 46px;
 	background: #27aae1;
 	letter-spacing: 1px;
@@ -266,7 +267,7 @@ a:hover, a:focus {
 	display: inline-block;
 }
 .btn-1 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'universnextprobold', sans-serif;
 	border: 1px solid #27aae1;
 	border-left: none;
 	border-right: none;
@@ -329,6 +330,27 @@ section {
 	position: relative;
 	z-index: 1;
 }
+.btn-secondary {
+	border: none;
+	color: #27aae1;
+	display: inline-block;
+	padding: 5px 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 18px;
+	border-radius: 0px;
+	font-family: 'universnextprobold', sans-serif;
+	line-height: 46px;
+	background: #fff;
+	letter-spacing: 1px;
+	position: relative;
+	z-index: 1;
+}
+.btn-secondary:hover {
+	background: #d7a960;
+	color: #fff;
+}
+
 /*=======================================================
       HEADING
 ========================================================*/
@@ -361,7 +383,7 @@ section {
 	line-height: 24px;
 	letter-spacing: 0.1px;
 	color: #666666;
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .heading.light-head h3 {
 	color: #fff;
@@ -1163,7 +1185,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	position: relative;
 }
 .simple-head h4 {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	font-size: 28px;
 	color: #2d3a4b;
 	margin: 30px 0;
@@ -1318,7 +1340,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0 ); /* IE6-9 */
 }
 .arrival-block .item-name p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	font-size: 14px;
 	margin: 0px;
 }
@@ -1399,40 +1421,119 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	width: 100%;
 }
 .top-shop-feature p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 /*=======================================================
       NEW ARRIVAL LIST
 ========================================================*/
 .new-arrival-list {
 }
+.new-arrival-list .item,
 .new-arrival-list li {
 	position: relative;
 	text-align: center;
 }
+.new-arrival-list .item h4 a,
 .new-arrival-list li h4 a {
 	color: #2d3a4b;
 }
+.new-arrival-list .item .btn,
 .new-arrival-list li .btn {
 	background: #27aae1;
 	color: #fff;
 	margin-top: 10px;
 }
+.new-arrival-list .item .btn:hover,
 .new-arrival-list li .btn:hover {
 	background: #c98b2b;
 	border-color: #c98b2b;
 	color: #2d3a4b;
 }
+.new-arrival-list .item article,
 .new-arrival-list li article {
 	margin-bottom: 30px;
 	position: relative;
 	overflow: hidden;
 	background: #fff;
 }
+.new-arrival-list .item article:hover img,
 .new-arrival-list li article:hover img {
 	-webkit-transform: scale3d(1.1, 1.1, 1);
 	transform: scale3d(1.1, 1.1, 1);
 	opacity: 0.5;
+}
+/* Promise slider: image on top, text below with white bg */
+.new-arrival-list .promise-card {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 0;
+	overflow: visible;
+	background: transparent;
+}
+.new-arrival-list .promise-card-img {
+	position: relative;
+	overflow: hidden;
+	line-height: 0;
+	height: 400px;
+	background: #f5f5f5;
+}
+.new-arrival-list .promise-card-img img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.new-arrival-list .promise-card:hover .promise-card-img img {
+	-webkit-transform: scale3d(1.05, 1.05, 1);
+	transform: scale3d(1.05, 1.05, 1);
+	opacity: 0.9;
+}
+.new-arrival-list .promise-card-caption {
+	background: #fff;
+	padding: 24px 20px;
+	text-align: center;
+	flex: 1;
+}
+.new-arrival-list .promise-card-caption h4 {
+	margin: 0 0 12px;
+	font-size: 18px;
+	color: #2d3a4b;
+	line-height: 1.3;
+}
+.new-arrival-list .promise-card-caption p {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.6;
+	color: #555;
+}
+.new-arrival-list .promise-slider.owl-carousel .owl-nav {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	transform: translateY(-50%);
+	pointer-events: none;
+}
+.new-arrival-list .promise-slider.owl-carousel .owl-prev,
+.new-arrival-list .promise-slider.owl-carousel .owl-next {
+	position: absolute;
+	pointer-events: auto;
+}
+.new-arrival-list .promise-slider.owl-carousel .owl-prev {
+	left: -50px;
+    height: 23px;
+    width: 23px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 21px;
+}
+.new-arrival-list .promise-slider.owl-carousel .owl-next {
+	right: -50px;
+    height: 23px;
+    width: 23px;
+    border: 1px solid #000;
+    text-align: center;
+    line-height: 21px;
 }
 /*=======================================================
       SPECIAL OFFERS
@@ -1535,7 +1636,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 }
 .tooltip-inner {
 	padding: 4px 14px;
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .tooltip.top .tooltip-arrow {
 	bottom: 1px;
@@ -1601,7 +1702,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	z-index: 9;
 }
 .papular-block .item-name p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	font-size: 14px;
 	margin: 0px;
 	margin-top: 10px;
@@ -1720,7 +1821,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	text-transform: uppercase;
 }
 .shop-items .item-name p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .shop-items .price {
 	font-size: 18px;
@@ -1763,7 +1864,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	transition: 0.4s ease-in-out;
 }
 .shop-detail p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .shop-detail h4 {
 	color: #2d3a4b;
@@ -1871,7 +1972,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 }
 .item-decribe .tab-content p {
 	font-size: 13px;
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .item-decribe .nav-tabs {
 	border: none;
@@ -2029,7 +2130,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	letter-spacing: 2px;
 }
 .history-block p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .vision-text h5 {
 	font-size: 20px;
@@ -2038,7 +2139,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	letter-spacing: 2px;
 }
 .vision-text h2 {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	font-size: 36px;
 	font-weight: normal;
 	text-transform: none;
@@ -2061,7 +2162,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	text-align: center;
 }
 .cultur-block p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	color: #fff;
 }
 .cultur-block h4 {
@@ -2208,7 +2309,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	background: #c98b2b;
 }
 .blog-list article p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .blog-list .post-tittle .tags {
 	font-weight: bold;
@@ -2348,7 +2449,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 .admin-info h6 span {
 	font-size: 12px;
 	text-transform: none;
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	margin-left: 30px;
 }
 /*=======================================================
@@ -2376,7 +2477,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	padding: 0px;
 	margin: 0px;
 	border: none;
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	margin: 50px 0;
 	border-bottom: 1px solid rgba(0,0,0,0.1);
 	border-top: 1px solid rgba(0,0,0,0.1);
@@ -2454,7 +2555,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	border-bottom: 1px solid #d1d5db;
 }
 .tweet p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 }
 .tweet i {
 	font-size: 30px;
@@ -3057,7 +3158,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	font-weight: bold;
 }
 .knowledge-share p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	max-width: 400px;
 }
 .knowledge-share a {
@@ -3256,7 +3357,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	margin-top: 20px;
 }
 .testimonial p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	max-width: 400px;
 	margin-top: 40px;
 	color: #4d4d4d;
@@ -3357,9 +3458,9 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	color: #c98b2b;
 }
 .small-about p {
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	color: #4d4d4d;
-	font-size: 14px;
+	font-size: 18px;
 	line-height: 20px;
 	max-width: 900px;
 	margin: 0 auto;
@@ -3393,7 +3494,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 .sub-bnr p {
 	color: #fff;
 	letter-spacing: 0px;
-	font-family: 'Playfair Display', serif;
+	font-family: 'universnextproregular', serif;
 	font-size: 14px;
 	margin-top: 20px;
 	max-width: 590px;

@@ -1,0 +1,18 @@
+@font-face {
+	font-family: 'universnextprolight';
+	src: url('univers-next-pro/UniversNextProThin.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'universnextproregular';
+	src: url('univers-next-pro/UniversNextProRegular.ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'universnextprobold';
+	src: url('univers-next-pro/UniversNextProBold.ttf');
+	font-weight: normal;
+	font-style: normal;
+}

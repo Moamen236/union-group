@@ -7,8 +7,7 @@
         <div class="position-center-center">
             <div class="container">
                 <h4>{{ __('About Union Group') }}</h4>
-                <p>{{ __('Leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East.') }}
-                </p>
+                <p>{{ __('Leading manufacturer of premium sanitary fittings since 1950') }}</p>
                 <ol class="breadcrumb">
                     <li><a href="{{ route('user.index') }}">{{ __('Home') }}</a></li>
                     <li class="active">{{ __('About') }}</li>
@@ -20,32 +19,55 @@
     <!-- Content -->
     <div id="content">
 
-        <!-- History -->
+        <!-- About Us Intro -->
         <section class="history-block padding-top-100 padding-bottom-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-10 center-block">
-                        <div class="col-sm-9 center-block">
-                            <h4>{{ __('Our Story') }}</h4>
-                            <p>{{ __('Union Group has been a pioneer in the paints and coatings industry for over three decades. Starting as a small manufacturing unit, we have grown to become one of the most trusted names in the region, serving clients across the Middle East and beyond.') }}
-                            </p>
-                            <p>{{ __('Our commitment to quality, innovation, and customer satisfaction has driven us to continuously improve our products and services. We invest heavily in research and development to ensure our products meet the highest international standards while being environmentally responsible.') }}
+                    <div class="col-xs-12 center-block">
+                        <div class="col-sm-10 center-block">
+                            <h4>{{ __('About Us') }}</h4>
+                            <p class="about-intro-lead">
+                                {{ __('Union Group is one of Egypt\'s leading manufacturers of premium sanitary fittings. Established in 1950, we specialize in designing and producing high-quality bathroom mixers and water control solutions for homes, projects and large developments across Egypt and international markets.') }}
+                                <br>
+                                {{ __('For more than 70 years, Union Group has combined engineering excellence, modern technology and competitive pricing to deliver reliable, certified and long-lasting sanitary products.') }}
                             </p>
                         </div>
 
                         <!-- IMG -->
-                        <div class="padding-top-150 margin-bottom-80"></div>
-
-                        <div class="vision-text">
-                            <div class="col-lg-5">
-                                <h5 class="text-left">{{ __('Our Vision') }}</h5>
-                                <h2>{{ __('To be the leading provider of innovative paint solutions in the region') }}</h2>
+                        <img class="img-responsive margin-top-80 margin-bottom-80"
+                            src="{{ asset('user/images/slider2.jpg') }}" alt=""
+                            style="max-height: 400px;width: 100%;object-fit: cover;">
+                        <div class="row about-cards-row">
+                            <div class="col-xs-12 col-sm-6 margin-bottom-40">
+                                <article class="about-card">
+                                    <div class="about-card-icon text-center"><i class="fa fa-eye" aria-hidden="true"></i>
+                                    </div>
+                                    <h4 class="about-card-title">{{ __('Vision') }}</h4>
+                                    <p class="about-card-lead">
+                                        {{ __('The company aims to strengthen its position in the local and global market through:') }}
+                                    </p>
+                                    <ul class="about-list about-list-check">
+                                        <li>{{ __('Competing effectively in the sanitary manufacturing sector') }}</li>
+                                        <li>{{ __('Closing the gap between increasing domestic demand and local production') }}
+                                        </li>
+                                        <li>{{ __('Reducing dependence on imports and supporting the national balance of payments') }}
+                                        </li>
+                                    </ul>
+                                </article>
                             </div>
-                            <div class="col-lg-7">
-                                <p>{{ __('We strive to deliver products that not only meet but exceed our customers\' expectations. Our vision is to create lasting value through sustainable practices, cutting-edge technology, and unwavering commitment to quality.') }}
-                                </p>
-                                <p>{{ __('We believe in building strong relationships with our clients, partners, and communities. Our success is measured not just by our growth, but by the positive impact we make on the environment and society.') }}
-                                </p>
+                            <div class="col-xs-12 col-sm-6 margin-bottom-40">
+                                <article class="about-card">
+                                    <div class="about-card-icon text-center"><i class="fa fa-bullseye"
+                                            aria-hidden="true"></i></div>
+                                    <h4 class="about-card-title">{{ __('Mission') }}</h4>
+                                    <p class="about-card-lead">{{ __('The company targets to serve:') }}</p>
+                                    <ul class="about-list about-list-check">
+                                        <li>{{ __('Local individual consumers and direct users') }}</li>
+                                        <li>{{ __('National mega projects aligned with the state\'s strategy') }}</li>
+                                        <li>{{ __('Export to foreign markets through agreements such as COMESA (Africa) and Arab Joint Cooperation agreements') }}
+                                        </li>
+                                    </ul>
+                                </article>
                             </div>
                         </div>
                     </div>
@@ -53,95 +75,136 @@
             </div>
         </section>
 
-        <!-- Values Section -->
-        <section class="cultur-block">
-            <ul>
-                <li><img src="{{ asset('user/images/cultur-img-1.jpg') }}" alt=""></li>
-                <li><img src="{{ asset('user/images/cultur-img-2.jpg') }}" alt=""></li>
-                <li><img src="{{ asset('user/images/cultur-img-3.jpg') }}" alt=""></li>
-                <li><img src="{{ asset('user/images/cultur-img-4.jpg') }}" alt=""></li>
-            </ul>
-            <div class="position-center-center">
-                <div class="container">
-                    <div class="col-sm-6 center-block">
-                        <h4>{{ __('Our Core Values') }}</h4>
-                        <p>{{ __('Quality, Innovation, Integrity, Customer Focus, and Environmental Responsibility guide everything we do.') }}
+        <!-- History -->
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+            <div class="container">
+                <div class="heading text-center margin-bottom-50">
+                    <h4>{{ __('History') }}</h4>
+                </div>
+                <div class="row about-section-with-img">
+                    <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
+                        <div class="about-section-img-wrap">
+                            <img src="{{ asset('user/images/promise1.avif') }}" alt="{{ __('Our History') }}"
+                                class="img-responsive about-section-img">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 history-block">
+                        <p class="about-support-p">
+                            {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                        </p>
+                        <p class="about-support-p">
+                            {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Certificates Section -->
-        @if ($certificates->count() > 0)
-            <section class="our-team padding-top-80 padding-bottom-100" id="certificates">
-                <div class="container">
-                    <div class="heading text-center">
-                        <h4>{{ __('Our Certifications') }}</h4>
-                        <span>{{ __('We hold prestigious international certifications that validate our commitment to quality and excellence.') }}</span>
-                    </div>
-
-                    <ul class="row" style="display: flex; flex-wrap: wrap;">
-                        @foreach ($certificates as $certificate)
-                            <li class="col-md-4 text-center animate fadeInUp" data-wow-delay="{{ $loop->index * 0.2 }}s">
-                                <article class="certificate-card">
-                                    <div class="certificate-icon">
-                                        @if ($certificate->isPdf())
-                                            <i class="fa fa-file-pdf-o fa-3x"></i>
-                                        @else
-                                            <i class="fa fa-certificate fa-3x"></i>
-                                        @endif
-                                    </div>
-                                    <div class="certificate-info">
-                                        <h6>{{ $certificate->name }}</h6>
-                                        <p class="issuer">{{ $certificate->issuer }}</p>
-                                        @if ($certificate->issue_date)
-                                            <p class="date">
-                                                <small>{{ __('Issued') }}:
-                                                    {{ $certificate->issue_date->format('M d, Y') }}</small>
-                                                @if ($certificate->expiry_date)
-                                                    <br><small>{{ __('Valid until') }}:
-                                                        {{ $certificate->expiry_date->format('M d, Y') }}</small>
-                                                @endif
-                                            </p>
-                                        @endif
-                                        @if ($certificate->file)
-                                            <a href="{{ $certificate->file_url }}" target="_blank"
-                                                class="btn btn-small margin-top-10">
-                                                {{ $certificate->isPdf() ? __('View PDF') : __('View Certificate') }}
-                                            </a>
-                                        @endif
-                                    </div>
-                                </article>
-                            </li>
-                        @endforeach
-                    </ul>
+        <!-- Brand Evolution -->
+        <section class="about-intro padding-top-100 padding-bottom-80">
+            <div class="container">
+                <div class="heading text-center margin-bottom-50">
+                    <h4>{{ __('Brand Evolution') }}</h4>
                 </div>
-            </section>
-        @endif
+                <div class="row about-section-with-img">
+                    <div class="col-xs-12 col-sm-7 col-md-6 history-block">
+                        <p class="about-support-p">
+                            {{ __('Union Group\'s first registered trademark combined a gear and a water valve to represent the union between industry and product.') }}
+                        </p>
+                        <p class="about-support-p">
+                            {{ __('Over time, the brand evolved into Union Group, reflecting advanced water control technology, sustainability and quality leadership in the sanitary fittings industry.') }}
+                        </p>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 col-md-6 margin-bottom-30">
+                        <div class="about-section-img-wrap">
+                            <img src="{{ asset('user/images/promise3.avif') }}" alt="{{ __('Brand Evolution') }}"
+                                class="img-responsive about-section-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialization -->
+        <section class="about-intro padding-top-100 padding-bottom-80">
+            <div class="container">
+                <div class="heading text-center margin-bottom-50">
+                    <h4>{{ __('Specialization') }}</h4>
+                    <p class="about-intro-lead">
+                        {{ __('We use high-purity brass, advanced casting, machining and plating technologies to ensure durability, clean water flow and elegant modern design, to achieve the highest quality levels at competitive pricing with modern contemporary design.') }}
+                    </p>
+                </div>
+                <div class="row about-section-with-img">
+                    <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
+                        <div class="about-section-img-wrap">
+                            <img src="{{ asset('user/images/promise2.avif') }}" alt="{{ __('Our Specialization') }}"
+                                class="img-responsive about-section-img">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <p class="about-support-p margin-bottom-20">
+                            {{ __('Union Group specializes in the manufacturing of:') }}
+                        </p>
+                        <ul class="about-list about-list-bullet">
+                            <li class="about-support-p">{{ __('Bathroom and kitchen mixers') }}</li>
+                            <li class="about-support-p">{{ __('Premium brass sanitary fittings') }}</li>
+                            <li class="about-support-p">{{ __('Water control and saving solutions') }}</li>
+                            <li class="about-support-p">{{ __('Laboratory fittings') }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- After-Sales & Warranty -->
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+            <div class="container">
+                <div class="heading text-center margin-bottom-50">
+                    <h4>{{ __('After-Sales Service & Warranty') }}</h4>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 margin-bottom-30">
+                        <article class="about-support-card">
+                            <div class="about-support-icon"><i class="fa fa-wrench" aria-hidden="true"></i></div>
+                            <h5 class="about-support-title">{{ __('After-Sales Service') }}</h5>
+                            <p>{{ __('Union Group provides dedicated after-sales support through professional technical service teams. We support maintenance and product performance to ensure long-term customer satisfaction.') }}
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 margin-bottom-30">
+                        <article class="about-support-card">
+                            <div class="about-support-icon"><i class="fa fa-shield" aria-hidden="true"></i></div>
+                            <h5 class="about-support-title">{{ __('Warranty') }}</h5>
+                            <p>{{ __('All Union Group products are backed by an official manufacturer warranty, ensuring quality, durability and peace of mind for our customers.') }}
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Projects Section -->
         @if ($projects->count() > 0)
-            <section class="light-gray-bg padding-top-150 padding-bottom-100" id="projects">
+            <section class="padding-top-150 padding-bottom-100" id="projects">
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Our Projects') }}</h4>
-                        <span>{{ __('We have successfully delivered coating solutions for landmark projects across the region.') }}</span>
+                        <span>{{ __('We have successfully delivered solutions for landmark projects across the region.') }}</span>
                     </div>
 
                     <ul class="row">
                         @foreach ($projects as $project)
-                            <li class="col-md-6 margin-bottom-30">
+                            <li class="col-xs-12 col-md-6 margin-bottom-30">
                                 <article class="project-card">
                                     <div class="row">
                                         @if ($project->image)
-                                            <div class="col-sm-4">
+                                            <div class="col-xs-12 col-sm-4">
                                                 <img src="{{ $project->image_url }}" alt="{{ $project->name }}"
                                                     class="img-responsive">
                                             </div>
-                                            <div class="col-sm-8">
+                                            <div class="col-xs-12 col-sm-8">
                                             @else
-                                                <div class="col-sm-12">
+                                                <div class="col-xs-12 col-sm-12">
                                         @endif
                                         <h5>{{ $project->name }}</h5>
                                         <p class="location"><i class="fa fa-map-marker"></i> {{ $project->location }}</p>
@@ -168,42 +231,39 @@
         <div class="container">
             <div class="heading text-center">
                 <h4>{{ __('Why Choose Union Group') }}</h4>
-                <span>{{ __('We are committed to delivering excellence in every product and service') }}</span>
+                <span>{{ __('Engineering excellence, certified quality, and dedicated support') }}</span>
             </div>
             <ul class="row">
-                <li class="col-md-4 text-center">
+                <li class="col-xs-12 col-sm-4 text-center">
                     <article>
-                        <div class="avatar"
-                            style="background: #f5f5f5; padding: 30px; border-radius: 50%; width: 150px; height: 150px; margin: 0 auto;">
-                            <i class="fa fa-check-circle fa-4x" style="color: #333; line-height: 90px;"></i>
+                        <div class="avatar about-why-icon">
+                            <i class="fa fa-cogs" aria-hidden="true"></i>
                         </div>
                         <div class="team-names">
-                            <h6>{{ __('Quality Assured') }}</h6>
-                            <p>{{ __('ISO certified products meeting international standards') }}</p>
+                            <h6>{{ __('Engineering Excellence') }}</h6>
+                            <p>{{ __('Over 70 years of expertise in sanitary fittings and water control solutions') }}</p>
                         </div>
                     </article>
                 </li>
-                <li class="col-md-4 text-center">
+                <li class="col-xs-12 col-sm-4 text-center">
                     <article>
-                        <div class="avatar"
-                            style="background: #f5f5f5; padding: 30px; border-radius: 50%; width: 150px; height: 150px; margin: 0 auto;">
-                            <i class="fa fa-leaf fa-4x" style="color: #333; line-height: 90px;"></i>
+                        <div class="avatar about-why-icon">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i>
                         </div>
                         <div class="team-names">
-                            <h6>{{ __('Eco-Friendly') }}</h6>
-                            <p>{{ __('Environmentally responsible products with low VOC formulas') }}</p>
+                            <h6>{{ __('Certified Quality') }}</h6>
+                            <p>{{ __('Reliable, certified and long-lasting products at competitive pricing') }}</p>
                         </div>
                     </article>
                 </li>
-                <li class="col-md-4 text-center">
+                <li class="col-xs-12 col-sm-4 text-center">
                     <article>
-                        <div class="avatar"
-                            style="background: #f5f5f5; padding: 30px; border-radius: 50%; width: 150px; height: 150px; margin: 0 auto;">
-                            <i class="fa fa-headphones fa-4x" style="color: #333; line-height: 90px;"></i>
+                        <div class="avatar about-why-icon">
+                            <i class="fa fa-headphones" aria-hidden="true"></i>
                         </div>
                         <div class="team-names">
-                            <h6>{{ __('Expert Support') }}</h6>
-                            <p>{{ __('Technical guidance and after-sales support') }}</p>
+                            <h6>{{ __('Dedicated Support') }}</h6>
+                            <p>{{ __('Professional after-sales service and manufacturer warranty') }}</p>
                         </div>
                     </article>
                 </li>
@@ -216,41 +276,233 @@
         <div class="container">
             <div class="heading text-center">
                 <h4>{{ __('Get in Touch') }}</h4>
-                <p>{{ __('Have questions about our products or need a custom solution? Our team is ready to help you find the perfect paint and coating solutions for your project.') }}
+                <p>{{ __('Have questions about our sanitary fittings or need technical support? Our team is ready to help.') }}
                 </p>
             </div>
             <div class="text-center">
                 <a href="{{ route('user.contact') }}" class="btn">{{ __('Contact Us') }}</a>
             </div>
-            {{-- <ul class="social_icons margin-top-30">
-                <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-                <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                <li><a href="#."><i class="icon-social-instagram"></i></a></li>
-                <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
-                <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-            </ul> --}}
         </div>
     </section>
 
-    {{-- <!-- Newsletter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
-        <div class="container">
-            <div class="heading light-head text-center margin-bottom-30">
-                <h4>{{ __('NEWSLETTER') }}</h4>
-                <span>{{ __('Subscribe to our newsletter to receive the latest updates on new products, projects, and industry news.') }}</span>
-            </div>
-            <form>
-                <input type="email" placeholder="{{ __('Enter your email address') }}" required>
-                <button type="submit">{{ __('SUBSCRIBE') }}</button>
-            </form>
-        </div>
-    </section> --}}
     </div>
 
 @endsection
 
 @push('styles')
     <style>
+        .our-team .avatar {
+            height: 110px !important;
+            width: 110px !important;
+        }
+
+        /* Section images – same style as About Us */
+        .about-section-img-wrap {
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .about-section-img-wrap img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .about-section-img-wrap:hover img {
+            transform: scale(1.03);
+        }
+
+        /* About section typography – matches About Us */
+        .about-intro-lead {
+            font-size: 18px;
+            line-height: 28px;
+            color: #333333;
+            margin-bottom: 20px;
+            font-family: 'universnextproregular', serif;
+        }
+
+        .about-intro-text {
+            font-size: 14px;
+            line-height: 24px;
+            color: #666666;
+            font-family: 'universnextproregular', serif;
+        }
+
+        /* Vision & Mission cards – theme colors #2d3a4b, #666666 */
+        .about-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            min-height: 280px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .about-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Equal height for Vision & Mission cards */
+        .about-cards-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .about-cards-row>[class*="col-"] {
+            display: flex;
+        }
+
+        .about-cards-row .about-card {
+            width: 100%;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .about-card-icon {
+            width: 56px;
+            height: 56px;
+            line-height: 56px;
+            border-radius: 50%;
+            background: #2d3a4b;
+            color: #fff;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+
+        .about-card-title {
+            color: #2d3a4b;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .about-card-lead {
+            color: #666666;
+            margin-bottom: 15px;
+            font-size: 14px;
+            line-height: 22px;
+            font-family: 'universnextproregular', serif;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .about-list li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+            color: #666666;
+            line-height: 22px;
+            font-size: 14px;
+        }
+
+        .about-list-check li:before {
+            content: "\f00c";
+            font-family: FontAwesome;
+            position: absolute;
+            left: 0;
+            color: #2d3a4b;
+            font-size: 12px;
+        }
+
+        .about-list-bullet {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-list-bullet li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 8px;
+            color: #666666;
+            font-size: 14px;
+        }
+
+        .about-list-bullet li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: #2d3a4b;
+            font-size: 8px;
+            top: 6px;
+        }
+
+        /* After-Sales & Warranty – same card style as Vision/Mission (no image) */
+        .about-support-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            min-height: 220px;
+            border-left: 4px solid #2d3a4b;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .about-support-card:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-support-card .about-support-icon {
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 4px;
+            background: #2d3a4b;
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .about-support-title {
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: #2d3a4b;
+        }
+
+        .about-support-p {
+            color: #666666;
+            font-size: 22px;
+            line-height: 36px;
+            margin: 0;
+            font-family: 'universnextproregular', serif;
+        }
+
+        /* Why Choose – extends .our-team .avatar, theme #2d3a4b */
+        .about-why-icon {
+            background: #f0f5f9;
+            padding: 0;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 40px;
+            color: #2d3a4b;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .about-why-icon i {
+            vertical-align: middle;
+        }
+
+        .our-team article:hover .about-why-icon {
+            background: #2d3a4b;
+            color: #fff;
+        }
+
+        /* Certificates & Projects – keep in sync with theme */
         .certificate-card {
             background: #fff;
             padding: 30px;
@@ -260,21 +512,21 @@
         }
 
         .certificate-card:hover {
-            transform: translateY(-5px);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
         .certificate-icon {
             margin-bottom: 20px;
-            color: #f39c12;
+            color: #c98b2b;
         }
 
         .certificate-info h6 {
             margin-bottom: 10px;
+            color: #2d3a4b;
         }
 
         .certificate-info .issuer {
-            color: #666;
+            color: #666666;
             font-style: italic;
         }
 
@@ -290,16 +542,16 @@
         }
 
         .project-card:hover {
-            transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
         }
 
         .project-card h5 {
             margin-bottom: 10px;
+            color: #2d3a4b;
         }
 
         .project-card .location {
-            color: #666;
+            color: #666666;
             margin-bottom: 15px;
         }
 
@@ -313,7 +565,7 @@
         .project-meta li {
             display: inline-block;
             margin-right: 15px;
-            color: #666;
+            color: #666666;
         }
 
         .btn-small {

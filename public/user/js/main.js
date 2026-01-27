@@ -1,5 +1,5 @@
 /*-----------------------------------------------------------------------------------*/
-/* 		Mian Js Start 
+/* 		Mian Js Start
 /*-----------------------------------------------------------------------------------*/
 $(document).ready(function($) {
 "use strict"
@@ -71,21 +71,21 @@ jQuery('.tp-banner').show().revolution({
 	navigationStyle:"preview1",
 	parallax:"mouse",
 	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],												
-	keyboardNavigation:"on",						
+	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+	keyboardNavigation:"on",
 	shadow:0,
 	fullWidth:"on",
 	fullScreen:"off",
-	shuffle:"off",						
-	autoHeight:"off",						
-	forceFullWidth:"off",	
-	fullScreenOffsetContainer:""	
+	shuffle:"off",
+	autoHeight:"off",
+	forceFullWidth:"off",
+	fullScreenOffsetContainer:""
 });
 
 /*-----------------------------------------------------------------------------------*/
 /* 	TESTIMONIAL SLIDER
 /*-----------------------------------------------------------------------------------*/
-$(".single-slide").owlCarousel({ 
+$(".single-slide").owlCarousel({
     items : 1,
 	autoplay:true,
 	loop:true,
@@ -95,7 +95,7 @@ $(".single-slide").owlCarousel({
     navigation : true,
 	navText: ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 	pagination : true,
-	animateOut: 'fadeOut'	
+	animateOut: 'fadeOut'
 });
 $('.item-slide').owlCarousel({
     loop:true,
@@ -117,7 +117,25 @@ $('.item-slide').owlCarousel({
         }
     }
 });
-/* ------------------------------------------------------------------------ 
+/*-----------------------------------------------------------------------------------*/
+/* 	PROMISE / NEW ARRIVAL SLIDER
+/*-----------------------------------------------------------------------------------*/
+$('.promise-slider').owlCarousel({
+    loop: true,
+    margin: 30,
+    nav: true,
+    navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 15000,
+    autoplayHoverPause: true,
+    responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        1024: { items: 3 }
+    }
+});
+/* ------------------------------------------------------------------------
    SEARCH OVERLAP
 ------------------------------------------------------------------------ */
 $(window).load(function() {
@@ -138,7 +156,7 @@ $('#slider-shop').flexslider({
     sync: "#shop-thumb"
   });
 });
-/* ------------------------------------------------------------------------ 
+/* ------------------------------------------------------------------------
    SEARCH OVERLAP
 ------------------------------------------------------------------------ */
 jQuery('.search-open').on('click', function(){
@@ -152,8 +170,8 @@ jQuery('.search-close').on('click', function(){
 /*-----------------------------------------------------------------------------------*/
 $(window).scroll(function(event) {
 		Scroll();
-});	
-$('.scroll a').on('click', function() {  
+});
+$('.scroll a').on('click', function() {
 	$('html, body').animate({scrollTop: $(this.hash).offset().top -0}, 1000);
 		return false;
 });
@@ -172,7 +190,7 @@ $.each( contentTop, function(i){
 if ( winTop > contentTop[i] - rangeTop ){
 	$('nav li.scroll')
 	  .removeClass('active')
-		.eq(i).addClass('active');			
+		.eq(i).addClass('active');
 }}  )};
 });
 /*-----------------------------------------------------------------------------------*/
@@ -180,7 +198,7 @@ if ( winTop > contentTop[i] - rangeTop ){
 /*-----------------------------------------------------------------------------------*/
 function checkmail(input){
   var pattern1=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-  	if(pattern1.test(input)){ return true; }else{ return false; }}     
+  	if(pattern1.test(input)){ return true; }else{ return false; }}
     function proceed(){
     	var name = document.getElementById("name");
 		var email = document.getElementById("email");
@@ -188,9 +206,9 @@ function checkmail(input){
 		var web = document.getElementById("website");
 		var msg = document.getElementById("message");
 		var errors = "";
-		if(name.value == ""){ 
+		if(name.value == ""){
 		name.className = 'error';
-	  	  return false;}    
+	  	  return false;}
 		  else if(email.value == ""){
 		  email.className = 'error';
 		  return false;}
@@ -206,7 +224,7 @@ function checkmail(input){
 		   else if(msg.value == ""){
 		        msg.className = 'error';
 		        return false;}
-		   else 
+		   else
 		  {
 	$.ajax({
 		type: "POST",
@@ -233,9 +251,9 @@ $('.progress-bars').waypoint(function() {
       width:$(this).attr('data-percent')
      },100);
 });},
-	{ 
+	{
 	offset: '100%',
-    triggerOnce: true 
+    triggerOnce: true
 });
 
 $(function () {
@@ -245,14 +263,14 @@ $(function () {
 
 jQuery(document).ready(function($){
 	var isLateralNavAnimating = false;
-	
+
 	//open/close lateral navigation
 	$('.cd-nav-trigger').on('click', function(event){
 		event.preventDefault();
-		//stop if nav animation is running 
+		//stop if nav animation is running
 		if( !isLateralNavAnimating ) {
-			if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
-			
+			if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true;
+
 			$('body').toggleClass('navigation-is-open');
 			$('.cd-navigation-wrapper').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
 				//animation is over
