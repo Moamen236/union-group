@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Helpers\LocalizableModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Storage;
 
 class Slider extends LocalizableModel
 {
@@ -80,8 +81,23 @@ class Slider extends LocalizableModel
     /**
      * Get image URL
      */
-    public function getImageUrlAttribute(): string
+    public function getImageUrlAttribute(): ?string
     {
-        return asset('storage/' . $this->image);
+        if (!$this->image || empty($this->image) || $this->image === '0') {
+            return null;
+        }
+
+        // Use Storage facade to get the correct URL
+        if (Storage::disk('public')->exists($this->image)) {
+            return Storage::disk('public')->url($this->image);
+        }
+
+        // Fallback to asset() if Storage::url() doesn't work
+        $imagePath = ltrim($this->image, '/');
+        if (strpos($imagePath, 'storage/') === 0) {
+            return asset($imagePath);
+        }
+
+        return asset('storage/' . $imagePath);
     }
 }

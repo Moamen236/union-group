@@ -50,7 +50,25 @@ class SliderController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->store('sliders', 'public');
+            $file = $request->file('image');
+
+            // Validate file
+            if (!$file->isValid()) {
+                return back()
+                    ->withInput()
+                    ->withErrors(['image' => 'Invalid image file. Please try again.']);
+            }
+
+            $imagePath = $file->store('sliders', 'public');
+
+            // Ensure we have a valid path (not empty, not false, not '0')
+            if (empty($imagePath) || $imagePath === false || $imagePath === '0') {
+                return back()
+                    ->withInput()
+                    ->withErrors(['image' => 'Failed to upload image. Please check storage permissions.']);
+            }
+
+            $data['image'] = (string) $imagePath; // Explicitly cast to string
         }
 
         $data['status'] = $request->boolean('status', true);
@@ -87,11 +105,30 @@ class SliderController extends Controller
         $data = $request->validated();
 
         if ($request->hasFile('image')) {
+            $file = $request->file('image');
+
+            // Validate file
+            if (!$file->isValid()) {
+                return back()
+                    ->withInput()
+                    ->withErrors(['image' => 'Invalid image file. Please try again.']);
+            }
+
             // Delete old image
             if ($slider->image) {
                 Storage::disk('public')->delete($slider->image);
             }
-            $data['image'] = $request->file('image')->store('sliders', 'public');
+
+            $imagePath = $file->store('sliders', 'public');
+
+            // Ensure we have a valid path
+            if (empty($imagePath) || $imagePath === false || $imagePath === '0') {
+                return back()
+                    ->withInput()
+                    ->withErrors(['image' => 'Failed to upload image. Please check storage permissions.']);
+            }
+
+            $data['image'] = (string) $imagePath; // Explicitly cast to string
         }
 
         $data['status'] = $request->boolean('status', false);
