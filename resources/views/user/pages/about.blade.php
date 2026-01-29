@@ -1,7 +1,6 @@
 @extends('user.layouts.app')
 
 @section('content')
-
     <!--======= SUB BANNER =========-->
     <section class="sub-bnr" data-stellar-background-ratio="0.5">
         <div class="position-center-center">
@@ -184,7 +183,7 @@
         </section>
 
         <!-- Projects Section -->
-        @if ($projects->count() > 0)
+        {{-- @if ($projects->count() > 0)
             <section class="padding-top-150 padding-bottom-100" id="projects">
                 <div class="container">
                     <div class="heading text-center">
@@ -223,10 +222,90 @@
                     </ul>
                 </div>
             </section>
-        @endif
+        @endif --}}
+
+        <section class="blog-list blog-list-3 padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('Our Exhibitions') }}</h4>
+                    <span>{{ __('We have participated in various exhibitions and events to showcase our products and services.') }}</span>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <article>
+                            <!-- Gallery 1: multiple images, open in lightGallery -->
+                            <div id="exhibition-gallery-1" class="exhibition-gallery">
+                                <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item">
+                                    <img class="img-responsive exhibition-gallery-main" src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('Exhibition') }} 1">
+                                </a>
+                                <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                            </div>
+                            <div class="post-tittle left">
+                                <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Cairo') }}</a>
+                                <span> <i class="primary-color fa fa-map-marker"></i> Egypt</span>
+                                <span> <i class="primary-color fa fa-calendar"></i> April 27, 2016</span>
+                            </div>
+                            <div class="text-left">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat dui at
+                                    lacus aliquet, a consequat enim aliquet. Integer molestie sit amet sem et
+                                    faucibus. Nunc ornare pharetra dui, vitae auctor orci fringilla eget.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <!-- Gallery 2 -->
+                            <div id="exhibition-gallery-2" class="exhibition-gallery">
+                                <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item">
+                                    <img class="img-responsive exhibition-gallery-main" src="{{ asset('user/images/promise4.avif') }}" alt="{{ __('Exhibition') }} 2">
+                                </a>
+                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                            </div>
+                            <div class="post-tittle left">
+                                <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Alexandria') }}</a>
+                                <span> <i class="primary-color fa fa-map-marker"></i> Egypt</span>
+                                <span> <i class="primary-color fa fa-calendar"></i> May 15, 2016</span>
+                            </div>
+                            <div class="text-left">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat dui at
+                                    lacus aliquet, a consequat enim aliquet. Integer molestie sit amet sem et
+                                    faucibus. Nunc ornare pharetra dui, vitae auctor orci fringilla eget.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article>
+                            <!-- Gallery 3 -->
+                            <div id="exhibition-gallery-3" class="exhibition-gallery">
+                                <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item">
+                                    <img class="img-responsive exhibition-gallery-main" src="{{ asset('user/images/promise1.avif') }}" alt="{{ __('Exhibition') }} 3">
+                                </a>
+                                <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                            </div>
+                            <div class="post-tittle left">
+                                <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Giza') }}</a>
+                                <span> <i class="primary-color fa fa-map-marker"></i> Egypt</span>
+                                <span> <i class="primary-color fa fa-calendar"></i> June 10, 2016</span>
+                            </div>
+                            <div class="text-left">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat dui at
+                                    lacus aliquet, a consequat enim aliquet. Integer molestie sit amet sem et
+                                    faucibus. Nunc ornare pharetra dui, vitae auctor orci fringilla eget.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 
         <!-- Why Choose Us -->
-        <section class="our-team padding-top-150 padding-bottom-100">
+        <section class="our-team padding-top-80 padding-bottom-100">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Why Choose Union Group') }}</h4>
@@ -286,11 +365,37 @@
         </section>
 
     </div>
-
 @endsection
 
 @push('styles')
+    <!-- lightGallery -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" />
     <style>
+        /* Exhibition gallery – one main image, rest in popup */
+        .exhibition-gallery {
+            margin-bottom: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+        .exhibition-gallery .exhibition-gallery-item:first-child {
+            display: block !important;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+        }
+        .exhibition-gallery .exhibition-gallery-main {
+            width: 100%;
+            height: 350px;
+            display: block;
+            object-fit: cover;
+            object-position: center;
+            transition: opacity 0.3s ease;
+        }
+        .exhibition-gallery:hover .exhibition-gallery-main {
+            opacity: 0.9;
+        }
+
         .our-team .avatar {
             height: 110px !important;
             width: 110px !important;
@@ -568,4 +673,26 @@
             font-size: 12px;
         }
     </style>
+@endpush
+
+@push('scripts')
+    <!-- lightGallery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof lightGallery !== 'undefined') {
+                document.querySelectorAll('.exhibition-gallery').forEach(function(galleryEl) {
+                    lightGallery(galleryEl, {
+                        selector: '.exhibition-gallery-item',
+                        thumbnail: true,
+                        zoom: true,
+                        download: false,
+                        counter: true
+                    });
+                });
+            }
+        });
+    </script>
 @endpush

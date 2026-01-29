@@ -116,7 +116,7 @@
                 </button>
 
                 <!-- Notification Dropdown -->
-                @include('admin.components.header.notification-dropdown')
+                {{-- @include('admin.components.header.notification-dropdown') --}}
             </div>
 
             <!-- User Dropdown -->
