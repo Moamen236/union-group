@@ -2247,7 +2247,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 }
 .our-team .team-names p {
 	color: #666666;
-	font-size: 12px;
+	font-size: 14px;
 }
 .our-team-small .avatar {
 	height: 200px;
@@ -3463,7 +3463,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	font-family: 'universnextproregular', serif;
 	color: #4d4d4d;
 	font-size: 18px;
-	line-height: 20px;
+	line-height: 26px;
 	max-width: 900px;
 	margin: 0 auto;
 }
@@ -3937,7 +3937,7 @@ footer .subscribe input {
 	font-size: 12px;
 }
 .contact-info li {
-	font-size: 12px;
+	font-size: 16px;
 	line-height: 30px;
 }
 .contact-info h6 {

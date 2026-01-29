@@ -117,7 +117,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-5 col-md-6 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <img src="{{ asset('user/images/promise3.avif') }}" alt="{{ __('Brand Evolution') }}"
+                            <img src="{{ asset('user/images/logos.png') }}" alt="{{ __('Brand Evolution') }}"
                                 class="img-responsive about-section-img">
                         </div>
                     </div>
@@ -300,7 +300,6 @@
         .about-section-img-wrap {
             overflow: hidden;
             border-radius: 6px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
 
@@ -309,10 +308,6 @@
             max-height: 400px;
             object-fit: cover;
             transition: transform 0.4s ease;
-        }
-
-        .about-section-img-wrap:hover img {
-            transform: scale(1.03);
         }
 
         /* About section typography – matches About Us */
@@ -472,7 +467,7 @@
 
         .about-support-p {
             color: #666666;
-            font-size: 22px;
+            font-size: 18px;
             line-height: 36px;
             margin: 0;
             font-family: 'universnextproregular', serif;
