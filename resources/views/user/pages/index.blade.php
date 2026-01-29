@@ -187,14 +187,16 @@
         @endif
 
         <!-- Popular Products -->
-        <section class="padding-bottom-150">
+        <section class="padding-bottom-150 padding-top-150 bg-blue">
             <div class="container">
 
                 <!-- Main Heading -->
                 <div class="heading text-center">
-                    <h4>Our promise: “Pure Freude an Wasser”</h4>
-                    <span>What creates "Pure Freude an Wasser"? It's when Quality, Technology, Design and Sustainability
-                        come together. At the core of the GROHE brand are these four pillars:</span>
+                    <h4 class="text-white">Built to Last. Designed to Perform.</h4>
+                    <span class="text-white">What makes Union Group a trusted choice? <br>
+                        It is our commitment to certified quality, advanced manufacturing, reliable service
+                        and long-term warranty. These pillars define the standard behind every Union Group
+                        product.</span>
                 </div>
 
                 <!-- NEW ARRIVAL - Promise Slider -->
@@ -203,21 +205,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise1.avif') }}" alt="Built to Last">
-                                </div>
-                                <div class="promise-card-caption">
-                                    <h4>Built to Last. Desi ned to Perform.</h4>
-                                    <p>What makes Union Group a trusted choice? <br>
-                                        It is our commitment to certified quality, advanced manufacturing, reliable service
-                                        and long-term warranty. These pillars define the standard behind every Union Group
-                                        product.</p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="item">
-                            <article class="promise-card">
-                                <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}" alt="Manufacturing Excellence">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
+                                        alt="Manufacturing Excellence">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>Manufacturing Excellence.</h4>
@@ -229,7 +218,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}" alt="Certified & Government Approved">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
+                                        alt="Certified & Government Approved">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>Certified & Government Approved</h4>
@@ -241,7 +231,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}" alt="Trusted in National Mega Projects">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
+                                        alt="Trusted in National Mega Projects">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>Trusted in National Mega Projects</h4>
@@ -253,7 +244,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise1.avif') }}" alt="Sustainability & Water Efficiency">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise1.avif') }}"
+                                        alt="Sustainability & Water Efficiency">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>Sustainability & Water Efficiency</h4>
@@ -265,7 +257,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}" alt="Competitive Pricing">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
+                                        alt="Competitive Pricing">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>Competitive Pricing — Premium Quality</h4>
@@ -276,7 +269,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}" alt="After-Sales Support">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
+                                        alt="After-Sales Support">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>After-Sales Support & Technical Service</h4>
@@ -288,7 +282,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}" alt="Warranty & Long-Term Reliability">
+                                    <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
+                                        alt="Warranty & Long-Term Reliability">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>Warranty & Long-Term Reliability</h4>
@@ -311,19 +306,22 @@
                 </div>
                 <div class="partners-logos">
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/ministry-of-exterior.png') }}" alt="Partner 1" loading="lazy">
+                        <img src="{{ asset('user/images/partners/ministry-of-exterior.png') }}" alt="Partner 1"
+                            loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/ministry-of-interior.png') }}" alt="Partner 2" loading="lazy">
+                        <img src="{{ asset('user/images/partners/ministry-of-interior.png') }}" alt="Partner 2"
+                            loading="lazy">
                     </div>
                     <div class="partner-item">
                         <img src="{{ asset('user/images/partners/orascom.png') }}" alt="Partner 3" loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/stella-de-mare.png') }}" alt="Partner 4" loading="lazy">
+                        <img src="{{ asset('user/images/partners/stella-de-mare.png') }}" alt="Partner 4"
+                            loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/partner5.png') }}" alt="Partner 5" loading="lazy">
+                        <img src="{{ asset('user/images/partners/new-giza.png') }}" alt="Partner 5" loading="lazy">
                     </div>
                 </div>
             </div>

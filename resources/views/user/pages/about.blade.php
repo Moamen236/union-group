@@ -217,73 +217,73 @@
                                             @endif
                                         </ul>
                                     </div>
+                                </article>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
-                </article>
-                </li>
-        @endforeach
-        </ul>
-    </div>
-    </section>
-    @endif
+            </section>
+        @endif
 
-    <!-- Why Choose Us -->
-    <section class="our-team padding-top-150 padding-bottom-100">
-        <div class="container">
-            <div class="heading text-center">
-                <h4>{{ __('Why Choose Union Group') }}</h4>
-                <span>{{ __('Engineering excellence, certified quality, and dedicated support') }}</span>
+        <!-- Why Choose Us -->
+        <section class="our-team padding-top-150 padding-bottom-100">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('Why Choose Union Group') }}</h4>
+                    <span>{{ __('Engineering excellence, certified quality, and dedicated support') }}</span>
+                </div>
+                <ul class="row">
+                    <li class="col-xs-12 col-sm-4 text-center">
+                        <article>
+                            <div class="avatar about-why-icon">
+                                <i class="fa fa-cogs" aria-hidden="true"></i>
+                            </div>
+                            <div class="team-names">
+                                <h6>{{ __('Engineering Excellence') }}</h6>
+                                <p>{{ __('Over 70 years of expertise in sanitary fittings and water control solutions') }}
+                                </p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="col-xs-12 col-sm-4 text-center">
+                        <article>
+                            <div class="avatar about-why-icon">
+                                <i class="fa fa-check-circle" aria-hidden="true"></i>
+                            </div>
+                            <div class="team-names">
+                                <h6>{{ __('Certified Quality') }}</h6>
+                                <p>{{ __('Reliable, certified and long-lasting products at competitive pricing') }}</p>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="col-xs-12 col-sm-4 text-center">
+                        <article>
+                            <div class="avatar about-why-icon">
+                                <i class="fa fa-headphones" aria-hidden="true"></i>
+                            </div>
+                            <div class="team-names">
+                                <h6>{{ __('Dedicated Support') }}</h6>
+                                <p>{{ __('Professional after-sales service and manufacturer warranty') }}</p>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
             </div>
-            <ul class="row">
-                <li class="col-xs-12 col-sm-4 text-center">
-                    <article>
-                        <div class="avatar about-why-icon">
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                        </div>
-                        <div class="team-names">
-                            <h6>{{ __('Engineering Excellence') }}</h6>
-                            <p>{{ __('Over 70 years of expertise in sanitary fittings and water control solutions') }}</p>
-                        </div>
-                    </article>
-                </li>
-                <li class="col-xs-12 col-sm-4 text-center">
-                    <article>
-                        <div class="avatar about-why-icon">
-                            <i class="fa fa-check-circle" aria-hidden="true"></i>
-                        </div>
-                        <div class="team-names">
-                            <h6>{{ __('Certified Quality') }}</h6>
-                            <p>{{ __('Reliable, certified and long-lasting products at competitive pricing') }}</p>
-                        </div>
-                    </article>
-                </li>
-                <li class="col-xs-12 col-sm-4 text-center">
-                    <article>
-                        <div class="avatar about-why-icon">
-                            <i class="fa fa-headphones" aria-hidden="true"></i>
-                        </div>
-                        <div class="team-names">
-                            <h6>{{ __('Dedicated Support') }}</h6>
-                            <p>{{ __('Professional after-sales service and manufacturer warranty') }}</p>
-                        </div>
-                    </article>
-                </li>
-            </ul>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact CTA -->
-    <section class="small-about padding-top-150 padding-bottom-150">
-        <div class="container">
-            <div class="heading text-center">
-                <h4>{{ __('Get in Touch') }}</h4>
-                <p>{{ __('Have questions about our sanitary fittings or need technical support? Our team is ready to help.') }}
-                </p>
+        <!-- Contact CTA -->
+        <section class="small-about padding-top-150 padding-bottom-150">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('Get in Touch') }}</h4>
+                    <p>{{ __('Have questions about our sanitary fittings or need technical support? Our team is ready to help.') }}
+                    </p>
+                </div>
+                <div class="text-center">
+                    <a href="{{ route('user.contact') }}" class="btn">{{ __('Contact Us') }}</a>
+                </div>
             </div>
-            <div class="text-center">
-                <a href="{{ route('user.contact') }}" class="btn">{{ __('Contact Us') }}</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
     </div>
 

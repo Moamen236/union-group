@@ -11,7 +11,7 @@
 }
 
 .bg-blue{
-    background-color: #27aae1;
+    background-color: #0f2b4b;
 }
 
 /* Our Partners */
@@ -54,4 +54,28 @@
 }
 .partners-logos .partner-item:hover img {
     filter: grayscale(0%);
+}
+
+/* Promise Cards - Equal Height */
+.promise-slider.owl-carousel .owl-stage {
+    display: flex;
+    align-items: stretch;
+}
+.promise-slider .item {
+    display: flex;
+    height: 100%;
+}
+.promise-slider .promise-card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.promise-slider .promise-card-caption {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.promise-slider .promise-card-caption p {
+    flex: 1;
 }

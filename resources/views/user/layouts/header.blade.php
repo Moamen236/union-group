@@ -40,32 +40,8 @@
                                 <a href="{{ route('user.about') }}">{{ __('About') }}</a>
                             </li>
 
-                            <!-- Products Dropdown -->
-                            <li
-                                class="dropdown {{ request()->routeIs('user.shop') || request()->routeIs('user.product-detail') ? 'active' : '' }}">
-                                <a href="{{ route('user.shop') }}" class="dropdown-toggle"
-                                    data-toggle="dropdown">{{ __('Products') }}</a>
-                                <div class="dropdown-menu two-option">
-                                    <div class="row">
-                                        <ul class="col-sm-6">
-                                            @foreach ($navCategories->take(4) as $category)
-                                                <li><a
-                                                        href="{{ route('user.shop', ['category' => $category->slug]) }}">{{ $category->name }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                        <ul class="col-sm-6">
-                                            @foreach ($navCategories->skip(4)->take(4) as $category)
-                                                <li><a
-                                                        href="{{ route('user.shop', ['category' => $category->slug]) }}">{{ $category->name }}</a>
-                                                </li>
-                                            @endforeach
-                                            <li><a
-                                                    href="{{ route('user.shop') }}"><strong>{{ __('View All Products') }}</strong></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <li class="{{ request()->routeIs('user.shop') || request()->routeIs('user.product-detail') ? 'active' : '' }}">
+                                <a href="{{ route('user.shop') }}">{{ __('Products') }}</a>
                             </li>
 
                             <li class="{{ request()->routeIs('user.projects') ? 'active' : '' }}">
