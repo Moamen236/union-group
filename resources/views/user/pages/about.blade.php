@@ -244,7 +244,7 @@
                             </div>
                             <div class="post-tittle left">
                                 <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Cairo') }}</a>
-                                <span> <i class="primary-color fa fa-map-marker"></i> Egypt</span>
+                                <span> <i class="primary-color fa fa-map-marker"></i> {{ __('Egypt') }}</span>
                                 <span> <i class="primary-color fa fa-calendar"></i> April 27, 2016</span>
                             </div>
                             <div class="text-left">
@@ -266,7 +266,7 @@
                             </div>
                             <div class="post-tittle left">
                                 <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Alexandria') }}</a>
-                                <span> <i class="primary-color fa fa-map-marker"></i> Egypt</span>
+                                <span> <i class="primary-color fa fa-map-marker"></i> {{ __('Egypt') }}</span>
                                 <span> <i class="primary-color fa fa-calendar"></i> May 15, 2016</span>
                             </div>
                             <div class="text-left">
@@ -288,7 +288,7 @@
                             </div>
                             <div class="post-tittle left">
                                 <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Giza') }}</a>
-                                <span> <i class="primary-color fa fa-map-marker"></i> Egypt</span>
+                                <span> <i class="primary-color fa fa-map-marker"></i> {{ __('Egypt') }}</span>
                                 <span> <i class="primary-color fa fa-calendar"></i> June 10, 2016</span>
                             </div>
                             <div class="text-left">

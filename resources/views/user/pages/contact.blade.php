@@ -91,7 +91,7 @@
 
                         <!--======= ADDRESS INFO =========-->
                         <div class="col-md-4">
-                            <div class="contact-info">
+                            <div class="contact-info bg-blue">
                                 <h6>{{ __('Our Address') }}</h6>
                                 <ul>
                                     <li>
@@ -179,6 +179,7 @@
 
         .contact-info ul li {
             margin-bottom: 15px;
+            color: #fff
         }
 
         .contact-info ul li a {

@@ -192,11 +192,8 @@
 
                 <!-- Main Heading -->
                 <div class="heading text-center">
-                    <h4 class="text-white">Built to Last. Designed to Perform.</h4>
-                    <span class="text-white">What makes Union Group a trusted choice? <br>
-                        It is our commitment to certified quality, advanced manufacturing, reliable service
-                        and long-term warranty. These pillars define the standard behind every Union Group
-                        product.</span>
+                    <h4 class="text-white">{{ __('Built to Last. Designed to Perform.') }}</h4>
+                    <span class="text-white">{{ __('What makes Union Group a trusted choice? It is our commitment to certified quality, advanced manufacturing, reliable service and long-term warranty. These pillars define the standard behind every Union Group product.') }}</span>
                 </div>
 
                 <!-- NEW ARRIVAL - Promise Slider -->
@@ -206,12 +203,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
-                                        alt="Manufacturing Excellence">
+                                        alt="{{ __('Manufacturing Excellence.') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>Manufacturing Excellence.</h4>
-                                    <p>High-purity brass, advanced casting, machining and plating technologies ensuring
-                                        superior durability, perfect water flow and long product life.</p>
+                                    <h4>{{ __('Manufacturing Excellence.') }}</h4>
+                                    <p>{{ __('High-purity brass, advanced casting, machining and plating technologies ensuring superior durability, perfect water flow and long product life.') }}</p>
                                 </div>
                             </article>
                         </div>
@@ -219,12 +215,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
-                                        alt="Certified & Government Approved">
+                                        alt="{{ __('Certified & Government Approved') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>Certified & Government Approved</h4>
-                                    <p>Union Group holds national and international quality certifications and is officially
-                                        accredited by major governmental authorities and research institutions.</p>
+                                    <h4>{{ __('Certified & Government Approved') }}</h4>
+                                    <p>{{ __('Union Group holds national and international quality certifications and is officially accredited by major governmental authorities and research institutions.') }}</p>
                                 </div>
                             </article>
                         </div>
@@ -232,12 +227,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
-                                        alt="Trusted in National Mega Projects">
+                                        alt="{{ __('Trusted in National Mega Projects') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>Trusted in National Mega Projects</h4>
-                                    <p>Our products are installed in government buildings, hospitals, universities,
-                                        residential compounds, resorts and infrastructure projects across Egypt.</p>
+                                    <h4>{{ __('Trusted in National Mega Projects') }}</h4>
+                                    <p>{{ __('Our products are installed in government buildings, hospitals, universities, residential compounds, resorts and infrastructure projects across Egypt.') }}</p>
                                 </div>
                             </article>
                         </div>
@@ -245,12 +239,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise1.avif') }}"
-                                        alt="Sustainability & Water Efficiency">
+                                        alt="{{ __('Sustainability & Water Efficiency') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>Sustainability & Water Efficiency</h4>
-                                    <p>Engineered water-saving solutions supporting environmental responsibility and
-                                        long-term resource conservation.</p>
+                                    <h4>{{ __('Sustainability & Water Efficiency') }}</h4>
+                                    <p>{{ __('Engineered water-saving solutions supporting environmental responsibility and long-term resource conservation.') }}</p>
                                 </div>
                             </article>
                         </div>
@@ -258,11 +251,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
-                                        alt="Competitive Pricing">
+                                        alt="{{ __('Competitive Pricing — Premium Quality') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>Competitive Pricing — Premium Quality</h4>
-                                    <p>International-standard quality delivered at highly competitive market pricing.</p>
+                                    <h4>{{ __('Competitive Pricing — Premium Quality') }}</h4>
+                                    <p>{{ __('International-standard quality delivered at highly competitive market pricing.') }}</p>
                                 </div>
                             </article>
                         </div>
@@ -270,12 +263,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
-                                        alt="After-Sales Support">
+                                        alt="{{ __('After-Sales Support & Technical Service') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>After-Sales Support & Technical Service</h4>
-                                    <p>Dedicated customer service and professional technical support ensuring smooth
-                                        installation, operation, maintenance and long-term performance.</p>
+                                    <h4>{{ __('After-Sales Support & Technical Service') }}</h4>
+                                    <p>{{ __('Dedicated customer service and professional technical support ensuring smooth installation, operation, maintenance and long-term performance.') }}</p>
                                 </div>
                             </article>
                         </div>
@@ -283,12 +275,11 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
-                                        alt="Warranty & Long-Term Reliability">
+                                        alt="{{ __('Warranty & Long-Term Reliability') }}">
                                 </div>
                                 <div class="promise-card-caption">
-                                    <h4>Warranty & Long-Term Reliability</h4>
-                                    <p>Union Group products are backed by a manufacturer warranty, guaranteeing
-                                        reliability, durability and customer peace of mind.</p>
+                                    <h4>{{ __('Warranty & Long-Term Reliability') }}</h4>
+                                    <p>{{ __('Union Group products are backed by a manufacturer warranty, guaranteeing reliability, durability and customer peace of mind.') }}</p>
                                 </div>
                             </article>
                         </div>
