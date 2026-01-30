@@ -41,14 +41,14 @@ class UserController extends Controller
         // Get active categories
         $categories = ProductCategory::active()
             ->ordered()
-            ->take(6)
+            ->take(8)
             ->get();
 
         // Get featured projects
-        $projects = Project::active()
-            ->ordered()
-            ->take(4)
-            ->get();
+        // $projects = Project::active()
+        //     ->ordered()
+        //     ->take(4)
+        //     ->get();
 
         // Get certificates for credibility section
         $certificates = Certificate::active()
@@ -62,7 +62,7 @@ class UserController extends Controller
             'featuredProducts' => $featuredProducts,
             'latestProducts' => $latestProducts,
             'categories' => $categories,
-            'projects' => $projects,
+            // 'projects' => $projects,
             'certificates' => $certificates,
         ]);
     }
