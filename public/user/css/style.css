@@ -3471,9 +3471,9 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
       SUB BANNER
 ========================================================*/
 .sub-bnr {
-	background: url(../images/slider.jpg) no-repeat;
+	background: url(../images/slider.png) no-repeat;
 	background-size: cover !important;
-	min-height: 610px;
+	min-height: 655px;
 	text-align: center;
 	position: relative;
 }
@@ -3484,7 +3484,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.3);
 }
 .sub-bnr h4 {
 	font-size: 25px;
