@@ -41,7 +41,6 @@ class UserController extends Controller
         // Get active categories
         $categories = ProductCategory::active()
             ->ordered()
-            ->take(8)
             ->get();
 
         // Get featured projects
