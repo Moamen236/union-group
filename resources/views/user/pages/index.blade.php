@@ -134,7 +134,7 @@
         @endif
 
         <!-- Featured Products -->
-        @if ($featuredProducts->count() > 0)
+        {{-- @if ($featuredProducts->count() > 0)
             <section class="padding-top-50 padding-bottom-150">
                 <div class="container">
                     <div class="heading text-center">
@@ -184,7 +184,7 @@
                     </div>
                 </div>
             </section>
-        @endif
+        @endif --}}
 
         <!-- Popular Products -->
         <section class="padding-bottom-150 padding-top-150 bg-blue">
@@ -297,22 +297,31 @@
                 </div>
                 <div class="partners-logos">
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/ministry-of-exterior.png') }}" alt="Partner 1"
+                        <img src="{{ asset('user/images/partners/1.png') }}" alt="Partner 1"
                             loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/ministry-of-interior.png') }}" alt="Partner 2"
+                        <img src="{{ asset('user/images/partners/2.png') }}" alt="Partner 2"
                             loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/orascom.png') }}" alt="Partner 3" loading="lazy">
+                        <img src="{{ asset('user/images/partners/3.png') }}" alt="Partner 3" loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/stella-de-mare.png') }}" alt="Partner 4"
+                        <img src="{{ asset('user/images/partners/7.png') }}" alt="Partner 5" loading="lazy">
+                    </div>
+                    <div class="partner-item">
+                        <img src="{{ asset('user/images/partners/8.png') }}" alt="Partner 5" loading="lazy">
+                    </div>
+                    <div class="partner-item">
+                        <img src="{{ asset('user/images/partners/4.png') }}" alt="Partner 4"
                             loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/new-giza.png') }}" alt="Partner 5" loading="lazy">
+                        <img src="{{ asset('user/images/partners/5.png') }}" alt="Partner 5" loading="lazy">
+                    </div>
+                    <div class="partner-item">
+                        <img src="{{ asset('user/images/partners/6.png') }}" alt="Partner 5" loading="lazy">
                     </div>
                 </div>
             </div>

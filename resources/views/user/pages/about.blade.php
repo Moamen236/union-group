@@ -21,54 +21,64 @@
         <!-- About Us Intro -->
         <section class="history-block padding-top-100 padding-bottom-100">
             <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 center-block">
-                        <div class="col-sm-10 center-block">
+                {{-- <div class="col-sm-10 center-block">
                             <h4>{{ __('About Us') }}</h4>
                             <p class="about-intro-lead">
                                 {{ __('Union Group is one of Egypt\'s leading manufacturers of premium sanitary fittings. Established in 1950, we specialize in designing and producing high-quality bathroom mixers and water control solutions for homes, projects and large developments across Egypt and international markets.') }}
                                 <br>
                                 {{ __('For more than 70 years, Union Group has combined engineering excellence, modern technology and competitive pricing to deliver reliable, certified and long-lasting sanitary products.') }}
                             </p>
-                        </div>
+                        </div> --}}
 
-                        <!-- IMG -->
-                        <img class="img-responsive margin-top-80 margin-bottom-80"
-                            src="{{ asset('user/images/slider2.jpg') }}" alt=""
-                            style="max-height: 400px;width: 100%;object-fit: cover;">
-                        <div class="row about-cards-row">
-                            <div class="col-xs-12 col-sm-6 margin-bottom-40">
-                                <article class="about-card">
-                                    <div class="about-card-icon text-center"><i class="fa fa-eye" aria-hidden="true"></i>
-                                    </div>
-                                    <h4 class="about-card-title">{{ __('Vision') }}</h4>
-                                    <p class="about-card-lead">
-                                        {{ __('The company aims to strengthen its position in the local and global market through:') }}
-                                    </p>
-                                    <ul class="about-list about-list-check">
-                                        <li>{{ __('Competing effectively in the sanitary manufacturing sector') }}</li>
-                                        <li>{{ __('Closing the gap between increasing domestic demand and local production') }}
-                                        </li>
-                                        <li>{{ __('Reducing dependence on imports and supporting the national balance of payments') }}
-                                        </li>
-                                    </ul>
-                                </article>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 margin-bottom-40">
-                                <article class="about-card">
-                                    <div class="about-card-icon text-center"><i class="fa fa-bullseye"
-                                            aria-hidden="true"></i></div>
-                                    <h4 class="about-card-title">{{ __('Mission') }}</h4>
-                                    <p class="about-card-lead">{{ __('The company targets to serve:') }}</p>
-                                    <ul class="about-list about-list-check">
-                                        <li>{{ __('Local individual consumers and direct users') }}</li>
-                                        <li>{{ __('National mega projects aligned with the state\'s strategy') }}</li>
-                                        <li>{{ __('Export to foreign markets through agreements such as COMESA (Africa) and Arab Joint Cooperation agreements') }}
-                                        </li>
-                                    </ul>
-                                </article>
-                            </div>
+                <div class="heading text-center margin-bottom-50">
+                    <h4>{{ __('About Us') }}</h4>
+                </div>
+                <div class="row about-section-with-img">
+                    <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
+                        <div class="about-section-img-wrap">
+                            <img src="{{ asset('user/images/slider2.jpg') }}" alt="{{ __('About Us') }}"
+                                class="img-responsive about-section-img">
                         </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6 history-block">
+                        <p class="about-support-p">
+                            {{ __('Union Group is one of Egypt\'s leading manufacturers of premium sanitary fittings. Established in 1950, we specialize in designing and producing high-quality bathroom mixers and water control solutions for homes, projects and large developments across Egypt and international markets.') }}
+                        </p>
+                        <p class="about-support-p">
+                            {{ __('For more than 70 years, Union Group has combined engineering excellence, modern technology and competitive pricing to deliver reliable, certified and long-lasting sanitary products.') }}
+                        </p>
+                    </div>
+                </div>
+                <div class="row about-cards-row">
+                    <div class="col-xs-12 col-sm-6 margin-bottom-40">
+                        <article class="about-card">
+                            <div class="about-card-icon text-center"><i class="fa fa-eye" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="about-card-title">{{ __('Vision') }}</h4>
+                            <p class="about-card-lead">
+                                {{ __('The company aims to strengthen its position in the local and global market through:') }}
+                            </p>
+                            <ul class="about-list about-list-check">
+                                <li>{{ __('Competing effectively in the sanitary manufacturing sector') }}</li>
+                                <li>{{ __('Closing the gap between increasing domestic demand and local production') }}
+                                </li>
+                                <li>{{ __('Reducing dependence on imports and supporting the national balance of payments') }}
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 margin-bottom-40">
+                        <article class="about-card">
+                            <div class="about-card-icon text-center"><i class="fa fa-bullseye" aria-hidden="true"></i></div>
+                            <h4 class="about-card-title">{{ __('Mission') }}</h4>
+                            <p class="about-card-lead">{{ __('The company targets to serve:') }}</p>
+                            <ul class="about-list about-list-check">
+                                <li>{{ __('Local individual consumers and direct users') }}</li>
+                                <li>{{ __('National mega projects aligned with the state\'s strategy') }}</li>
+                                <li>{{ __('Export to foreign markets through agreements such as COMESA (Africa) and Arab Joint Cooperation agreements') }}
+                                </li>
+                            </ul>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -81,17 +91,35 @@
                     <h4>{{ __('History') }}</h4>
                 </div>
                 <div class="row about-section-with-img">
-                    <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
+                    <div class="col-xs-12 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <img src="{{ asset('user/images/promise1.avif') }}" alt="{{ __('Our History') }}"
-                                class="img-responsive about-section-img">
+                            <div class="owl-carousel owl-theme about-history-slider">
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 history-block">
-                        <p class="about-support-p">
+                    <div class="col-xs-12 history-block">
+                        <p class="about-support-p text-center">
                             {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
-                        </p>
-                        <p class="about-support-p">
                             {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
                         </p>
                     </div>
@@ -236,11 +264,15 @@
                             <!-- Gallery 1: multiple images, open in lightGallery -->
                             <div id="exhibition-gallery-1" class="exhibition-gallery">
                                 <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item">
-                                    <img class="img-responsive exhibition-gallery-main" src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('Exhibition') }} 1">
+                                    <img class="img-responsive exhibition-gallery-main"
+                                        src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('Exhibition') }} 1">
                                 </a>
-                                <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
                             </div>
                             <div class="post-tittle left">
                                 <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Cairo') }}</a>
@@ -259,10 +291,13 @@
                             <!-- Gallery 2 -->
                             <div id="exhibition-gallery-2" class="exhibition-gallery">
                                 <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item">
-                                    <img class="img-responsive exhibition-gallery-main" src="{{ asset('user/images/promise4.avif') }}" alt="{{ __('Exhibition') }} 2">
+                                    <img class="img-responsive exhibition-gallery-main"
+                                        src="{{ asset('user/images/promise4.avif') }}" alt="{{ __('Exhibition') }} 2">
                                 </a>
-                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
                             </div>
                             <div class="post-tittle left">
                                 <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Alexandria') }}</a>
@@ -281,10 +316,13 @@
                             <!-- Gallery 3 -->
                             <div id="exhibition-gallery-3" class="exhibition-gallery">
                                 <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item">
-                                    <img class="img-responsive exhibition-gallery-main" src="{{ asset('user/images/promise1.avif') }}" alt="{{ __('Exhibition') }} 3">
+                                    <img class="img-responsive exhibition-gallery-main"
+                                        src="{{ asset('user/images/promise1.avif') }}" alt="{{ __('Exhibition') }} 3">
                                 </a>
-                                <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item" style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item" style="display:none;"></a>
+                                <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
+                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item"
+                                    style="display:none;"></a>
                             </div>
                             <div class="post-tittle left">
                                 <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Giza') }}</a>
@@ -369,7 +407,8 @@
 
 @push('styles')
     <!-- lightGallery -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css" />
     <style>
         /* Exhibition gallery – one main image, rest in popup */
         .exhibition-gallery {
@@ -378,12 +417,14 @@
             overflow: hidden;
             border-radius: 6px;
         }
+
         .exhibition-gallery .exhibition-gallery-item:first-child {
             display: block !important;
             width: 100%;
             height: 350px;
             overflow: hidden;
         }
+
         .exhibition-gallery .exhibition-gallery-main {
             width: 100%;
             height: 350px;
@@ -392,6 +433,7 @@
             object-position: center;
             transition: opacity 0.3s ease;
         }
+
         .exhibition-gallery:hover .exhibition-gallery-main {
             opacity: 0.9;
         }
@@ -412,6 +454,13 @@
             width: 100%;
             max-height: 400px;
             object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .about-history-slider img{
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            object-position: center;
             transition: transform 0.4s ease;
         }
 
@@ -523,7 +572,7 @@
             padding-left: 18px;
             margin-bottom: 8px;
             color: #666666;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .about-list-bullet li:before {
@@ -532,7 +581,7 @@
             left: 0;
             color: #2d3a4b;
             font-size: 8px;
-            top: 6px;
+            top: 0;
         }
 
         /* After-Sales & Warranty – same card style as Vision/Mission (no image) */

@@ -47,7 +47,8 @@
     <!-- LOADER -->
     <div id="loader">
         <div class="position-center-center">
-            <div class="ldr"></div>
+            {{-- <div class="ldr"></div> --}}
+            <img src="{{ asset('user/images/logo.gif') }}" alt="{{ __('Union Group') }}" class="img-responsive" style="max-height: 350px;">
         </div>
     </div>
 

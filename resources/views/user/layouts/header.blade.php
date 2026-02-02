@@ -15,7 +15,7 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="{{ route('user.index') }}">
-                        <img class="img-responsive" src="{{ asset('user/images/logo.png') }}"
+                        <img class="img-responsive" src="{{ asset('user/images/logo.gif') }}"
                             alt="{{ __('Union Group') }}">
                     </a>
                 </div>
