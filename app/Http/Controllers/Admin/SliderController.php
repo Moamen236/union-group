@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\SliderRequest;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class SliderController extends Controller
@@ -49,28 +50,26 @@ class SliderController extends Controller
     {
         $data = $request->validated();
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-
-            // Validate file
-            if (!$file->isValid()) {
-                return back()
-                    ->withInput()
-                    ->withErrors(['image' => 'Invalid image file. Please try again.']);
-            }
-
-            $imagePath = $file->store('sliders', 'public');
-
-            // Ensure we have a valid path (not empty, not false, not '0')
-            if (empty($imagePath) || $imagePath === false || $imagePath === '0') {
-                return back()
-                    ->withInput()
-                    ->withErrors(['image' => 'Failed to upload image. Please check storage permissions.']);
-            }
-
-            $data['image'] = (string) $imagePath; // Explicitly cast to string
+        // Don't pass UploadedFile to the model — only store the path
+        if (isset($data['image']) && $data['image'] instanceof UploadedFile) {
+            unset($data['image']);
         }
 
+        $file = $request->file('image');
+        if (!$file || !$file->isValid()) {
+            return back()
+                ->withInput()
+                ->withErrors(['image' => 'Please upload a valid slider image.']);
+        }
+
+        $imagePath = $file->store('sliders', 'public');
+        if (empty($imagePath) || $imagePath === false) {
+            return back()
+                ->withInput()
+                ->withErrors(['image' => 'Failed to upload image. Please check storage permissions.']);
+        }
+
+        $data['image'] = $imagePath;
         $data['status'] = $request->boolean('status', true);
         $data['order'] = $data['order'] ?? Slider::max('order') + 1;
 
@@ -104,31 +103,26 @@ class SliderController extends Controller
     {
         $data = $request->validated();
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+        // Don't pass UploadedFile to the model — only store the path
+        if (isset($data['image']) && $data['image'] instanceof UploadedFile) {
+            unset($data['image']);
+        }
 
-            // Validate file
-            if (!$file->isValid()) {
-                return back()
-                    ->withInput()
-                    ->withErrors(['image' => 'Invalid image file. Please try again.']);
-            }
-
-            // Delete old image
+        $file = $request->file('image');
+        if ($file && $file->isValid()) {
             if ($slider->image) {
                 Storage::disk('public')->delete($slider->image);
             }
 
             $imagePath = $file->store('sliders', 'public');
 
-            // Ensure we have a valid path
-            if (empty($imagePath) || $imagePath === false || $imagePath === '0') {
+            if (empty($imagePath) || $imagePath === false) {
                 return back()
                     ->withInput()
                     ->withErrors(['image' => 'Failed to upload image. Please check storage permissions.']);
             }
 
-            $data['image'] = (string) $imagePath; // Explicitly cast to string
+            $data['image'] = $imagePath;
         }
 
         $data['status'] = $request->boolean('status', false);

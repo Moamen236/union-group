@@ -50,29 +50,29 @@
         <div class="col-md-3">
             <h6>{{ __('Contact Us') }}</h6>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> Customer Services: <a href="tel:022331414"
+                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Customer Services') }}: <a href="tel:022331414"
                     style="color: inherit;">022331414</a>
             </p>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> Customer Services: <a href="tel:022353598"
+                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Customer Services') }}: <a href="tel:022353598"
                     style="color: inherit;">022353598</a>
             </p>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> Customer Services: <a href="tel:01016194660"
+                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Customer Services') }}: <a href="tel:01016194660"
                     style="color: inherit;">01016194660</a>
             </p>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> Sales: <a href="tel:01026578943" style="color: inherit;">01026578943</a>
+                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Sales') }}: <a href="tel:01026578943" style="color: inherit;">01026578943</a>
             </p>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> Sales: <a href="tel:01026347675" style="color: inherit;">01026347675</a>
+                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Sales') }}: <a href="tel:01026347675" style="color: inherit;">01026347675</a>
             </p>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> WhatsApp: <a href="https://wa.me/201016194660" target="_blank"
+                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('WhatsApp') }}: <a href="https://wa.me/201016194660" target="_blank"
                     style="color: inherit;">01016194660</a>
             </p>
             <p>
-                <i class="icon-envelope" style="margin: 0 5px"></i> Email: <a href="mailto:info@uniongroup.com"
+                <i class="icon-envelope" style="margin: 0 5px"></i> {{ __('Email') }}: <a href="mailto:info@uniongroup.com"
                     style="color: inherit;">info@uniongroup.com</a>
             </p>
         </div>
