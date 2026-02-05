@@ -39,6 +39,8 @@ class CertificateRequest extends FormRequest
             $rules['file'] = 'nullable|file|mimes:pdf,jpeg,png,jpg,gif,webp|max:5120';
         }
 
+        $rules['logo'] = 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048';
+
         return $rules;
     }
 

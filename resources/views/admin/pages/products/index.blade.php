@@ -200,8 +200,6 @@
             </div>
         @endif
     </div>
-
-    @include('admin.components.common.delete-modal')
 @endsection
 
 @push('scripts')

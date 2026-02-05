@@ -13,6 +13,7 @@ class Certificate extends Model
         'name_en',
         'name_ar',
         'file',
+        'logo',
         'type',
         'issuer_en',
         'issuer_ar',
@@ -77,6 +78,14 @@ class Certificate extends Model
     public function getFileUrlAttribute(): string
     {
         return asset('storage/' . $this->file);
+    }
+
+    /**
+     * Get logo URL (or null if no logo)
+     */
+    public function getLogoUrlAttribute(): ?string
+    {
+        return $this->logo ? asset('storage/' . $this->logo) : null;
     }
 
     /**

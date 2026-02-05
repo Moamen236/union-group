@@ -36,6 +36,12 @@
                         <p class="mt-1 text-xs text-gray-500">PDF or Image (JPG, PNG, WebP). Max 5MB.</p>
                         @error('file')<p class="mt-1 text-xs text-red-500">{{ $message }}</p>@enderror
                     </div>
+                    <div>
+                        <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">Logo</label>
+                        <input type="file" name="logo" accept=".jpg,.jpeg,.png,.gif,.webp" class="block w-full text-sm text-gray-500 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:text-sm file:font-medium file:text-brand-700 hover:file:bg-brand-100 dark:text-gray-400 dark:file:bg-brand-900/50 dark:file:text-brand-400">
+                        <p class="mt-1 text-xs text-gray-500">Optional. Image only (JPG, PNG, WebP). Max 2MB. Shown on frontend certificate cards.</p>
+                        @error('logo')<p class="mt-1 text-xs text-red-500">{{ $message }}</p>@enderror
+                    </div>
                 </div>
 
                 <div class="space-y-6">

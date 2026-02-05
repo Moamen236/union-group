@@ -34,12 +34,17 @@
                                 <article class="certificate-card animate fadeInUp"
                                     data-wow-delay="{{ ($loop->index % 3) * 0.1 }}s">
 
+                                    @if ($certificate->logo_url)
+                                        <div class="certificate-logo">
+                                            <img src="{{ $certificate->logo_url }}" alt="{{ $certificate->name }}">
+                                        </div>
+                                    @endif
                                     <div class="certificate-body">
                                         <h5>{{ $certificate->name }}</h5>
-                                        <p class="issuer">
+                                        {{-- <p class="issuer">
                                             <i class="fa fa-building-o"></i>
                                             {{ $certificate->issuer }}
-                                        </p>
+                                        </p> --}}
 
                                         {{-- <div class="certificate-dates">
                                             @if ($certificate->issue_date)
@@ -234,8 +239,26 @@
             color: #fff;
         }
 
+        .certificate-logo {
+            padding: 20px 25px 0;
+            text-align: center;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .certificate-logo img {
+            max-height: 200px;
+            max-width: 120px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
         .certificate-body {
             padding: 25px;
+            padding-bottom: 0;
             flex-grow: 1;
         }
 

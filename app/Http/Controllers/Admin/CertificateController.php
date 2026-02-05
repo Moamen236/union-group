@@ -59,6 +59,10 @@ class CertificateController extends Controller
             $data['file'] = $request->file('file')->store('certificates', 'public');
         }
 
+        if ($request->hasFile('logo')) {
+            $data['logo'] = $request->file('logo')->store('certificates/logos', 'public');
+        }
+
         $data['status'] = $request->boolean('status', true);
         $data['order'] = $data['order'] ?? Certificate::max('order') + 1;
 
@@ -100,6 +104,13 @@ class CertificateController extends Controller
             $data['file'] = $request->file('file')->store('certificates', 'public');
         }
 
+        if ($request->hasFile('logo')) {
+            if ($certificate->logo) {
+                Storage::disk('public')->delete($certificate->logo);
+            }
+            $data['logo'] = $request->file('logo')->store('certificates/logos', 'public');
+        }
+
         $data['status'] = $request->boolean('status', false);
 
         $certificate->update($data);
@@ -116,6 +127,9 @@ class CertificateController extends Controller
     {
         if ($certificate->file) {
             Storage::disk('public')->delete($certificate->file);
+        }
+        if ($certificate->logo) {
+            Storage::disk('public')->delete($certificate->logo);
         }
 
         $certificate->delete();

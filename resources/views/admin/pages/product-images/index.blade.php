@@ -86,7 +86,6 @@
         </div>
         @if($images->hasPages())<div class="border-t border-gray-200 px-6 py-4 dark:border-gray-700">{{ $images->links() }}</div>@endif
     </div>
-    @include('admin.components.common.delete-modal')
 @endsection
 @push('scripts')
 <script>function setMain(url) { fetch(url, { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content, 'Accept': 'application/json' }}).then(r => r.json()).then(d => { if(d.success) window.location.reload(); }); }</script>

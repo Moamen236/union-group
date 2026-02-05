@@ -14,6 +14,13 @@
     <!-- Alpine.js -->
     {{-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
 
+    <!-- Global $dispatch for inline onclick (e.g. delete buttons outside Alpine scope) -->
+    <script>
+        window.$dispatch = function (eventName, detail) {
+            window.dispatchEvent(new CustomEvent(eventName, { detail: detail || {} }));
+        };
+    </script>
+
     <!-- Theme Store -->
     <script>
         document.addEventListener('alpine:init', () => {
@@ -75,7 +82,7 @@
         });
     </script>
 
-    <!-- Apply dark mode immediately to prevent flash -->
+    <!-- Apply dark mode to <html> immediately (body not yet available in head) -->
     <script>
         (function() {
             const savedTheme = localStorage.getItem('theme');
@@ -83,10 +90,8 @@
             const theme = savedTheme || systemTheme;
             if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
-                document.body.classList.add('dark', 'bg-gray-900');
             } else {
                 document.documentElement.classList.remove('dark');
-                document.body.classList.remove('dark', 'bg-gray-900');
             }
         })();
     </script>
@@ -106,16 +111,26 @@
         }
     };
     window.addEventListener('resize', checkMobile);">
+    <script>
+        (function() {
+            var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            if (theme === 'dark') {
+                document.body.classList.add('dark', 'bg-gray-900');
+            } else {
+                document.body.classList.remove('dark', 'bg-gray-900');
+            }
+        })();
+    </script>
 
     {{-- preloader --}}
     @include('admin.components.common.preloader')
     {{-- preloader end --}}
 
-    <div class="min-h-screen xl:flex">
+    <div class="min-h-screen xl:flex relative z-0">
         @include('admin.layouts.backdrop')
         @include('admin.layouts.sidebar')
 
-        <div class="flex-1 transition-all duration-300 ease-in-out"
+        <div class="flex-1 transition-all duration-300 ease-in-out relative z-0"
             :class="{
                 'xl:ml-[290px]': $store.sidebar.isExpanded || $store.sidebar.isHovered,
                 'xl:ml-[90px]': !$store.sidebar.isExpanded && !$store.sidebar.isHovered,
@@ -130,6 +145,8 @@
         </div>
 
     </div>
+
+    @include('admin.components.common.delete-modal')
 
 </body>
 

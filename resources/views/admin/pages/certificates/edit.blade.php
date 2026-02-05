@@ -46,6 +46,19 @@
                         <input type="file" name="file" accept=".pdf,.jpg,.jpeg,.png,.gif,.webp" class="block w-full text-sm text-gray-500 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:text-sm file:font-medium file:text-brand-700 hover:file:bg-brand-100 dark:text-gray-400 dark:file:bg-brand-900/50 dark:file:text-brand-400">
                         <p class="mt-1 text-xs text-gray-500">Leave empty to keep current file.</p>
                     </div>
+                    <div>
+                        <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-300">Logo</label>
+                        <div class="mb-2 flex items-center gap-4">
+                            @if($certificate->logo)
+                                <img src="{{ $certificate->logo_url }}" alt="Certificate logo" class="h-16 w-16 rounded-lg object-contain border border-gray-200 dark:border-gray-600">
+                            @else
+                                <span class="text-xs text-gray-500">No logo uploaded</span>
+                            @endif
+                        </div>
+                        <input type="file" name="logo" accept=".jpg,.jpeg,.png,.gif,.webp" class="block w-full text-sm text-gray-500 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:text-sm file:font-medium file:text-brand-700 hover:file:bg-brand-100 dark:text-gray-400 dark:file:bg-brand-900/50 dark:file:text-brand-400">
+                        <p class="mt-1 text-xs text-gray-500">Optional. Leave empty to keep current logo.</p>
+                        @error('logo')<p class="mt-1 text-xs text-red-500">{{ $message }}</p>@enderror
+                    </div>
                 </div>
 
                 <div class="space-y-6">

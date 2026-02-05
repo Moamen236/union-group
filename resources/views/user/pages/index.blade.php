@@ -308,9 +308,6 @@
                         <img src="{{ asset('user/images/partners/1.png') }}" alt="Partner 1" loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/2.png') }}" alt="Partner 2" loading="lazy">
-                    </div>
-                    <div class="partner-item">
                         <img src="{{ asset('user/images/partners/3.png') }}" alt="Partner 3" loading="lazy">
                     </div>
                     <div class="partner-item">
@@ -331,20 +328,6 @@
                 </div>
             </div>
         </section>
-
-        {{-- <!-- Newsletter -->
-        <section class="news-letter padding-top-150 padding-bottom-150">
-            <div class="container">
-                <div class="heading light-head text-center margin-bottom-30">
-                    <h4>{{ __('NEWSLETTER') }}</h4>
-                    <span>{{ __('Subscribe to our newsletter to receive the latest updates on new products, projects, and industry news.') }}</span>
-                </div>
-                <form>
-                    <input type="email" placeholder="{{ __('Enter your email address') }}" required>
-                    <button type="submit">{{ __('SUBSCRIBE') }}</button>
-                </form>
-            </div>
-        </section> --}}
     </div>
 
 @endsection

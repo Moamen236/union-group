@@ -102,5 +102,4 @@
             </div>
         </div>
     </div>
-    @include('admin.components.common.delete-modal')
 @endsection
