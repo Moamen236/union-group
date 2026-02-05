@@ -110,7 +110,7 @@
 
                             <!-- Contact Button -->
                             <div class="margin-top-30">
-                                <a href="{{ route('user.contact') }}" class="btn">{{ __('Contact for Inquiry') }}</a>
+                                <a href="{{ route('user.contact') }}" class="btn">{{ __('Request Quotation') }}</a>
                             </div>
 
                             <!-- Share Product -->
@@ -225,44 +225,15 @@
                 </div>
             </section>
         @endif
-
-        <!-- About Section -->
-        <section class="small-about padding-top-150 padding-bottom-150">
-            <div class="container">
-                <div class="heading text-center">
-                    <h4>{{ __('About Union Group') }}</h4>
-                    <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
-                    </p>
-                </div>
-                <ul class="social_icons">
-                    <li><a href="#."><i class="icon-social-facebook"></i></a></li>
-                    <li><a href="#."><i class="icon-social-twitter"></i></a></li>
-                    <li><a href="#."><i class="icon-social-instagram"></i></a></li>
-                    <li><a href="#."><i class="icon-social-linkedin"></i></a></li>
-                    <li><a href="#."><i class="icon-social-youtube"></i></a></li>
-                </ul>
-            </div>
-        </section>
-
-        {{-- <!-- Newsletter -->
-        <section class="news-letter padding-top-150 padding-bottom-150">
-            <div class="container">
-                <div class="heading light-head text-center margin-bottom-30">
-                    <h4>{{ __('NEWSLETTER') }}</h4>
-                    <span>{{ __('Subscribe to our newsletter to receive the latest updates on new products, projects, and industry news.') }}</span>
-                </div>
-                <form>
-                    <input type="email" placeholder="{{ __('Enter your email address') }}" required>
-                    <button type="submit">{{ __('SUBSCRIBE') }}</button>
-                </form>
-            </div>
-        </section> --}}
     </div>
 
 @endsection
 
 @push('styles')
     <style>
+        .sub-bnr{
+            min-height: 300px;
+        }
         .product-description {
             line-height: 1.8;
         }

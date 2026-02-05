@@ -84,8 +84,6 @@
                                                 {{ $currentSort == 'newest' ? 'selected' : '' }}>{{ __('Newest First') }}
                                             </option>
                                         </select>
-                                        <a href="#." class="grid-style"><i class="icon-grid"></i></a>
-                                        <a href="#." class="list-style"><i class="icon-list"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -94,54 +92,54 @@
                         @if ($products->count() > 0)
                             <div class="papular-block row">
                                 @foreach ($products as $product)
-                                    <div class="col-md-4">
-                                        <div class="item">
-                                            @if ($product->is_favorite)
-                                                <div class="on-sale">
-                                                    <i class="fa fa-star"></i>
-                                                    <span>{{ __('TOP') }}</span>
-                                                </div>
-                                            @endif
+                                    {{-- <div class="col-md-4"> --}}
+                                    <div class="item">
+                                        @if ($product->is_favorite)
+                                            <div class="on-sale">
+                                                <i class="fa fa-star"></i>
+                                                <span>{{ __('TOP') }}</span>
+                                            </div>
+                                        @endif
 
-                                            <div class="item-img">
-                                                @if ($product->mainImage())
-                                                    <img class="img-1" src="{{ $product->main_image_url }}"
-                                                        alt="{{ $product->name }}">
-                                                    <img class="img-2"
-                                                        src="{{ $product->second_image_url ?? $product->main_image_url }}"
-                                                        alt="{{ $product->name }}">
-                                                @else
-                                                    <img class="img-1"
-                                                        src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                                        alt="{{ $product->name }}">
-                                                    <img class="img-2"
-                                                        src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                                        alt="{{ $product->name }}">
-                                                @endif
-                                                <div class="overlay">
-                                                    <div class="position-center-center">
-                                                        <div class="inn">
-                                                            @if ($product->mainImage())
-                                                                <a href="{{ $product->main_image_url }}" data-lighter><i
-                                                                        class="icon-magnifier"></i></a>
-                                                            @endif
-                                                            <a href="{{ route('user.product-detail', $product->slug) }}"><i
-                                                                    class="icon-eye"></i></a>
-                                                        </div>
+                                        <div class="item-img">
+                                            @if ($product->mainImage())
+                                                <img class="img-1" src="{{ $product->main_image_url }}"
+                                                    alt="{{ $product->name }}">
+                                                <img class="img-2"
+                                                    src="{{ $product->second_image_url ?? $product->main_image_url }}"
+                                                    alt="{{ $product->name }}">
+                                            @else
+                                                <img class="img-1"
+                                                    src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                                    alt="{{ $product->name }}">
+                                                <img class="img-2"
+                                                    src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                                    alt="{{ $product->name }}">
+                                            @endif
+                                            <div class="overlay">
+                                                <div class="position-center-center">
+                                                    <div class="inn">
+                                                        @if ($product->mainImage())
+                                                            <a href="{{ $product->main_image_url }}" data-lighter><i
+                                                                    class="icon-magnifier"></i></a>
+                                                        @endif
+                                                        <a href="{{ route('user.product-detail', $product->slug) }}"><i
+                                                                class="icon-eye"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            <div class="item-name">
-                                                <a
-                                                    href="{{ route('user.product-detail', $product->slug) }}">{{ $product->name }}</a>
-                                                <p>{{ $product->category ? $product->category->name : '' }}</p>
-                                            </div>
-                                            @if ($product->code)
-                                                <span class="price">{{ $product->code }}</span>
-                                            @endif
                                         </div>
+
+                                        <div class="item-name">
+                                            <a
+                                                href="{{ route('user.product-detail', $product->slug) }}">{{ $product->name }}</a>
+                                            <p>{{ $product->category ? $product->category->name : '' }}</p>
+                                        </div>
+                                        @if ($product->code)
+                                            <span class="price">{{ $product->code }}</span>
+                                        @endif
                                     </div>
+                                    {{-- </div> --}}
                                 @endforeach
                             </div>
 
@@ -226,6 +224,16 @@
             padding: 5px 10px;
             font-size: 12px;
             z-index: 1;
+        }
+
+        .papular-block.row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .papular-block.row:before {
+            content: "";
+            display: none;
         }
     </style>
 @endpush

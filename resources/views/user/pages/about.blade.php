@@ -21,15 +21,6 @@
         <!-- About Us Intro -->
         <section class="history-block padding-top-100 padding-bottom-100">
             <div class="container">
-                {{-- <div class="col-sm-10 center-block">
-                            <h4>{{ __('About Us') }}</h4>
-                            <p class="about-intro-lead">
-                                {{ __('Union Group is one of Egypt\'s leading manufacturers of premium sanitary fittings. Established in 1950, we specialize in designing and producing high-quality bathroom mixers and water control solutions for homes, projects and large developments across Egypt and international markets.') }}
-                                <br>
-                                {{ __('For more than 70 years, Union Group has combined engineering excellence, modern technology and competitive pricing to deliver reliable, certified and long-lasting sanitary products.') }}
-                            </p>
-                        </div> --}}
-
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('About Us') }}</h4>
                 </div>
@@ -47,38 +38,6 @@
                         <p class="about-support-p">
                             {{ __('For more than 70 years, Union Group has combined engineering excellence, modern technology and competitive pricing to deliver reliable, certified and long-lasting sanitary products.') }}
                         </p>
-                    </div>
-                </div>
-                <div class="row about-cards-row">
-                    <div class="col-xs-12 col-sm-6 margin-bottom-40">
-                        <article class="about-card">
-                            <div class="about-card-icon text-center"><i class="fa fa-eye" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="about-card-title">{{ __('Vision') }}</h4>
-                            <p class="about-card-lead">
-                                {{ __('The company aims to strengthen its position in the local and global market through:') }}
-                            </p>
-                            <ul class="about-list about-list-check">
-                                <li>{{ __('Competing effectively in the sanitary manufacturing sector') }}</li>
-                                <li>{{ __('Closing the gap between increasing domestic demand and local production') }}
-                                </li>
-                                <li>{{ __('Reducing dependence on imports and supporting the national balance of payments') }}
-                                </li>
-                            </ul>
-                        </article>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 margin-bottom-40">
-                        <article class="about-card">
-                            <div class="about-card-icon text-center"><i class="fa fa-bullseye" aria-hidden="true"></i></div>
-                            <h4 class="about-card-title">{{ __('Mission') }}</h4>
-                            <p class="about-card-lead">{{ __('The company targets to serve:') }}</p>
-                            <ul class="about-list about-list-check">
-                                <li>{{ __('Local individual consumers and direct users') }}</li>
-                                <li>{{ __('National mega projects aligned with the state\'s strategy') }}</li>
-                                <li>{{ __('Export to foreign markets through agreements such as COMESA (Africa) and Arab Joint Cooperation agreements') }}
-                                </li>
-                            </ul>
-                        </article>
                     </div>
                 </div>
             </div>
@@ -112,6 +71,14 @@
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
                                 </div>
                             </div>
@@ -152,8 +119,100 @@
             </div>
         </section>
 
-        <!-- Specialization -->
+        <!-- Our Exhibitions -->
+        <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>{{ __('Our Exhibitions') }}</h4>
+                </div>
+                <div class="row about-section-with-img">
+                    <div class="col-xs-12 margin-bottom-30">
+                        <div class="about-section-img-wrap">
+                            <div class="owl-carousel owl-theme about-history-slider">
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                                <div class="item">
+                                    <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our History') }}"
+                                        class="img-responsive about-section-img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 history-block">
+                        <p class="about-support-p text-center">
+                            {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
         <section class="about-intro padding-top-100 padding-bottom-80">
+            <div class="container">
+                <div class="heading text-center margin-bottom-50">
+                    <h4>{{ __('Vision & Mission') }}</h4>
+                </div>
+                <div class="row about-cards-row">
+                    <div class="col-xs-12 col-sm-6 margin-bottom-40">
+                        <article class="about-card">
+                            <div class="about-card-icon text-center"><i class="fa fa-eye" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="about-card-title">{{ __('Vision') }}</h4>
+                            <p class="about-card-lead">
+                                {{ __('The company aims to strengthen its position in the local and global market through:') }}
+                            </p>
+                            <ul class="about-list about-list-check">
+                                <li>{{ __('Competing effectively in the sanitary manufacturing sector') }}</li>
+                                <li>{{ __('Closing the gap between increasing domestic demand and local production') }}
+                                </li>
+                                <li>{{ __('Reducing dependence on imports and supporting the national balance of payments') }}
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 margin-bottom-40">
+                        <article class="about-card">
+                            <div class="about-card-icon text-center"><i class="fa fa-bullseye" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="about-card-title">{{ __('Mission') }}</h4>
+                            <p class="about-card-lead">{{ __('The company targets to serve:') }}</p>
+                            <ul class="about-list about-list-check">
+                                <li>{{ __('Local individual consumers and direct users') }}</li>
+                                <li>{{ __('National mega projects aligned with the state\'s strategy') }}</li>
+                                <li>{{ __('Export to foreign markets through agreements such as COMESA (Africa) and Arab Joint Cooperation agreements') }}
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialization -->
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Specialization') }}</h4>
@@ -184,7 +243,7 @@
         </section>
 
         <!-- After-Sales & Warranty -->
-        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('After-Sales Service & Warranty') }}</h4>
@@ -251,95 +310,6 @@
                 </div>
             </section>
         @endif --}}
-
-        <section class="blog-list blog-list-3 padding-top-100 padding-bottom-100">
-            <div class="container">
-                <div class="heading text-center">
-                    <h4>{{ __('Our Exhibitions') }}</h4>
-                    <span>{{ __('We have participated in various exhibitions and events to showcase our products and services.') }}</span>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <article>
-                            <!-- Gallery 1: multiple images, open in lightGallery -->
-                            <div id="exhibition-gallery-1" class="exhibition-gallery">
-                                <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item">
-                                    <img class="img-responsive exhibition-gallery-main"
-                                        src="{{ asset('user/images/about-img.jpg') }}" alt="{{ __('Exhibition') }} 1">
-                                </a>
-                                <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                            </div>
-                            <div class="post-tittle left">
-                                <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Cairo') }}</a>
-                                <span> <i class="primary-color fa fa-map-marker"></i> {{ __('Egypt') }}</span>
-                                <span> <i class="primary-color fa fa-calendar"></i> April 27, 2016</span>
-                            </div>
-                            <div class="text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat dui at
-                                    lacus aliquet, a consequat enim aliquet. Integer molestie sit amet sem et
-                                    faucibus. Nunc ornare pharetra dui, vitae auctor orci fringilla eget.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4">
-                        <article>
-                            <!-- Gallery 2 -->
-                            <div id="exhibition-gallery-2" class="exhibition-gallery">
-                                <a href="{{ asset('user/images/promise2.avif') }}" class="exhibition-gallery-item">
-                                    <img class="img-responsive exhibition-gallery-main"
-                                        src="{{ asset('user/images/promise4.avif') }}" alt="{{ __('Exhibition') }} 2">
-                                </a>
-                                <a href="{{ asset('user/images/promise3.avif') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                            </div>
-                            <div class="post-tittle left">
-                                <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Alexandria') }}</a>
-                                <span> <i class="primary-color fa fa-map-marker"></i> {{ __('Egypt') }}</span>
-                                <span> <i class="primary-color fa fa-calendar"></i> May 15, 2016</span>
-                            </div>
-                            <div class="text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat dui at
-                                    lacus aliquet, a consequat enim aliquet. Integer molestie sit amet sem et
-                                    faucibus. Nunc ornare pharetra dui, vitae auctor orci fringilla eget.</p>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-4">
-                        <article>
-                            <!-- Gallery 3 -->
-                            <div id="exhibition-gallery-3" class="exhibition-gallery">
-                                <a href="{{ asset('user/images/promise1.avif') }}" class="exhibition-gallery-item">
-                                    <img class="img-responsive exhibition-gallery-main"
-                                        src="{{ asset('user/images/promise1.avif') }}" alt="{{ __('Exhibition') }} 3">
-                                </a>
-                                <a href="{{ asset('user/images/about-img.jpg') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                                <a href="{{ asset('user/images/promise4.avif') }}" class="exhibition-gallery-item"
-                                    style="display:none;"></a>
-                            </div>
-                            <div class="post-tittle left">
-                                <a href="#." class="tittle">{{ __('Exhibition') }} — {{ __('Giza') }}</a>
-                                <span> <i class="primary-color fa fa-map-marker"></i> {{ __('Egypt') }}</span>
-                                <span> <i class="primary-color fa fa-calendar"></i> June 10, 2016</span>
-                            </div>
-                            <div class="text-left">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam volutpat dui at
-                                    lacus aliquet, a consequat enim aliquet. Integer molestie sit amet sem et
-                                    faucibus. Nunc ornare pharetra dui, vitae auctor orci fringilla eget.</p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
 
         <!-- Why Choose Us -->
@@ -456,7 +426,8 @@
             object-fit: cover;
             transition: transform 0.4s ease;
         }
-        .about-history-slider img{
+
+        .about-history-slider img {
             width: 100%;
             max-height: 500px;
             object-fit: contain;

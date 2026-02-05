@@ -12,7 +12,7 @@
 
     <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('user/rs-plugin/css/settings.css') }}" media="screen" />
-    <link rel="shortcut icon" href="{{ asset('user/images/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('user/images/logo.png') }}" type="image/x-icon">
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('user/css/bootstrap.min.css') }}" rel="stylesheet">

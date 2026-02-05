@@ -95,9 +95,10 @@
                                 <h6>{{ __('Our Address') }}</h6>
                                 <ul>
                                     <li>
-                                        <i class="icon-map-pin"></i>
-                                        {{ __('Industrial Area, P.O. Box 12345') }}<br>
-                                        {{ __('Riyadh, Saudi Arabia') }}
+                                        <i class="icon-pointer"></i>
+                                            {{ __('Mohamed Badawy Khalil St., Industrial Area, Ghamra, Cairo, Egypt') }}
+                                            <br><br> <b>{{ __('Exhibitions') }}</b><br>
+                                            {{ __('Kamel Sedky St. - Al-Fagala - Cairo') }}
                                     </li>
                                     <li>
                                         <i class="icon-call-end"></i>
@@ -119,7 +120,7 @@
                                     </li>
                                     <li>
                                         <i class="icon-envelope"></i>
-                                        <a href="mailto:info@uniongroup.com">info@uniongroup.com</a>
+                                        <a href="mailto:info@uniongroup.com">info@uniongroup.com.eg</a>
                                     </li>
                                 </ul>
                             </div>

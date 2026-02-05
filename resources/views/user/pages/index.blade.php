@@ -82,11 +82,11 @@
                 <div class="heading text-center">
                     <h4 class="text-white">{{ __('About Union Group') }}</h4>
                     <p class="text-white">
-                        {{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
+                        {{ __('Union Group is one of Egypt’s leading manufacturers of premium sanitary fittings, established in 1950 with a clear mission: to deliver high-quality, reliable and affordable sanitary solutions to the Egyptian and regional markets.') }}
                     </p>
                 </div>
                 <div class="text-center margin-top-30">
-                    <a href="{{ route('user.shop') }}" class="btn-secondary">
+                    <a href="{{ route('user.about') }}" class="btn-secondary">
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -193,7 +193,8 @@
                 <!-- Main Heading -->
                 <div class="heading text-center">
                     <h4 class="text-white">{{ __('Built to Last. Designed to Perform.') }}</h4>
-                    <span class="text-white">{{ __('What makes Union Group a trusted choice? It is our commitment to certified quality, advanced manufacturing, reliable service and long-term warranty. These pillars define the standard behind every Union Group product.') }}</span>
+                    <span
+                        class="text-white">{{ __('What makes Union Group a trusted choice? It is our commitment to certified quality, advanced manufacturing, reliable service and long-term warranty. These pillars define the standard behind every Union Group product.') }}</span>
                 </div>
 
                 <!-- NEW ARRIVAL - Promise Slider -->
@@ -207,7 +208,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Manufacturing Excellence.') }}</h4>
-                                    <p>{{ __('High-purity brass, advanced casting, machining and plating technologies ensuring superior durability, perfect water flow and long product life.') }}</p>
+                                    <p>{{ __('High-purity brass, advanced casting, machining and plating technologies ensuring superior durability, perfect water flow and long product life.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -219,7 +221,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Certified & Government Approved') }}</h4>
-                                    <p>{{ __('Union Group holds national and international quality certifications and is officially accredited by major governmental authorities and research institutions.') }}</p>
+                                    <p>{{ __('Union Group holds national and international quality certifications and is officially accredited by major governmental authorities and research institutions.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -231,7 +234,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Trusted in National Mega Projects') }}</h4>
-                                    <p>{{ __('Our products are installed in government buildings, hospitals, universities, residential compounds, resorts and infrastructure projects across Egypt.') }}</p>
+                                    <p>{{ __('Our products are installed in government buildings, hospitals, universities, residential compounds, resorts and infrastructure projects across Egypt.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -243,7 +247,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Sustainability & Water Efficiency') }}</h4>
-                                    <p>{{ __('Engineered water-saving solutions supporting environmental responsibility and long-term resource conservation.') }}</p>
+                                    <p>{{ __('Engineered water-saving solutions supporting environmental responsibility and long-term resource conservation.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -255,7 +260,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Competitive Pricing — Premium Quality') }}</h4>
-                                    <p>{{ __('International-standard quality delivered at highly competitive market pricing.') }}</p>
+                                    <p>{{ __('International-standard quality delivered at highly competitive market pricing.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -267,7 +273,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('After-Sales Support & Technical Service') }}</h4>
-                                    <p>{{ __('Dedicated customer service and professional technical support ensuring smooth installation, operation, maintenance and long-term performance.') }}</p>
+                                    <p>{{ __('Dedicated customer service and professional technical support ensuring smooth installation, operation, maintenance and long-term performance.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -279,7 +286,8 @@
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Warranty & Long-Term Reliability') }}</h4>
-                                    <p>{{ __('Union Group products are backed by a manufacturer warranty, guaranteeing reliability, durability and customer peace of mind.') }}</p>
+                                    <p>{{ __('Union Group products are backed by a manufacturer warranty, guaranteeing reliability, durability and customer peace of mind.') }}
+                                    </p>
                                 </div>
                             </article>
                         </div>
@@ -297,12 +305,10 @@
                 </div>
                 <div class="partners-logos">
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/1.png') }}" alt="Partner 1"
-                            loading="lazy">
+                        <img src="{{ asset('user/images/partners/1.png') }}" alt="Partner 1" loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/2.png') }}" alt="Partner 2"
-                            loading="lazy">
+                        <img src="{{ asset('user/images/partners/2.png') }}" alt="Partner 2" loading="lazy">
                     </div>
                     <div class="partner-item">
                         <img src="{{ asset('user/images/partners/3.png') }}" alt="Partner 3" loading="lazy">
@@ -314,8 +320,7 @@
                         <img src="{{ asset('user/images/partners/8.png') }}" alt="Partner 5" loading="lazy">
                     </div>
                     <div class="partner-item">
-                        <img src="{{ asset('user/images/partners/4.png') }}" alt="Partner 4"
-                            loading="lazy">
+                        <img src="{{ asset('user/images/partners/4.png') }}" alt="Partner 4" loading="lazy">
                     </div>
                     <div class="partner-item">
                         <img src="{{ asset('user/images/partners/5.png') }}" alt="Partner 5" loading="lazy">

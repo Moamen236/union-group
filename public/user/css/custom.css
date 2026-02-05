@@ -79,3 +79,27 @@
 .promise-slider .promise-card-caption p {
     flex: 1;
 }
+html[lang='ar'] header .navbar li {
+	display: inline-block;
+	float: right;
+	margin: 0 5px;
+	position: relative;
+}
+html[lang='ar'] .owl-carousel {
+	direction: ltr;
+}
+
+html[lang='ar'] ul.about-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+html[lang='ar'] ul.about-list li {
+    padding-right: 15px;
+}
+
+html[lang='ar'] ul.about-list li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+  }
