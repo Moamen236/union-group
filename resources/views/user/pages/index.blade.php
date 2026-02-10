@@ -23,11 +23,11 @@
                             @endif
 
                             @if ($slider->title)
-                                <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="center" data-hoffset="0"
+                                <div class="tp-caption sfr font-extra-bold tp-resizeme slider-title" data-x="center" data-hoffset="0"
                                     data-y="center" data-voffset="0" data-speed="800" data-start="800"
                                     data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
                                     data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                    style="z-index: 6; font-size:80px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                                    style="z-index: 6; color:#fff; text-transform:uppercase; white-space: nowrap;">
                                     {{ $slider->title }}
                                 </div>
                             @endif
@@ -53,11 +53,11 @@
                                 style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
                                 {{ __('Premium Paints & Coatings') }}
                             </div>
-                            <div class="tp-caption sfr font-extra-bold tp-resizeme" data-x="left" data-hoffset="0"
+                            <div class="tp-caption sfr font-extra-bold tp-resizeme slider-title" data-x="left" data-hoffset="0"
                                 data-y="center" data-voffset="0" data-speed="800" data-start="800"
                                 data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
                                 data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                style="z-index: 6; font-size:80px; color:#fff; text-transform:uppercase; white-space: nowrap;">
+                                style="z-index: 6; color:#fff; text-transform:uppercase; white-space: nowrap;">
                                 {{ __('UNION GROUP') }}
                             </div>
                             <div class="tp-caption lfb tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
@@ -329,5 +329,26 @@
             </div>
         </section>
     </div>
+
+    @push('styles')
+    <style>
+        /* Responsive slider title: scales between 28px and 80px based on viewport */
+        .home-slider .slider-title {
+            font-size: clamp(28px, 6vw, 80px) !important;
+        }
+        /* On mobile: allow wrapping and add padding so text isn't cropped */
+        @media (max-width: 768px) {
+            .home-slider .slider-title {
+                white-space: normal !important;
+                max-width: 90vw !important;
+                padding-left: 5vw !important;
+                padding-right: 5vw !important;
+                text-align: center;
+                font-size: clamp(22px, 5.5vw, 36px) !important;
+                line-height: 25px !important;
+            }
+        }
+    </style>
+    @endpush
 
 @endsection

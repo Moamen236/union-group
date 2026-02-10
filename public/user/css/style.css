@@ -428,7 +428,7 @@ header {
 	width: 100%;
 	z-index: 999;
 	background: #fff;
-	padding: 30px 0;
+	padding: 0;
 	position: relative;
 }
 header .container {
@@ -3490,9 +3490,10 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
       SUB BANNER
 ========================================================*/
 .sub-bnr {
-	background: url(../images/slider.png) no-repeat;
-	background-size: cover !important;
-	min-height: 655px;
+	/* background: url(../images/slider.png) no-repeat; */
+	/* background-size: cover !important; */
+	background-color: #c98b2b;
+	min-height: 250px;
 	text-align: center;
 	position: relative;
 }
