@@ -110,7 +110,7 @@
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Our Product Categories') }}</h4>
-                        <span>{{ __('Discover our comprehensive range of premium paints, coatings, and specialty products designed for every application.') }}</span>
+                        <span>{{ __('Discover our comprehensive range of premium sanitaryware, mixers, and bathroom solutions, thoughtfully designed to combine performance, durability, and timeless elegance for every space.') }}</span>
                     </div>
 
                     <div class="arrival-block">
