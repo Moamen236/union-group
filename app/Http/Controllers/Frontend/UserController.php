@@ -80,6 +80,12 @@ class UserController extends Controller
             });
         }
 
+        if ($request->filled('search')) {
+            $query->where('name_en', 'like', '%' . $request->search . '%')
+                ->orWhere('name_ar', 'like', '%' . $request->search . '%')
+                ->orWhere('code', 'like', '%' . $request->search . '%');
+        }
+
         // Sort products
         $sort = $request->get('sort', 'order');
         switch ($sort) {

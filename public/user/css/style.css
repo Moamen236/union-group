@@ -2116,8 +2116,8 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	background: #2d3a4b;
 	color: #fff;
 	margin: 0 2px;
-	height: 23px;
-	width: 23px;
+	/* height: 23px;
+	width: 23px; */
 	padding: 0px;
 	text-align: center;
 	line-height: 23px;

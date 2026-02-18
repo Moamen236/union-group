@@ -24,7 +24,7 @@
       <div class="container">
         <div class="heading text-center">
           <h4>{{ __('Our Portfolio') }}</h4>
-          <span>{{ __('We have successfully delivered coating solutions for landmark projects across the region.') }}</span>
+          <span>{{ __('Union Group products are trusted in some of the most important national, residential, healthcare, educational and hospitality projects across Egypt.') }}</span>
         </div>
 
         @if($projects->count() > 0)

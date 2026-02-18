@@ -1,5 +1,13 @@
 @extends('user.layouts.app')
 
+@push('styles')
+<style>
+    .small-about p{
+        color: #fff !important;
+    }
+</style>
+@endpush
+
 @section('content')
 
     <!--======= HOME MAIN SLIDER =========-->
@@ -81,8 +89,11 @@
             <div class="container">
                 <div class="heading text-center">
                     <h4 class="text-white">{{ __('About Union Group') }}</h4>
-                    <p class="text-white">
-                        {{ __('Union Group is one of Egypt’s leading manufacturers of premium sanitary fittings, established in 1950 with a clear mission: to deliver high-quality, reliable and affordable sanitary solutions to the Egyptian and regional markets.') }}
+                    <p class="about-support-p">
+                        {{ __('Union Group is one of Egypt\'s leading manufacturers of premium sanitary fittings. Established in 1950, we specialize in designing and producing high-quality bathroom mixers and water control solutions for homes, projects and large developments across Egypt and international markets.') }}
+                    </p>
+                    <p class="about-support-p">
+                        {{ __('For more than 70 years, Union Group has combined engineering excellence, modern technology and competitive pricing to deliver reliable, certified and long-lasting sanitary products.') }}
                     </p>
                 </div>
                 <div class="text-center margin-top-30">
