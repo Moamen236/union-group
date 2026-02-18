@@ -11,7 +11,7 @@
 <header>
     <div class="sticky">
         <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-start align-items-md-center">
                 <!-- Logo -->
                 <div class="logo">
                     <a href="{{ route('user.index') }}">

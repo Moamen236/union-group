@@ -115,9 +115,11 @@ html[lang='ar'] ul.about-list li::before {
     position: absolute;
     right: 0;
 }
+
 .tp-bgimg.defaultimg {
     position: relative;
 }
+
 .tp-bgimg.defaultimg::before {
     content: "";
     position: absolute;
@@ -128,4 +130,8 @@ html[lang='ar'] ul.about-list li::before {
     background-color: #000;
     opacity: 0.5;
     z-index: 1;
+}
+
+.align-items-md-center {
+    align-items: center;
 }
