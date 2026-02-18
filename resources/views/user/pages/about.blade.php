@@ -50,46 +50,74 @@
                     <h4>{{ __('History') }}</h4>
                 </div>
                 <div class="row about-section-with-img">
-                    <div class="col-xs-12 margin-bottom-30">
+                    <div class="col-xs-12">
                         <div class="about-section-img-wrap">
                             <div class="owl-carousel owl-theme about-history-slider">
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
                                     <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our History') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
+                                        {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 history-block">
+                    {{-- <div class="col-xs-12 history-block">
                         <p class="about-support-p text-center">
                             {{ __('Union Group was founded in 1950 by Eng. Abdel Fattah Ahmed Mohamed to meet the growing Egyptian market demand for high-quality sanitary products at affordable prices. At that time, most premium sanitary ware was imported. Union Group was created to bridge this gap and lead local manufacturing.') }}
                             {{ __('Today, the company is proudly managed by the third generation, continuing the legacy while adopting modern manufacturing standards and global market requirements.') }}
                         </p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

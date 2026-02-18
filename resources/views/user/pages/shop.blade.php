@@ -7,7 +7,7 @@
         <div class="position-center-center">
             <div class="container">
                 <h4>{{ $currentCategory ? $currentCategory->name : __('Our Products') }}</h4>
-                <p>{{ $currentCategory ? $currentCategory->description : __('Explore our comprehensive range of premium paints, coatings, and specialty products.') }}
+                <p>{{ $currentCategory ? $currentCategory->description : __('Discover our comprehensive range of premium sanitaryware, mixers, and bathroom solutions, thoughtfully designed to combine performance, durability, and timeless elegance for every space.') }}
                 </p>
                 <ol class="breadcrumb">
                     <li><a href="{{ route('user.index') }}">{{ __('Home') }}</a></li>
@@ -29,27 +29,48 @@
         <section class="shop-page padding-top-100 padding-bottom-100">
             <div class="container">
                 <div class="row">
-                    <!-- Sidebar with Categories -->
+                    <!-- Sidebar with Categories (Accordion) -->
                     <div class="col-md-3">
                         <div class="shop-sidebar">
-                            <h5>{{ __('Categories') }}</h5>
-                            <ul class="category-list">
-                                <li class="{{ !$currentCategory ? 'active' : '' }}">
-                                    <a href="{{ route('user.shop') }}">
-                                        {{ __('All Products') }}
-                                        <span class="badge">{{ $products->total() }}</span>
-                                    </a>
-                                </li>
-                                @foreach ($categories as $category)
-                                    <li
-                                        class="{{ $currentCategory && $currentCategory->id == $category->id ? 'active' : '' }}">
-                                        <a href="{{ route('user.shop', ['category' => $category->slug]) }}">
-                                            {{ $category->name }}
-                                            <span class="badge">{{ $category->products_count }}</span>
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
+                            <div class="panel-group accordion-categories" id="categoriesAccordion">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" id="headingCategories">
+                                        <h5 class="panel-title">
+                                            <a data-toggle="collapse" data-parent="#categoriesAccordion"
+                                                href="#collapseCategories"
+                                                aria-expanded="{{ !$currentCategory ? 'true' : 'false' }}"
+                                                aria-controls="collapseCategories"
+                                                class="accordion-toggle {{ $currentCategory ? 'collapsed' : '' }}">
+                                                {{ __('Categories') }}
+                                                <i class="fa fa-chevron-down pull-right accordion-icon"></i>
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseCategories"
+                                        class="panel-collapse collapse {{ !$currentCategory ? 'in' : '' }}"
+                                        role="tabpanel" aria-labelledby="headingCategories">
+                                        <div class="panel-body p-0">
+                                            <ul class="category-list">
+                                                <li class="{{ !$currentCategory ? 'active' : '' }}">
+                                                    <a href="{{ route('user.shop') }}">
+                                                        {{ __('All Products') }}
+                                                        <span class="badge">{{ $products->total() }}</span>
+                                                    </a>
+                                                </li>
+                                                @foreach ($categories as $category)
+                                                    <li
+                                                        class="{{ $currentCategory && $currentCategory->id == $category->id ? 'active' : '' }}">
+                                                        <a href="{{ route('user.shop', ['category' => $category->slug]) }}">
+                                                            {{ $category->name }}
+                                                            <span class="badge">{{ $category->products_count }}</span>
+                                                        </a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -145,8 +166,8 @@
 
                             <!-- Pagination -->
                             @if ($products->hasPages())
-                                <div class="text-center margin-top-50">
-                                    {{ $products->links() }}
+                                <div class="margin-top-50 pagination-wrap text-center">
+                                    {{ $products->links('vendor.pagination.bootstrap-shop') }}
                                 </div>
                             @endif
                         @else
@@ -174,9 +195,50 @@
         }
 
         .shop-sidebar h5 {
-            margin-bottom: 20px;
             padding-bottom: 10px;
+        }
+
+        .accordion-categories .panel {
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            background: transparent;
+        }
+
+        .accordion-categories .panel-heading {
+            padding: 0;
+            background: transparent;
+            border: none;
+        }
+
+        .accordion-categories .panel-title a {
+            display: block;
+            padding: 0 0 10px 0;
+            margin-bottom: 10px;
             border-bottom: 2px solid #333;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .accordion-categories .panel-title a:hover,
+        .accordion-categories .panel-title a:focus {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .accordion-categories .panel-title .accordion-icon {
+            transition: transform 0.2s ease;
+            margin-top: 2px;
+        }
+
+        .accordion-categories .panel-title a.collapsed .accordion-icon {
+            transform: rotate(-90deg);
+        }
+
+        .accordion-categories .panel-body {
+            border: none;
+            padding: 0;
         }
 
         .category-list {
@@ -234,6 +296,24 @@
         .papular-block.row:before {
             content: "";
             display: none;
+        }
+
+        .pagination-wrap {
+            text-align: center;
+        }
+        .pagination-wrap .pagination {
+            margin: 0;
+            display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2px;
+            width: 100%;
+            align-items: center;
+        }
+        .pagination-wrap .pagination li a,
+        .pagination-wrap .pagination li span {
+            padding: 8px 14px;
+            border-radius: 4px;
         }
     </style>
 @endpush

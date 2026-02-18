@@ -130,7 +130,7 @@
     "UNION GROUP": "يونيون جروب",
     "EXPLORE PRODUCTS": "استكشف المنتجات",
     "Our Product Categories": "فئات منتجاتنا",
-    "Discover our comprehensive range of premium paints, coatings, and specialty products designed for every application.": "اكتشف مجموعتنا الشاملة من الدهانات والطلاءات والمنتجات المتخصصة الممتازة المصممة لكل تطبيق.",
+    "Discover our comprehensive range of premium sanitaryware, mixers, and bathroom solutions, thoughtfully designed to combine performance, durability, and timeless elegance for every space.": "اكتشف مجموعتنا المتكاملة من الأدوات الصحية والخلاطات وحلول الحمامات الفاخرة، المصممة بعناية لتجمع بين الأداء والمتانة والأناقة الخالدة لكل المساحات.",
     "Explore our most popular and highly-rated products trusted by professionals and homeowners alike.": "استكشف منتجاتنا الأكثر شعبية والأعلى تقييماً والموثوقة من قبل المحترفين وأصحاب المنازل على حد سواء.",
     "See how our products have been used in landmark projects across the region.": "شاهد كيف تم استخدام منتجاتنا في مشاريع بارزة في جميع أنحاء المنطقة.",
     "Client": "العميل",
@@ -200,6 +200,7 @@
     "Failed to load certificate. Please try downloading it instead.": "فشل تحميل الشهادة. يرجى محاولة تحميلها بدلاً من ذلك.",
     "Certificate": "الشهادة",
     "Our Exhibitions": "معارضنا",
+    "Showroom": "المعرض",
     "We have participated in various exhibitions and events to showcase our products and services.": "شاركنا في معارض وفعاليات متنوعة لعرض منتجاتنا وخدماتنا.",
     "Exhibition": "معرض",
     "Cairo": "القاهرة",
@@ -223,5 +224,7 @@
     "Warranty & Long-Term Reliability": "الضمان والموثوقية على المدى الطويل",
     "Union Group products are backed by a manufacturer warranty, guaranteeing reliability, durability and customer peace of mind.": "منتجات يونيون جروب مدعومة بضمان الشركة المصنعة، مما يضمن الموثوقية والمتانة وراحة بال العملاء.",
     "Egypt": "مصر",
-    "Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.": "على مدار السنوات، شاركنا بفاعلية في العديد من المعارض المحلية، التي شكّلت منصة لعرض منتجاتنا وإبراز خبراتنا والتزامنا بالجودة. وقد ساهمت هذه المشاركات في تعزيز حضورنا في السوق المحلي وبناء علاقات طويلة الأمد مع شركائنا وعملائنا. ومع استمرار هذه المسيرة، نواصل حرصنا على المشاركة في المزيد من المعارض المحلية واستكشاف فرص جديدة للنمو."
+    "Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.": "على مدار السنوات، شاركنا بفاعلية في العديد من المعارض المحلية، التي شكّلت منصة لعرض منتجاتنا وإبراز خبراتنا والتزامنا بالجودة. وقد ساهمت هذه المشاركات في تعزيز حضورنا في السوق المحلي وبناء علاقات طويلة الأمد مع شركائنا وعملائنا. ومع استمرار هذه المسيرة، نواصل حرصنا على المشاركة في المزيد من المعارض المحلية واستكشاف فرص جديدة للنمو.",
+    "Vision & Mission": "الرؤية والمهمة",
+    "Union Group products are trusted in some of the most important national, residential, healthcare, educational and hospitality projects across Egypt.": "منتجات يونيون جروب موثوقة في بعض المشاريع القومية والسكنية والصحية والتعليمية والفنادئية في جميع أنحاء مصر."
 }
