@@ -1356,6 +1356,12 @@
 	.about-history-slider.owl-carousel .owl-next{
 		border: 1px solid #fff;
 	}
+	.new-arrival-list .promise-slider.owl-carousel .owl-prev, .about-history-slider.owl-carousel .owl-prev{
+		left: 0;
+	}
+	.new-arrival-list .promise-slider.owl-carousel .owl-next, .about-history-slider.owl-carousel .owl-next{
+		right: 0;
+	}
 }
 
 @media (max-width:640px) {

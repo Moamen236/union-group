@@ -151,48 +151,69 @@
         <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100">
             <div class="container">
                 <div class="heading text-center">
-                    <h4>{{ __('Our Exhibitions') }}</h4>
+                    <h4>{{ __('Our Showrooms') }}</h4>
                 </div>
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 margin-bottom-30">
                         <div class="about-section-img-wrap">
                             <div class="owl-carousel owl-theme about-history-slider">
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                                 <div class="item">
-                                    <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our History') }}"
+                                    <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our Showrooms') }}"
                                         class="img-responsive about-section-img">
+                                    <p class="about-support-p text-center">
+                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 history-block">
+                    {{-- <div class="col-xs-12 history-block">
                         <p class="about-support-p text-center">
                             {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
                         </p>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
