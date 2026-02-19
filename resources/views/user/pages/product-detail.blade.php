@@ -26,7 +26,7 @@
     <div id="content">
 
         <!-- Product Detail -->
-        <section class="padding-top-100 padding-bottom-100">
+        <section class="padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="shop-detail">
                     <div class="row">
@@ -176,7 +176,7 @@
 
         <!-- Related Products -->
         @if ($relatedProducts->count() > 0)
-            <section class="light-gray-bg padding-top-150 padding-bottom-150">
+            <section class="light-gray-bg padding-top-150 padding-bottom-150 reveal-on-scroll">
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Related Products') }}</h4>

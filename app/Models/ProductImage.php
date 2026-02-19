@@ -18,11 +18,13 @@ class ProductImage extends LocalizableModel
         'alt_en',
         'alt_ar',
         'is_main',
+        'is_hover',
         'order',
     ];
 
     protected $casts = [
         'is_main' => 'boolean',
+        'is_hover' => 'boolean',
         'order' => 'integer',
     ];
 

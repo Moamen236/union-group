@@ -10,7 +10,7 @@
             <div class="about-footer">
                 <img class="margin-bottom-30" src="{{ asset('user/images/logo.png') }}" alt="{{ __('Union Group') }}"
                     style="max-width: 100px;">
-                <p><i class="icon-pointer"></i>
+                <p><i class="icon-pointer"></i> {{ __('Factory') }} <br>
                     {{ __('Mohamed Badawy Khalil St., Industrial Area, Ghamra, Cairo, Egypt') }}</p>
                 <p><i class="icon-pointer"></i> {{ __('Exhibitions') }}<br>
                     {{ __('Kamel Sedky St. - Al-Fagala - Cairo') }}

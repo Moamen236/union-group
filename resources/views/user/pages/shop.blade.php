@@ -26,24 +26,23 @@
     <div id="content">
 
         <!-- Products Section -->
-        <section class="shop-page padding-top-100 padding-bottom-100">
+        <section class="shop-page padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="row">
-                    <!-- Sidebar with Categories -->
+                    <!-- Sidebar with Categories (always visible list) -->
                     <div class="col-md-3">
                         <div class="shop-sidebar">
-                            <h5>{{ __('Categories') }}</h5>
+                            <h5 class="sidebar-title">{{ __('Categories') }}</h5>
                             <ul class="category-list">
                                 <li class="{{ !$currentCategory ? 'active' : '' }}">
-                                    <a href="{{ route('user.shop') }}">
+                                    <a href="{{ route('user.shop', request()->only('sort', 'search')) }}">
                                         {{ __('All Products') }}
-                                        <span class="badge">{{ $products->total() }}</span>
+                                        <span class="badge">{{ $totalProductsCount }}</span>
                                     </a>
                                 </li>
                                 @foreach ($categories as $category)
-                                    <li
-                                        class="{{ $currentCategory && $currentCategory->id == $category->id ? 'active' : '' }}">
-                                        <a href="{{ route('user.shop', ['category' => $category->slug]) }}">
+                                    <li class="{{ $currentCategory && $currentCategory->id == $category->id ? 'active' : '' }}">
+                                        <a href="{{ route('user.shop', array_merge(request()->only('sort', 'search'), ['category' => $category->slug])) }}">
                                             {{ $category->name }}
                                             <span class="badge">{{ $category->products_count }}</span>
                                         </a>
@@ -143,10 +142,10 @@
                                 @endforeach
                             </div>
 
-                            <!-- Pagination -->
+                            <!-- Pagination (preserves category, sort, search) -->
                             @if ($products->hasPages())
-                                <div class="text-center margin-top-50">
-                                    {{ $products->links() }}
+                                <div class="margin-top-50 pagination-wrap text-center">
+                                    {{ $products->withQueryString()->links('vendor.pagination.bootstrap-shop') }}
                                 </div>
                             @endif
                         @else
@@ -173,10 +172,12 @@
             margin-bottom: 30px;
         }
 
-        .shop-sidebar h5 {
-            margin-bottom: 20px;
+        .shop-sidebar .sidebar-title {
+            margin: 0 0 15px 0;
             padding-bottom: 10px;
             border-bottom: 2px solid #333;
+            font-weight: 600;
+            color: #333;
         }
 
         .category-list {

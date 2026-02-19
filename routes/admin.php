@@ -77,6 +77,7 @@ Route::middleware(['auth', 'check.active'])->group(function () {
     Route::middleware(['permission:manage product images'])->group(function () {
         Route::resource('product-images', ProductImageController::class)->names('admin.product-images');
         Route::post('product-images/{product_image}/set-main', [ProductImageController::class, 'setMain'])->name('admin.product-images.set-main');
+        Route::post('product-images/{product_image}/set-hover', [ProductImageController::class, 'setHover'])->name('admin.product-images.set-hover');
         Route::post('product-images/update-order', [ProductImageController::class, 'updateOrder'])->name('admin.product-images.update-order');
         Route::get('api/products/{product}/colors', [ProductImageController::class, 'getColors'])->name('admin.api.products.colors');
     });

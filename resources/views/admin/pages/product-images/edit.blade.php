@@ -64,8 +64,14 @@
 
                     @include('admin.components.form.toggle-switch', [
                         'name' => 'is_main',
-                        'label' => 'Set as Main Image',
+                        'label' => 'Set as Main Image (default product image)',
                         'checked' => $productImage->is_main
+                    ])
+
+                    @include('admin.components.form.toggle-switch', [
+                        'name' => 'is_hover',
+                        'label' => 'Set as Hover Image (shown when customer hovers on product)',
+                        'checked' => $productImage->is_hover
                     ])
                 </div>
             </div>

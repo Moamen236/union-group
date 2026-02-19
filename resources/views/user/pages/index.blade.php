@@ -2,73 +2,45 @@
 
 @section('content')
 
-    <!--======= HOME MAIN SLIDER =========-->
-    <section class="home-slider">
-        <div class="tp-banner-container">
-            <div class="tp-banner">
-                <ul>
-                    @forelse ($sliders as $index => $slider)
-                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                            <img src="{{ $slider->image_url }}" alt="{{ $slider->title }}" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat">
+    <!--======= HOME HERO (Replaces Revolution Slider) =========-->
+    @php
+        $heroSlider = $sliders->first();
+    @endphp
+    <section class="home-hero">
+        <div class="home-hero-bg"
+             style="background-image: url('{{ $heroSlider?->image_url ?? asset('user/images/slider.jpg') }}');">
+        </div>
+        <div class="home-hero-overlay">
+            <div class="container">
+                <div class="home-hero-content text-center">
+                    @if ($heroSlider?->subtitle)
+                        <p class="home-hero-subtitle">
+                            {{ $heroSlider->subtitle }}
+                        </p>
+                    @else
+                        <p class="home-hero-subtitle">
+                            {{ __('Premium Paints & Coatings') }}
+                        </p>
+                    @endif
 
-                            @if ($slider->subtitle)
-                                <div class="tp-caption font-playfair sfb tp-resizeme" data-x="center" data-hoffset="0"
-                                    data-y="center" data-voffset="-150" data-speed="800" data-start="500"
-                                    data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
-                                    data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                    style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
-                                    {{ $slider->subtitle }}
-                                </div>
-                            @endif
+                    <h1 class="home-hero-title slider-title">
+                        {{ $heroSlider?->title ?? __('UNION GROUP') }}
+                    </h1>
 
-                            @if ($slider->title)
-                                <div class="tp-caption sfr font-extra-bold tp-resizeme slider-title" data-x="center" data-hoffset="0"
-                                    data-y="center" data-voffset="0" data-speed="800" data-start="800"
-                                    data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
-                                    data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                    style="z-index: 6; color:#fff; text-transform:uppercase; white-space: nowrap;">
-                                    {{ $slider->title }}
-                                </div>
-                            @endif
-
-                            @if ($slider->button_text && $slider->button_url)
-                                <div class="tp-caption lfb tp-resizeme" data-x="center" data-hoffset="0" data-y="center"
-                                    data-voffset="120" data-speed="800" data-start="1500" data-easing="Power3.easeInOut"
-                                    data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                    data-scrolloffset="0" style="z-index: 8;">
-                                    <a href="{{ $slider->button_url }}" class="btn">{{ $slider->button_text }}</a>
-                                </div>
-                            @endif
-                        </li>
-                    @empty
-                        <!-- Default slide when no sliders in database -->
-                        <li data-transition="random" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-                            <img src="{{ asset('user/images/slider.jpg') }}" alt="slider" data-bgposition="center center"
-                                data-bgfit="cover" data-bgrepeat="no-repeat">
-                            <div class="tp-caption font-playfair sfb tp-resizeme" data-x="left" data-hoffset="0"
-                                data-y="center" data-voffset="-150" data-speed="800" data-start="500"
-                                data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
-                                data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                style="z-index: 7; font-size:18px; color:#fff; max-width: auto; max-height: auto; white-space: nowrap;">
-                                {{ __('Premium Paints & Coatings') }}
-                            </div>
-                            <div class="tp-caption sfr font-extra-bold tp-resizeme slider-title" data-x="left" data-hoffset="0"
-                                data-y="center" data-voffset="0" data-speed="800" data-start="800"
-                                data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none"
-                                data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                style="z-index: 6; color:#fff; text-transform:uppercase; white-space: nowrap;">
-                                {{ __('UNION GROUP') }}
-                            </div>
-                            <div class="tp-caption lfb tp-resizeme" data-x="left" data-hoffset="0" data-y="center"
-                                data-voffset="120" data-speed="800" data-start="1500" data-easing="Power3.easeInOut"
-                                data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300"
-                                data-scrolloffset="0" style="z-index: 8;">
-                                <a href="{{ route('user.shop') }}" class="btn">{{ __('EXPLORE PRODUCTS') }}</a>
-                            </div>
-                        </li>
-                    @endforelse
-                </ul>
+                    @if ($heroSlider?->button_text && $heroSlider?->button_url)
+                        <div class="home-hero-cta">
+                            <a href="{{ $heroSlider->button_url }}" class="btn">
+                                {{ $heroSlider->button_text }}
+                            </a>
+                        </div>
+                    @else
+                        <div class="home-hero-cta">
+                            <a href="{{ route('user.shop') }}" class="btn">
+                                {{ __('EXPLORE PRODUCTS') }}
+                            </a>
+                        </div>
+                    @endif
+                </div>
             </div>
         </div>
     </section>
@@ -77,7 +49,7 @@
     <div id="content">
 
         <!-- About Section -->
-        <section class="small-about padding-top-150 padding-bottom-150 bg-blue">
+        <section class="small-about padding-top-150 padding-bottom-150 bg-blue reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4 class="text-white">{{ __('About Union Group') }}</h4>
@@ -95,11 +67,11 @@
 
         <!-- Product Categories -->
         @if ($categories->count() > 0)
-            <section class="padding-top-100 padding-bottom-100">
+            <section class="padding-top-100 padding-bottom-100 reveal-on-scroll">
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Our Product Categories') }}</h4>
-                        <span>{{ __('Discover our comprehensive range of premium paints, coatings, and specialty products designed for every application.') }}</span>
+                        <span>{{ __('Discover our comprehensive range of premium sanitaryware, mixers, and bathroom solutions, thoughtfully designed to combine performance, durability, and timeless elegance for every space.') }}</span>
                     </div>
 
                     <div class="arrival-block">
@@ -187,7 +159,7 @@
         @endif --}}
 
         <!-- Popular Products -->
-        <section class="padding-bottom-150 padding-top-150 bg-blue">
+        <section class="padding-bottom-150 padding-top-150 bg-blue reveal-on-scroll">
             <div class="container">
 
                 <!-- Main Heading -->
@@ -297,7 +269,7 @@
         </section>
 
         <!-- Our Partners -->
-        <section class="partners-section padding-top-100 padding-bottom-100">
+        <section class="partners-section padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Our Partners') }}</h4>

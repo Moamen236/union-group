@@ -110,12 +110,15 @@ class UserController extends Controller
             ? ProductCategory::where('slug', $request->category)->first()
             : null;
 
+        $totalProductsCount = Product::active()->count();
+
         return view('user.pages.shop', [
             'title' => $currentCategory ? $currentCategory->name : __('Shop'),
             'products' => $products,
             'categories' => $categories,
             'currentCategory' => $currentCategory,
             'currentSort' => $sort,
+            'totalProductsCount' => $totalProductsCount,
         ]);
     }
 

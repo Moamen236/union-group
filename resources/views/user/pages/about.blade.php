@@ -19,7 +19,7 @@
     <div id="content">
 
         <!-- About Us Intro -->
-        <section class="history-block padding-top-100 padding-bottom-100">
+        <section class="history-block padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('About Us') }}</h4>
@@ -44,7 +44,7 @@
         </section>
 
         <!-- History -->
-        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('History') }}</h4>
@@ -95,7 +95,7 @@
         </section>
 
         <!-- Brand Evolution -->
-        <section class="about-intro padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Brand Evolution') }}</h4>
@@ -120,7 +120,7 @@
         </section>
 
         <!-- Our Exhibitions -->
-        <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100">
+        <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Our Exhibitions') }}</h4>
@@ -170,7 +170,7 @@
         </section>
 
         <!-- Vision & Mission -->
-        <section class="about-intro padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Vision & Mission') }}</h4>
@@ -212,7 +212,7 @@
         </section>
 
         <!-- Specialization -->
-        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Specialization') }}</h4>
@@ -243,7 +243,7 @@
         </section>
 
         <!-- After-Sales & Warranty -->
-        <section class="about-intro padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('After-Sales Service & Warranty') }}</h4>
@@ -271,7 +271,7 @@
 
         <!-- Projects Section -->
         {{-- @if ($projects->count() > 0)
-            <section class="padding-top-150 padding-bottom-100" id="projects">
+            <section class="padding-top-150 padding-bottom-100 reveal-on-scroll" id="projects">
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Our Projects') }}</h4>
@@ -313,7 +313,7 @@
 
 
         <!-- Why Choose Us -->
-        <section class="our-team padding-top-80 padding-bottom-100">
+        <section class="our-team padding-top-80 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Why Choose Union Group') }}</h4>
@@ -359,7 +359,7 @@
         </section>
 
         <!-- Contact CTA -->
-        <section class="small-about padding-top-150 padding-bottom-150">
+        <section class="small-about padding-top-150 padding-bottom-150 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Get in Touch') }}</h4>

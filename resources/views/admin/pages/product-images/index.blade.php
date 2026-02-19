@@ -58,10 +58,20 @@
                                                 <span class="rounded-full bg-brand-600 px-2 py-1 text-xs font-medium text-white">Main</span>
                                             </div>
                                         @endif
+                                        @if($image->is_hover)
+                                            <div class="absolute left-2 top-8">
+                                                <span class="rounded-full bg-emerald-600 px-2 py-1 text-xs font-medium text-white">Hover</span>
+                                            </div>
+                                        @endif
                                         <div class="absolute inset-0 flex items-center justify-center gap-2 bg-black/50 opacity-0 transition-opacity group-hover:opacity-100">
                                             @if(!$image->is_main)
                                                 <button type="button" onclick="setMain('{{ route('admin.product-images.set-main', $image) }}')" class="rounded-lg bg-white p-2 text-gray-700 hover:bg-gray-100" title="Set as Main">
                                                     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+                                                </button>
+                                            @endif
+                                            @if(!$image->is_hover)
+                                                <button type="button" onclick="setHover('{{ route('admin.product-images.set-hover', $image) }}')" class="rounded-lg bg-white p-2 text-gray-700 hover:bg-gray-100" title="Set as Hover">
+                                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                                                 </button>
                                             @endif
                                             <a href="{{ route('admin.product-images.edit', $image) }}" class="rounded-lg bg-white p-2 text-gray-700 hover:bg-gray-100" title="Edit">
@@ -88,5 +98,8 @@
     </div>
 @endsection
 @push('scripts')
-<script>function setMain(url) { fetch(url, { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content, 'Accept': 'application/json' }}).then(r => r.json()).then(d => { if(d.success) window.location.reload(); }); }</script>
+<script>
+function setMain(url) { fetch(url, { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content, 'Accept': 'application/json' }}).then(r => r.json()).then(d => { if(d.success) window.location.reload(); }); }
+function setHover(url) { fetch(url, { method: 'POST', headers: { 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content, 'Accept': 'application/json' }}).then(r => r.json()).then(d => { if(d.success) window.location.reload(); }); }
+</script>
 @endpush

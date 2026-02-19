@@ -10,8 +10,6 @@
     <meta name="author" content="Union Group">
     <title>{{ $title ?? __('Home') }} - {{ __('Union Group') }}</title>
 
-    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('user/rs-plugin/css/settings.css') }}" media="screen" />
     <link rel="shortcut icon" href="{{ asset('user/images/logo.png') }}" type="image/x-icon">
 
     <!-- Bootstrap Core CSS -->
@@ -70,11 +68,9 @@
     <script src="{{ asset('user/js/own-menu.js') }}"></script>
     <script src="{{ asset('user/js/jquery.lighter.js') }}"></script>
     <script src="{{ asset('user/js/owl.carousel.min.js') }}"></script>
-
-    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script type="text/javascript" src="{{ asset('user/rs-plugin/js/jquery.tp.t.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('user/rs-plugin/js/jquery.tp.min.js') }}"></script>
     <script src="{{ asset('user/js/main.js') }}"></script>
+    <script src="{{ asset('user/js/scroll-reveal.js') }}"></script>
+    <script src="{{ asset('user/js/zoom-scroll-fix.js') }}"></script>
 
     @stack('scripts')
 

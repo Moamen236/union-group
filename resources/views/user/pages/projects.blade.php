@@ -20,7 +20,7 @@
   <div id="content">
 
     <!-- Projects Section -->
-    <section class="padding-top-100 padding-bottom-100">
+    <section class="padding-top-100 padding-bottom-100 reveal-on-scroll">
       <div class="container">
         <div class="heading text-center">
           <h4>{{ __('Our Portfolio') }}</h4>
@@ -83,7 +83,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="small-about padding-top-150 padding-bottom-150">
+    <section class="small-about padding-top-150 padding-bottom-150 reveal-on-scroll">
       <div class="container">
         <div class="heading text-center">
           <h4>{{ __('Have a Project in Mind?') }}</h4>
@@ -96,7 +96,7 @@
     </section>
 
     {{-- <!-- Newsletter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
+    <section class="news-letter padding-top-150 padding-bottom-150 reveal-on-scroll">
       <div class="container">
         <div class="heading light-head text-center margin-bottom-30">
           <h4>{{ __('NEWSLETTER') }}</h4>
