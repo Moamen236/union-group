@@ -145,7 +145,7 @@
                             <!-- Pagination (preserves category, sort, search) -->
                             @if ($products->hasPages())
                                 <div class="margin-top-50 pagination-wrap text-center">
-                                    {{ $products->withQueryString()->links('vendor.pagination.bootstrap-shop') }}
+                                    {{ $products->withQueryString()->links() }}
                                 </div>
                             @endif
                         @else
