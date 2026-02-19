@@ -1,3 +1,89 @@
+/* ========== Header: compact but readable height (keeps original colors) ========== */
+header.header-compact .sticky {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+header.header-compact .sticky .container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+header.header-compact .navbar .nav li a {
+    padding: 12px 0;
+    margin: 0 10px;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+header.header-compact .logo {
+    margin-top: 6px;
+}
+header.header-compact .logo img {
+    max-height: 68px;
+    width: auto;
+}
+header.header-compact .nav-right {
+    margin-top: 10px;
+}
+
+/* Products dropdown above adjacent nav so it is not cropped */
+header .navbar .nav .dropdown-menu {
+    z-index: 1050;
+}
+
+/* ========== Navbar search: static inline bar ========== */
+.navbar-right .navbar-search {
+    padding-left: 10px;
+}
+
+.navbar-right .nav-search-form {
+    margin: 0;
+}
+
+.navbar-right .nav-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.navbar-right .nav-search input[type="search"] {
+    width: 220px;
+    height: 30px;
+    font-size: 13px;
+    padding: 0 26px 0 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
+    background: #f9f9f9;
+    transition: border-color 0.2s, background 0.2s;
+    vertical-align: middle;
+}
+
+.navbar-right .nav-search input[type="search"]:focus {
+    outline: none;
+    border-color: #333;
+    background: #fff;
+}
+
+.navbar-right .nav-search button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    background: transparent;
+    color: #555;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.navbar-right .nav-search button:hover {
+    color: #222;
+}
+
 /* Arabic / RTL: prevent mid-word breaks (e.g. "اتـ صل بـ نا" -> "اتصل بنا") */
 html[lang="ar"] body,
 html[lang="ar"] nav a,
@@ -10,6 +96,42 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
+}
+
+/* Arabic / RTL mobile navbar: prevent cropped nav list (padding + alignment) */
+@media (max-width: 991px) {
+    html[lang="ar"] header .navbar .navbar-collapse,
+    html[lang="ar"] header #nav-open-btn {
+        padding-right: 20px;
+        padding-left: 20px;
+        overflow-x: visible;
+    }
+    html[lang="ar"] header .navbar .nav {
+        padding-right: 0;
+        padding-left: 0;
+        overflow: visible;
+        text-align: right;
+    }
+    html[lang="ar"] header .navbar .nav li {
+        text-align: right;
+        width: 100%;
+    }
+    html[lang="ar"] header .navbar .nav li a {
+        padding: 12px 16px;
+        display: block;
+        text-align: right;
+        white-space: nowrap;
+    }
+    html[lang="ar"] header .navbar .nav .dropdown-menu {
+        text-align: right;
+        right: 0;
+        left: auto;
+    }
+    html[lang="ar"] header .navbar .nav .dropdown-menu li a {
+        text-align: right;
+        padding-right: 24px;
+        padding-left: 16px;
+    }
 }
 
 .d-flex {
@@ -305,6 +427,60 @@ html[lang='ar'] ul.about-list li::before {
         padding-bottom: 140px;
     }
     .home-hero-subtitle {
+        font-size: 16px;
+    }
+}
+
+/* ========== History slider arrows: closer to center, improved UI ========== */
+.about-history-slider.owl-carousel .owl-nav {
+    pointer-events: none;
+}
+.about-history-slider.owl-carousel .owl-prev,
+.about-history-slider.owl-carousel .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    border-radius: 50%;
+    background: #fff !important;
+    color: #333 !important;
+    font-size: 18px;
+    line-height: 42px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    pointer-events: auto;
+}
+.about-history-slider.owl-carousel .owl-prev:hover,
+.about-history-slider.owl-carousel .owl-next:hover {
+    background: #333 !important;
+    color: #fff !important;
+    border-color: #333 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+.about-history-slider.owl-carousel .owl-prev {
+    left: 20px;
+}
+.about-history-slider.owl-carousel .owl-next {
+    right: 20px;
+}
+@media (max-width: 768px) {
+    .about-history-slider.owl-carousel .owl-prev {
+        left: 10px;
+        width: 38px;
+        height: 38px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+    .about-history-slider.owl-carousel .owl-next {
+        right: 10px;
+        width: 38px;
+        height: 38px;
+        line-height: 36px;
         font-size: 16px;
     }
 }

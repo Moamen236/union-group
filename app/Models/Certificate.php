@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Certificate extends Model
 {
@@ -75,9 +76,9 @@ class Certificate extends Model
     /**
      * Get file URL
      */
-    public function getFileUrlAttribute(): string
+    public function getFileUrlAttribute(): ?string
     {
-        return asset('storage/' . $this->file);
+        return $this->file ? asset('storage/' . $this->file) : null;
     }
 
     /**
@@ -89,11 +90,35 @@ class Certificate extends Model
     }
 
     /**
-     * Check if certificate is PDF
+     * URL used when viewing the certificate (file if present, otherwise logo).
+     */
+    public function getViewUrlAttribute(): ?string
+    {
+        if ($this->file) {
+            return $this->file_url;
+        }
+
+        return $this->logo_url;
+    }
+
+    /**
+     * Whether there is any viewable resource (file or logo).
+     */
+    public function hasViewableResource(): bool
+    {
+        return (bool) ($this->file || $this->logo);
+    }
+
+    /**
+     * Check if certificate resource is PDF (based on stored file path).
      */
     public function isPdf(): bool
     {
-        return $this->type === 'pdf';
+        if (!$this->file) {
+            return false;
+        }
+
+        return Str::endsWith(Str::lower($this->file), '.pdf');
     }
 
     /**

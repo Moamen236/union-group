@@ -34,9 +34,9 @@
             <article class="project-card animate fadeInUp" data-wow-delay="{{ ($loop->index % 3) * 0.1 }}s">
               <div class="project-image">
                 @if($project->image)
-                <img src="{{ $project->image_url }}" alt="{{ $project->name }}" class="img-responsive">
+                <img src="{{ $project->image_url }}" alt="{{ $project->name }}" class="img-responsive" loading="lazy">
                 @else
-                <img src="{{ asset('user/images/product-placeholder.jpg') }}" alt="{{ $project->name }}" class="img-responsive">
+                <img src="{{ asset('user/images/product-placeholder.jpg') }}" alt="{{ $project->name }}" class="img-responsive" loading="lazy">
                 @endif
                 <div class="project-overlay">
                   <div class="overlay-content">

@@ -8,7 +8,7 @@
         ->get();
 @endphp
 
-<header>
+<header class="header-compact">
     <div class="sticky">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
@@ -40,8 +40,21 @@
                                 <a href="{{ route('user.about') }}">{{ __('About') }}</a>
                             </li>
 
-                            <li class="{{ request()->routeIs('user.shop') || request()->routeIs('user.product-detail') ? 'active' : '' }}">
-                                <a href="{{ route('user.shop') }}">{{ __('Products') }}</a>
+                            <li class="dropdown {{ request()->routeIs('user.shop') || request()->routeIs('user.product-detail') ? 'active' : '' }}">
+                                <a href="{{ route('user.shop') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    {{ __('Products') }} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('user.shop') }}">{{ __('All Products') }}</a></li>
+                                    @if($navCategories->isNotEmpty())
+                                        <li role="separator" class="divider"></li>
+                                        @foreach($navCategories as $cat)
+                                            <li class="{{ request()->routeIs('user.shop') && request()->get('category') === $cat->slug ? 'active' : '' }}">
+                                                <a href="{{ route('user.shop', ['category' => $cat->slug]) }}">{{ $cat->name }}</a>
+                                            </li>
+                                        @endforeach
+                                    @endif
+                                </ul>
                             </li>
 
                             <li class="{{ request()->routeIs('user.projects') ? 'active' : '' }}">
@@ -73,22 +86,15 @@
                                 </ul>
                             </li>
 
-                            <!-- SEARCH BAR -->
-                            <li class="dropdown">
-                                <a href="javascript:void(0);" class="search-open"><i class="icon-magnifier"></i></a>
-                                <div class="search-inside animated bounceInUp">
-                                    <i class="icon-close search-close"></i>
-                                    <div class="search-overlay"></div>
-                                    <div class="position-center-center">
-                                        <div class="search">
-                                            <form action="{{ route('user.shop') }}" method="GET">
-                                                <input type="search" name="search"
-                                                    placeholder="{{ __('Search Products...') }}">
-                                                <button type="submit"><i class="icon-check"></i></button>
-                                            </form>
-                                        </div>
+                            <!-- SEARCH BAR (static inline) -->
+                            <li class="navbar-search">
+                                <form action="{{ route('user.shop') }}" method="GET" class="nav-search-form">
+                                    <div class="nav-search">
+                                        <input type="search" name="search"
+                                            placeholder="{{ __('Search Products...') }}">
+                                        <button type="submit"><i class="icon-magnifier"></i></button>
                                     </div>
-                                </div>
+                                </form>
                             </li>
                         </ul>
                     </div>

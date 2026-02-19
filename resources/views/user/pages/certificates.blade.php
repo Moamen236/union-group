@@ -36,7 +36,9 @@
 
                                     @if ($certificate->logo_url)
                                         <div class="certificate-logo">
-                                            <img src="{{ $certificate->logo_url }}" alt="{{ $certificate->name }}">
+                                            <div class="certificate-logo-circle">
+                                                <img src="{{ $certificate->logo_url }}" alt="{{ $certificate->name }}" loading="lazy">
+                                            </div>
                                         </div>
                                     @endif
                                     <div class="certificate-body">
@@ -65,9 +67,9 @@
                                     </div>
 
                                     <div class="certificate-footer">
-                                        @if ($certificate->file)
+                                        @if ($certificate->hasViewableResource())
                                             <a href="#" class="btn btn-view view-certificate-btn"
-                                                data-certificate-url="{{ $certificate->file_url }}"
+                                                data-certificate-url="{{ $certificate->view_url }}"
                                                 data-certificate-name="{{ $certificate->name }}"
                                                 data-is-pdf="{{ $certificate->isPdf() ? 'true' : 'false' }}">
                                                 <i class="fa fa-eye"></i>
@@ -182,19 +184,18 @@
         }
 
         .certificate-card {
-            background: #fff;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            background: transparent;
+            box-shadow: none;
             transition: all 0.3s ease;
             height: 100%;
             display: flex;
             flex-direction: column;
-            border-radius: 8px;
-            overflow: hidden;
+            align-items: center;
         }
 
-        .certificate-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        .certificate-card:hover .certificate-logo-circle {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
 
         .certificate-header {
@@ -240,26 +241,37 @@
         }
 
         .certificate-logo {
-            padding: 20px 25px 0;
+            padding: 0;
             text-align: center;
-            min-height: 80px;
+        }
+
+        .certificate-logo-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .certificate-logo img {
-            max-height: 200px;
-            max-width: 120px;
+            max-width: 75%;
+            max-height: 75%;
             width: auto;
             height: auto;
             object-fit: contain;
         }
 
         .certificate-body {
-            padding: 25px;
+            padding: 10px 15px 0;
             padding-bottom: 0;
             flex-grow: 1;
+            text-align: center;
         }
 
         .certificate-body h5 {

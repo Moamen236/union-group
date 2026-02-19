@@ -78,13 +78,13 @@
                         @foreach ($categories as $category)
                             <div class="item">
                                 @if ($category->image)
-                                    <img class="img-1" src="{{ $category->image_url }}" alt="{{ $category->name }}">
-                                    <img class="img-2" src="{{ $category->image_url }}" alt="{{ $category->name }}">
+                                    <img class="img-1" src="{{ $category->image_url }}" alt="{{ $category->name }}" loading="lazy">
+                                    <img class="img-2" src="{{ $category->image_url }}" alt="{{ $category->name }}" loading="lazy">
                                 @else
                                     <img class="img-1" src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                        alt="{{ $category->name }}">
+                                        alt="{{ $category->name }}" loading="lazy">
                                     <img class="img-2" src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                        alt="{{ $category->name }}">
+                                        alt="{{ $category->name }}" loading="lazy">
                                 @endif
                                 <div class="overlay">
                                     <span class="price">{{ $category->products_count }} {{ __('Products') }}</span>
@@ -176,7 +176,7 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
-                                        alt="{{ __('Manufacturing Excellence.') }}">
+                                        alt="{{ __('Manufacturing Excellence.') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Manufacturing Excellence.') }}</h4>
@@ -189,7 +189,7 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
-                                        alt="{{ __('Certified & Government Approved') }}">
+                                        alt="{{ __('Certified & Government Approved') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Certified & Government Approved') }}</h4>
@@ -202,7 +202,7 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
-                                        alt="{{ __('Trusted in National Mega Projects') }}">
+                                        alt="{{ __('Trusted in National Mega Projects') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Trusted in National Mega Projects') }}</h4>
@@ -228,7 +228,7 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
-                                        alt="{{ __('Competitive Pricing — Premium Quality') }}">
+                                        alt="{{ __('Competitive Pricing — Premium Quality') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Competitive Pricing — Premium Quality') }}</h4>
@@ -241,7 +241,7 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
-                                        alt="{{ __('After-Sales Support & Technical Service') }}">
+                                        alt="{{ __('After-Sales Support & Technical Service') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('After-Sales Support & Technical Service') }}</h4>
@@ -254,7 +254,7 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
-                                        alt="{{ __('Warranty & Long-Term Reliability') }}">
+                                        alt="{{ __('Warranty & Long-Term Reliability') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Warranty & Long-Term Reliability') }}</h4>

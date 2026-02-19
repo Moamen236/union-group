@@ -64,13 +64,13 @@
     </div>
 
     <script src="{{ asset('user/js/jquery-1.11.3.min.js') }}"></script>
-    <script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('user/js/own-menu.js') }}"></script>
-    <script src="{{ asset('user/js/jquery.lighter.js') }}"></script>
-    <script src="{{ asset('user/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('user/js/main.js') }}"></script>
-    <script src="{{ asset('user/js/scroll-reveal.js') }}"></script>
-    <script src="{{ asset('user/js/zoom-scroll-fix.js') }}"></script>
+    <script src="{{ asset('user/js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('user/js/own-menu.js') }}" defer></script>
+    <script src="{{ asset('user/js/jquery.lighter.js') }}" defer></script>
+    <script src="{{ asset('user/js/owl.carousel.min.js') }}" defer></script>
+    <script src="{{ asset('user/js/main.js') }}" defer></script>
+    <script src="{{ asset('user/js/scroll-reveal.js') }}" defer></script>
+    <script src="{{ asset('user/js/zoom-scroll-fix.js') }}" defer></script>
 
     @stack('scripts')
 

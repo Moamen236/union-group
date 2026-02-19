@@ -103,17 +103,17 @@
                                         <div class="item-img">
                                             @if ($product->mainImage())
                                                 <img class="img-1" src="{{ $product->main_image_url }}"
-                                                    alt="{{ $product->name }}">
+                                                    alt="{{ $product->name }}" loading="lazy">
                                                 <img class="img-2"
                                                     src="{{ $product->second_image_url ?? $product->main_image_url }}"
-                                                    alt="{{ $product->name }}">
+                                                    alt="{{ $product->name }}" loading="lazy">
                                             @else
                                                 <img class="img-1"
                                                     src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                                    alt="{{ $product->name }}">
+                                                    alt="{{ $product->name }}" loading="lazy">
                                                 <img class="img-2"
                                                     src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                                    alt="{{ $product->name }}">
+                                                    alt="{{ $product->name }}" loading="lazy">
                                             @endif
                                             <div class="overlay">
                                                 <div class="position-center-center">
@@ -232,9 +232,105 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
         }
+
         .papular-block.row:before {
             content: "";
             display: none;
+        }
+
+        /* Pagination: Laravel default (Tailwind) markup – add spacing and pill buttons */
+        .pagination-wrap nav[role="navigation"] {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .pagination-wrap nav[role="navigation"] > div {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .pagination-wrap nav[role="navigation"] div > span[class*="inline-flex"] {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pagination-wrap nav[role="navigation"] a,
+        .pagination-wrap nav[role="navigation"] span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            padding: 10px 20px;
+            border-radius: 999px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #333;
+            background-color: #fff;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .pagination-wrap nav[role="navigation"] a:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        .pagination-wrap nav[role="navigation"] span[aria-disabled="true"],
+        .pagination-wrap nav[role="navigation"] span.cursor-default {
+            opacity: 0.6;
+            cursor: default;
+            background-color: #f5f5f5;
+        }
+
+        .pagination-wrap .pagination {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .pagination-wrap .pagination li {
+            margin: 0;
+            list-style: none;
+        }
+
+        .pagination-wrap .pagination li a,
+        .pagination-wrap .pagination li span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 90px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            border: 1px solid #ddd;
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #333;
+            background-color: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .pagination-wrap .pagination li a:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+            text-decoration: none;
+        }
+
+        .pagination-wrap .pagination li.disabled span {
+            opacity: 0.5;
+            cursor: default;
+            background-color: #f4f4f4;
         }
     </style>
 @endpush

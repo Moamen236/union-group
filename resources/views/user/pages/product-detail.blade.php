@@ -40,14 +40,14 @@
                                             <li data-thumb="{{ asset('storage/' . $image->image) }}"
                                                 data-color-id="{{ $image->color_id ?? 'all' }}">
                                                 <img class="img-responsive" src="{{ asset('storage/' . $image->image) }}"
-                                                    alt="{{ $product->name }}">
+                                                    alt="{{ $product->name }}" loading="lazy">
                                             </li>
                                         @endforeach
                                     @else
                                         <li data-thumb="{{ asset('user/images/product-placeholder.jpg') }}">
                                             <img class="img-responsive"
                                                 src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                                alt="{{ $product->name }}">
+                                                alt="{{ $product->name }}" loading="lazy">
                                         </li>
                                     @endif
                                 </ul>
@@ -189,14 +189,14 @@
                                 <div class="item-img">
                                     @if ($relatedProduct->mainImage())
                                         <img class="img-1" src="{{ $relatedProduct->main_image_url }}"
-                                            alt="{{ $relatedProduct->name }}">
+                                            alt="{{ $relatedProduct->name }}" loading="lazy">
                                         <img class="img-2" src="{{ $relatedProduct->main_image_url }}"
-                                            alt="{{ $relatedProduct->name }}">
+                                            alt="{{ $relatedProduct->name }}" loading="lazy">
                                     @else
                                         <img class="img-1" src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                            alt="{{ $relatedProduct->name }}">
+                                            alt="{{ $relatedProduct->name }}" loading="lazy">
                                         <img class="img-2" src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                            alt="{{ $relatedProduct->name }}">
+                                            alt="{{ $relatedProduct->name }}" loading="lazy">
                                     @endif
                                     <div class="overlay">
                                         <div class="position-center-center">
