@@ -29,6 +29,28 @@ header .navbar .nav .dropdown-menu {
     z-index: 1050;
 }
 
+/* Products dropdown: arrow to the right of each category, no overlap */
+header .navbar .nav .dropdown-menu li a {
+    display: block;
+    padding-left: 20px;
+    padding-right: 28px;
+}
+header .navbar .nav .dropdown-menu li a:after {
+    left: auto;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+}
+html[lang="ar"] header .navbar .nav .dropdown-menu li a {
+    padding-left: 28px;
+    padding-right: 20px;
+}
+html[lang="ar"] header .navbar .nav .dropdown-menu li a:after {
+    right: auto;
+    left: 10px;
+}
+
 /* ========== Navbar search: static inline bar ========== */
 .navbar-right .navbar-search {
     padding-left: 10px;
@@ -84,6 +106,12 @@ header .navbar .nav .dropdown-menu {
     color: #222;
 }
 
+/* Arabic / RTL: more space between search text and magnifier icon */
+html[lang="ar"] .navbar-right .nav-search input[type="search"] {
+    padding-right: 38px;
+    padding-left: 12px;
+}
+
 /* Arabic / RTL: prevent mid-word breaks (e.g. "اتـ صل بـ نا" -> "اتصل بنا") */
 html[lang="ar"] body,
 html[lang="ar"] nav a,
@@ -96,6 +124,94 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
+}
+
+/* Mobile: nav-right stays next to tabs (same row as hamburger); limit search width so it doesn’t overflow */
+@media (max-width: 991px) {
+    /* Show hamburger and collapse nav at 991px (theme only does this at 767px) */
+    header .navbar .navbar-toggle {
+        display: inline-block !important;
+    }
+    header .navbar-collapse.collapse {
+        display: none !important;
+        height: 0 !important;
+        overflow: hidden !important;
+    }
+    header .navbar-collapse.collapse.in {
+        display: block !important;
+        height: auto !important;
+        overflow: visible !important;
+    }
+    header .navbar-collapse .nav {
+        float: none;
+    }
+    /* Override theme position: absolute; top: 40px so search stays in header row */
+    header .navbar .nav-right {
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        float: none !important;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    /* One header row: [language + search | hamburger]; expanded menu full-width below */
+    header .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+        min-height: 50px;
+    }
+    header .navbar .navbar-header {
+        flex-shrink: 0;
+        order: 2;
+    }
+    header .navbar .nav-right {
+        order: 1;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    /* Collapse panel on its own row below so language/search never sit next to nav links */
+    header .navbar .navbar-collapse {
+        order: 3;
+        width: 100%;
+        flex-basis: 100%;
+        border-top: 1px solid #eee;
+        margin-top: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    header .navbar .navbar-right {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    header .navbar .navbar-right > li {
+        margin: 0;
+    }
+    header .nav-right .nav-search input[type="search"] {
+        width: 120px;
+        max-width: 45vw;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+    /* Keep logo and nav on one row; prevent theme from inverting to nav-on-top */
+    header .sticky .d-flex {
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    header .sticky .d-flex .logo {
+        flex-shrink: 0;
+    }
+    header .sticky .d-flex .navbar {
+        flex-shrink: 1;
+        min-width: 0;
+    }
 }
 
 /* Arabic / RTL mobile navbar: prevent cropped nav list (padding + alignment) */
@@ -130,7 +246,7 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     html[lang="ar"] header .navbar .nav .dropdown-menu li a {
         text-align: right;
         padding-right: 24px;
-        padding-left: 16px;
+        padding-left: 28px;
     }
 }
 
@@ -380,12 +496,34 @@ html[lang='ar'] ul.about-list li::before {
     }
 }
 
-/* ========== Home hero (replacing Revolution Slider) ========== */
+/* ========== Home hero slider ========== */
 .home-hero {
     position: relative;
     min-height: 600px;
     color: #fff;
     overflow: hidden;
+}
+
+.home-hero-slides {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+}
+
+.home-hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.home-hero-slide.active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    min-height: 600px;
 }
 
 .home-hero-bg {
@@ -397,37 +535,96 @@ html[lang='ar'] ul.about-list li::before {
 }
 
 .home-hero-overlay {
-    position: relative;
+    position: absolute;
+    inset: 0;
     z-index: 1;
-    padding-top: 180px;
-    padding-bottom: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75));
+}
+
+.home-hero-overlay .container {
+    width: 100%;
 }
 
 .home-hero-title {
     text-transform: uppercase;
     margin-bottom: 25px;
+    color: #fff;
 }
 
 .home-hero-subtitle {
     font-size: 18px;
     margin-bottom: 15px;
+    color: #fff;
 }
 
 .home-hero-cta .btn {
     margin-top: 10px;
 }
 
+/* Home hero arrows (prev/next) */
+.home-hero-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 18px;
+    line-height: 42px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+.home-hero-arrow:hover {
+    background: #fff;
+    color: #222;
+    border-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+.home-hero-prev {
+    left: 20px;
+}
+.home-hero-next {
+    right: 20px;
+}
+
 @media (max-width: 768px) {
-    .home-hero {
+    .home-hero,
+    .home-hero-slides {
+        min-height: 420px;
+    }
+    .home-hero-slide.active {
         min-height: 420px;
     }
     .home-hero-overlay {
-        padding-top: 130px;
-        padding-bottom: 140px;
+        padding: 16px;
     }
     .home-hero-subtitle {
         font-size: 16px;
+        color: #fff;
+    }
+    .home-hero-arrow {
+        width: 38px;
+        height: 38px;
+        line-height: 36px;
+        font-size: 16px;
+    }
+    .home-hero-prev {
+        left: 10px;
+    }
+    .home-hero-next {
+        right: 10px;
     }
 }
 
@@ -483,4 +680,116 @@ html[lang='ar'] ul.about-list li::before {
         line-height: 36px;
         font-size: 16px;
     }
+}
+
+/* ========== Our Showrooms slider: every image shows properly ========== */
+.about-showrooms-slider .item {
+    min-height: 420px;
+}
+.about-showroom-slide {
+    display: block;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+.about-showroom-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center center;
+}
+@media (max-width: 768px) {
+    .about-showrooms-slider .item {
+        min-height: 280px;
+    }
+    .about-showroom-slide {
+        height: 280px;
+    }
+}
+
+/* ========== Pagination (shop, projects, etc.): pill-style prev/next and page numbers ========== */
+.pagination-wrap nav[role="navigation"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.pagination-wrap nav[role="navigation"] > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.pagination-wrap nav[role="navigation"] div > span[class*="inline-flex"] {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 12px;
+}
+.pagination-wrap nav[role="navigation"] a,
+.pagination-wrap nav[role="navigation"] span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: #333;
+    background-color: #fff;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    text-decoration: none;
+}
+.pagination-wrap nav[role="navigation"] a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+.pagination-wrap nav[role="navigation"] span[aria-disabled="true"],
+.pagination-wrap nav[role="navigation"] span.cursor-default {
+    opacity: 0.6;
+    cursor: default;
+    background-color: #f5f5f5;
+}
+.pagination-wrap .pagination {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+.pagination-wrap .pagination li {
+    margin: 0;
+    list-style: none;
+}
+.pagination-wrap .pagination li a,
+.pagination-wrap .pagination li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #ddd;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+.pagination-wrap .pagination li a:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+    text-decoration: none;
+}
+.pagination-wrap .pagination li.disabled span {
+    opacity: 0.5;
+    cursor: default;
+    background-color: #f4f4f4;
 }

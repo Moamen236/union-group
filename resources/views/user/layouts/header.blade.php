@@ -29,7 +29,7 @@
                         </button>
                     </div>
 
-                    <!-- NAV -->
+                    <!-- NAV (collapse contains only nav links; nav-right stays next to tabs on mobile) -->
                     <div class="collapse navbar-collapse" id="nav-open-btn">
                         <ul class="nav">
                             <li class="{{ request()->routeIs('user.index') ? 'active' : '' }}">
@@ -71,10 +71,9 @@
                         </ul>
                     </div>
 
-                    <!-- Nav Right -->
+                    <!-- Nav Right (language + search) – next to tabs / hamburger on mobile -->
                     <div class="nav-right">
                         <ul class="navbar-right">
-                            <!-- Language Switcher -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
                                     <i class="fa fa-globe"></i>
@@ -85,8 +84,6 @@
                                     <li><a href="{{ route('user.set-locale', 'ar') }}">العربية</a></li>
                                 </ul>
                             </li>
-
-                            <!-- SEARCH BAR (static inline) -->
                             <li class="navbar-search">
                                 <form action="{{ route('user.shop') }}" method="GET" class="nav-search-form">
                                     <div class="nav-search">

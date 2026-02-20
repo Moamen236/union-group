@@ -2,47 +2,54 @@
 
 @section('content')
 
-    <!--======= HOME HERO (Replaces Revolution Slider) =========-->
+    <!--======= HOME HERO SLIDER =========-->
     @php
-        $heroSlider = $sliders->first();
+        $defaultCaptions = [
+            (object)['image_url' => asset('user/images/slider.jpg'), 'title' => __('Legacy within every drop.'), 'subtitle' => '', 'button_text' => null, 'button_url' => null],
+            (object)['image_url' => asset('user/images/slider.jpg'), 'title' => __('Engineering Water. Perfecting Living.'), 'subtitle' => '', 'button_text' => null, 'button_url' => null],
+            (object)['image_url' => asset('user/images/slider.jpg'), 'title' => __('Sanitary Fittings Since 1950.'), 'subtitle' => '', 'button_text' => null, 'button_url' => null],
+        ];
+        $heroSliders = $sliders->isEmpty() ? collect($defaultCaptions) : $sliders;
+        $heroHasMultiple = $heroSliders->count() > 1;
     @endphp
     <section class="home-hero">
-        <div class="home-hero-bg"
-             style="background-image: url('{{ $heroSlider?->image_url ?? asset('user/images/slider.jpg') }}');">
-        </div>
-        <div class="home-hero-overlay">
-            <div class="container">
-                <div class="home-hero-content text-center">
-                    @if ($heroSlider?->subtitle)
-                        <p class="home-hero-subtitle">
-                            {{ $heroSlider->subtitle }}
-                        </p>
-                    @else
-                        <p class="home-hero-subtitle">
-                            {{ __('Premium Paints & Coatings') }}
-                        </p>
-                    @endif
-
-                    <h1 class="home-hero-title slider-title">
-                        {{ $heroSlider?->title ?? __('UNION GROUP') }}
-                    </h1>
-
-                    @if ($heroSlider?->button_text && $heroSlider?->button_url)
-                        <div class="home-hero-cta">
-                            <a href="{{ $heroSlider->button_url }}" class="btn">
-                                {{ $heroSlider->button_text }}
-                            </a>
+        <div class="home-hero-slides">
+            @foreach ($heroSliders as $idx => $slide)
+                @php
+                    $imgUrl = $slide->image_url ?? asset('user/images/slider.jpg');
+                    $title = $slide->title ?? __('UNION GROUP');
+                    $subtitle = $slide->subtitle ?? __('Premium Paints & Coatings');
+                @endphp
+                <div class="home-hero-slide {{ $idx === 0 ? 'active' : '' }}" data-slide-index="{{ $idx }}">
+                    <div class="home-hero-bg" style="background-image: url('{{ $imgUrl }}');"></div>
+                    <div class="home-hero-overlay">
+                        <div class="container">
+                            <div class="home-hero-content text-center">
+                                @if (!empty($subtitle))<p class="home-hero-subtitle">{{ $subtitle }}</p>@endif
+                                <h1 class="home-hero-title slider-title">{{ $title }}</h1>
+                                @if (($slide->button_text ?? null) && ($slide->button_url ?? null))
+                                    <div class="home-hero-cta">
+                                        <a href="{{ $slide->button_url }}" class="btn">{{ $slide->button_text }}</a>
+                                    </div>
+                                @else
+                                    <div class="home-hero-cta">
+                                        <a href="{{ route('user.shop') }}" class="btn">{{ __('EXPLORE PRODUCTS') }}</a>
+                                    </div>
+                                @endif
+                            </div>
                         </div>
-                    @else
-                        <div class="home-hero-cta">
-                            <a href="{{ route('user.shop') }}" class="btn">
-                                {{ __('EXPLORE PRODUCTS') }}
-                            </a>
-                        </div>
-                    @endif
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
+        @if ($heroHasMultiple)
+            <button type="button" class="home-hero-arrow home-hero-prev" aria-label="{{ __('Previous') }}">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="home-hero-arrow home-hero-next" aria-label="{{ __('Next') }}">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </button>
+        @endif
     </section>
 
     <!-- Content -->
@@ -58,9 +65,7 @@
                     </p>
                 </div>
                 <div class="text-center margin-top-30">
-                    <a href="{{ route('user.about') }}" class="btn-secondary">
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    </a>
+                    <a href="{{ route('user.about') }}" class="btn btn-secondary">{{ __('More Info.') }}</a>
                 </div>
             </div>
         </section>
@@ -305,12 +310,14 @@
     @push('styles')
     <style>
         /* Responsive slider title: scales between 28px and 80px based on viewport */
-        .home-slider .slider-title {
+        .home-slider .slider-title,
+        .home-hero .slider-title {
             font-size: clamp(28px, 6vw, 80px) !important;
         }
         /* On mobile: allow wrapping and add padding so text isn't cropped */
         @media (max-width: 768px) {
-            .home-slider .slider-title {
+            .home-slider .slider-title,
+            .home-hero .slider-title {
                 white-space: normal !important;
                 max-width: 90vw !important;
                 padding-left: 5vw !important;
@@ -321,6 +328,29 @@
             }
         }
     </style>
+    @endpush
+
+    @push('scripts')
+    <script>
+    (function() {
+        var hero = document.querySelector('.home-hero');
+        if (!hero) return;
+        var slides = hero.querySelectorAll('.home-hero-slide');
+        var prevBtn = hero.querySelector('.home-hero-prev');
+        var nextBtn = hero.querySelector('.home-hero-next');
+        if (slides.length <= 1 || (!prevBtn && !nextBtn)) return;
+
+        var current = 0;
+        function goTo(index) {
+            current = (index + slides.length) % slides.length;
+            slides.forEach(function(s, i) {
+                s.classList.toggle('active', i === current);
+            });
+        }
+        if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
+    })();
+    </script>
     @endpush
 
 @endsection

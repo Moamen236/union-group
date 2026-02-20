@@ -10,9 +10,9 @@
             <div class="about-footer">
                 <img class="margin-bottom-30" src="{{ asset('user/images/logo.png') }}" alt="{{ __('Union Group') }}"
                     style="max-width: 100px;">
-                <p><i class="icon-pointer"></i> {{ __('Factory') }} <br>
+                <p><i class="icon-pointer"></i> {{ __('Factory and Headquarter') }}<br>
                     {{ __('Mohamed Badawy Khalil St., Industrial Area, Ghamra, Cairo, Egypt') }}</p>
-                <p><i class="icon-pointer"></i> {{ __('Exhibitions') }}<br>
+                <p><i class="icon-pointer"></i> {{ __('Showroom') }}<br>
                     {{ __('Kamel Sedky St. - Al-Fagala - Cairo') }}
                 </p>
                 <ul class="link social-footer">
@@ -68,8 +68,8 @@
                 <a href="https://wa.me/201016194660" target="_blank" style="color: inherit;">01016194660</a>
             </p>
             <p>
-                <i class="icon-envelope" style="margin: 0 5px"></i> {{ __('Email') }}: <a href="mailto:info@uniongroup.com"
-                    style="color: inherit;">info@uniongroup.com</a>
+                <i class="icon-envelope" style="margin: 0 5px"></i> {{ __('Email') }}: <a href="mailto:info@uniongroup.com.eg"
+                    style="color: inherit;">info@uniongroup.com.eg</a>
             </p>
         </div>
 

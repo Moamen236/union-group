@@ -10,6 +10,7 @@ use App\Models\ContactMessage;
 use App\Models\ProductCategory;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
@@ -179,10 +180,43 @@ class UserController extends Controller
             ->take(6)
             ->get();
 
+        // Showroom images from public/images/showroom26 (Our Exhibitions slider)
+        $showroomPath = public_path('images/showroom26');
+        $showroomImages = [];
+        if (File::isDirectory($showroomPath)) {
+            $extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+            $entries = [];
+            foreach (File::files($showroomPath) as $file) {
+                $basename = $file->getFilename();
+                if ($basename === '' || $basename === '.') {
+                    continue;
+                }
+                $ext = strtolower($file->getExtension());
+                if (in_array($ext, $extensions)) {
+                    $entries[] = $basename;
+                }
+            }
+            sort($entries, SORT_STRING);
+            // Exclude positions 9–17 (0-based indices 8–16) – those images do not display correctly
+            $entries = array_merge(
+                array_slice($entries, 0, 8),
+                array_slice($entries, 17)
+            );
+            $baseUrl = rtrim(asset('images/showroom26'), '/');
+            foreach ($entries as $i => $filename) {
+                $safePath = $baseUrl . '/' . rawurlencode($filename);
+                $showroomImages[] = [
+                    'url' => $safePath,
+                    'alt' => __('Our Exhibitions') . ' – ' . ($i + 1),
+                ];
+            }
+        }
+
         return view('user.pages.about', [
             'title' => __('About Us'),
             'projects' => $projects,
             'certificates' => $certificates,
+            'showroomImages' => $showroomImages,
         ]);
     }
 

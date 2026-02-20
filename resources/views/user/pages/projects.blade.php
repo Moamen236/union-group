@@ -66,10 +66,10 @@
           @endforeach
         </div>
 
-        <!-- Pagination -->
+        <!-- Pagination (same style as products/shop) -->
         @if($projects->hasPages())
-        <div class="text-center margin-top-50">
-          {{ $projects->links() }}
+        <div class="margin-top-50 pagination-wrap text-center">
+          {{ $projects->withQueryString()->links() }}
         </div>
         @endif
 

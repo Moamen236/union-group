@@ -119,7 +119,7 @@
             </div>
         </section>
 
-        <!-- Our Exhibitions -->
+        <!-- Our Exhibitions / Showrooms -->
         <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
@@ -128,35 +128,23 @@
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <div class="owl-carousel owl-theme about-history-slider">
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our History') }}"
-                                        class="img-responsive about-section-img">
-                                </div>
+                            <div class="owl-carousel owl-theme about-history-slider about-showrooms-slider">
+                                @forelse ($showroomImages as $img)
+                                    <div class="item">
+                                        <div class="about-showroom-slide">
+                                            <img src="{{ $img['url'] }}" alt="{{ $img['alt'] }}"
+                                                class="img-responsive about-section-img about-showroom-img" loading="lazy"
+                                                decoding="async">
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="item">
+                                        <div class="about-showroom-slide">
+                                            <img src="{{ asset('user/images/slider2.jpg') }}" alt="{{ __('Our Exhibitions') }}"
+                                                class="img-responsive about-section-img about-showroom-img">
+                                        </div>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
                     </div>
