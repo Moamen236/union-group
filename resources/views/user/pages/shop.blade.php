@@ -231,6 +231,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
+            padding: 0 20px;
         }
 
         .papular-block.row:before {
