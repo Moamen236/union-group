@@ -249,6 +249,12 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     }
 }
 
+@media (max-width: 768px) {
+    .papular-block.row{
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
 .d-flex {
     display: flex;
 }
