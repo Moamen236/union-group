@@ -687,30 +687,55 @@ html[lang='ar'] ul.about-list li::before {
     }
 }
 
-/* ========== Our Showrooms slider: every image shows properly ========== */
+/* ========== Brand Evolution: vertically center text with image ========== */
+.brand-evolution-row {
+    display: table;
+    width: 100%;
+}
+.brand-evolution-row > [class*="col-"] {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+.brand-evolution-row .history-block {
+    margin-bottom: 0;
+}
+@media (max-width: 767px) {
+    .brand-evolution-row {
+        display: block;
+    }
+    .brand-evolution-row > [class*="col-"] {
+        display: block;
+        float: left;
+        width: 100%;
+    }
+    .brand-evolution-row .history-block {
+        margin-bottom: 20px;
+    }
+}
+
+/* ========== Our Showrooms slider: fit image, show whole image (no crop) ========== */
 .about-showrooms-slider .item {
-    min-height: 420px;
+    min-height: 0;
 }
 .about-showroom-slide {
     display: block;
     width: 100%;
-    height: 420px;
+    height: auto;
     overflow: hidden;
     background: #f0f0f0;
 }
 .about-showroom-img {
+    display: block;
     width: 100% !important;
-    height: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain;
     object-position: center center;
 }
 @media (max-width: 768px) {
     .about-showrooms-slider .item {
-        min-height: 280px;
-    }
-    .about-showroom-slide {
-        height: 280px;
+        min-height: 0;
     }
 }
 

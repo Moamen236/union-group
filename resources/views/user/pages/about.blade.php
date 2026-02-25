@@ -100,7 +100,7 @@
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Brand Evolution') }}</h4>
                 </div>
-                <div class="row about-section-with-img">
+                <div class="row about-section-with-img brand-evolution-row">
                     <div class="col-xs-12 col-sm-7 col-md-6 history-block">
                         <p class="about-support-p">
                             {{ __('Union Group\'s first registered trademark combined a gear and a water valve to represent the union between industry and product.') }}
