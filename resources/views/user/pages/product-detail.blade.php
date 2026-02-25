@@ -31,26 +31,45 @@
                 <div class="shop-detail">
                     <div class="row">
 
-                        <!-- Product Images Slider -->
+                        <!-- Product Images: main image + grid of variations -->
                         <div class="col-md-7">
-                            <div class="images-slider" id="product-slider">
-                                <ul class="slides">
+                            <div class="product-gallery" id="product-gallery">
+                                @php
+                                    $galleryImages = $product->images->count() > 0
+                                        ? $product->images->sortBy('order')->values()
+                                        : collect();
+                                @endphp
+                                <div class="product-gallery-main">
                                     @if ($product->images->count() > 0)
-                                        @foreach ($product->images as $image)
-                                            <li data-thumb="{{ asset('storage/' . $image->image) }}"
-                                                data-color-id="{{ $image->color_id ?? 'all' }}">
-                                                <img class="img-responsive" src="{{ asset('storage/' . $image->image) }}"
-                                                    alt="{{ $product->name }}" loading="lazy">
-                                            </li>
+                                        @php $first = $galleryImages->first(); @endphp
+                                        <img id="product-gallery-main-img" class="img-responsive" src="{{ asset('storage/' . $first->image) }}"
+                                            alt="{{ $product->name }}" loading="eager">
+                                    @else
+                                        <img id="product-gallery-main-img" class="img-responsive"
+                                            src="{{ asset('user/images/product-placeholder.jpg') }}"
+                                            alt="{{ $product->name }}" loading="eager">
+                                    @endif
+                                    <button type="button" class="product-gallery-nav product-gallery-prev" aria-label="{{ __('Previous') }}"><i class="fa fa-angle-left"></i></button>
+                                    <button type="button" class="product-gallery-nav product-gallery-next" aria-label="{{ __('Next') }}"><i class="fa fa-angle-right"></i></button>
+                                </div>
+                                <div class="product-gallery-grid" role="tablist">
+                                    @if ($product->images->count() > 0)
+                                        @foreach ($galleryImages as $index => $image)
+                                            <button type="button" class="product-gallery-thumb {{ $index === 0 ? 'active' : '' }}"
+                                                data-color-id="{{ $image->color_id ?? 'all' }}"
+                                                data-src="{{ asset('storage/' . $image->image) }}"
+                                                role="tab"
+                                                aria-selected="{{ $index === 0 ? 'true' : 'false' }}"
+                                                aria-label="{{ $product->name }} {{ $index + 1 }}">
+                                                <img src="{{ asset('storage/' . $image->image) }}" alt="" loading="lazy">
+                                            </button>
                                         @endforeach
                                     @else
-                                        <li data-thumb="{{ asset('user/images/product-placeholder.jpg') }}">
-                                            <img class="img-responsive"
-                                                src="{{ asset('user/images/product-placeholder.jpg') }}"
-                                                alt="{{ $product->name }}" loading="lazy">
-                                        </li>
+                                        <button type="button" class="product-gallery-thumb active" data-src="{{ asset('user/images/product-placeholder.jpg') }}" role="tab" aria-selected="true">
+                                            <img src="{{ asset('user/images/product-placeholder.jpg') }}" alt="" loading="lazy">
+                                        </button>
                                     @endif
-                                </ul>
+                                </div>
                             </div>
                         </div>
 
@@ -327,12 +346,108 @@
             font-weight: 600;
         }
 
-        /* Slide visibility animation */
-        .images-slider .slides li {
-            transition: opacity 0.3s ease;
+        /* Product gallery: main image + grid of variations */
+        .product-gallery {
+            background: #f9f9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 16px;
+            border: 1px solid #eee;
         }
 
-        .images-slider .slides li.color-hidden {
+        .product-gallery-main {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            max-height: 480px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .product-gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            transition: background 0.2s, color 0.2s;
+            z-index: 2;
+        }
+
+        .product-gallery-nav:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        .product-gallery-prev { left: 12px; }
+        .product-gallery-next { right: 12px; }
+
+        .product-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .product-gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .product-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .product-gallery-thumb {
+            aspect-ratio: 1;
+            padding: 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fff;
+            cursor: pointer;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .product-gallery-thumb:hover {
+            border-color: #999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-gallery-thumb.active {
+            border-color: #2d3a4b;
+            box-shadow: 0 4px 12px rgba(45, 58, 75, 0.25);
+        }
+
+        .product-gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-gallery-thumb.color-hidden {
             display: none !important;
         }
     </style>
@@ -341,82 +456,85 @@
 @push('scripts')
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const gallery = document.querySelector('#product-gallery');
+            if (!gallery) return;
+
+            const mainImg = document.getElementById('product-gallery-main-img');
+            const thumbs = Array.from(gallery.querySelectorAll('.product-gallery-thumb'));
+            const prevBtn = gallery.querySelector('.product-gallery-prev');
+            const nextBtn = gallery.querySelector('.product-gallery-next');
             const colorSwatches = document.querySelectorAll('.color-swatch');
-            const slider = document.querySelector('#product-slider');
 
-            if (colorSwatches.length === 0 || !slider) return;
+            function getVisibleThumbs() {
+                return thumbs.filter(function(t) { return !t.classList.contains('color-hidden'); });
+            }
 
-            // Store all original slides
-            const allSlides = Array.from(slider.querySelectorAll('.slides li'));
-            const allSlideData = allSlides.map((slide, index) => ({
-                element: slide,
-                colorId: slide.getAttribute('data-color-id'),
-                thumb: slide.getAttribute('data-thumb'),
-                imgSrc: slide.querySelector('img').getAttribute('src')
-            }));
+            function setMainImage(src) {
+                if (mainImg && src) mainImg.src = src;
+            }
 
-            colorSwatches.forEach(swatch => {
-                swatch.addEventListener('click', function() {
-                    const colorId = this.getAttribute('data-color-id');
+            function setActiveThumb(thumb) {
+                thumbs.forEach(function(t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+                if (thumb) {
+                    thumb.classList.add('active');
+                    thumb.setAttribute('aria-selected', 'true');
+                }
+            }
 
-                    // Update active state
-                    colorSwatches.forEach(s => s.classList.remove('active'));
-                    this.classList.add('active');
-
-                    // Filter images based on color
-                    filterSlidesByColor(colorId);
+            thumbs.forEach(function(thumb) {
+                thumb.addEventListener('click', function() {
+                    if (this.classList.contains('color-hidden')) return;
+                    var src = this.getAttribute('data-src');
+                    setMainImage(src);
+                    setActiveThumb(this);
                 });
             });
 
-            function filterSlidesByColor(colorId) {
-                // Get the flexslider instance
-                const flexslider = slider.querySelector('.flex-viewport');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    var visible = getVisibleThumbs();
+                    var current = visible.find(function(t) { return t.classList.contains('active'); });
+                    var idx = current ? visible.indexOf(current) : 0;
+                    idx = idx <= 0 ? visible.length - 1 : idx - 1;
+                    var prev = visible[idx];
+                    if (prev) { setMainImage(prev.getAttribute('data-src')); setActiveThumb(prev); }
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    var visible = getVisibleThumbs();
+                    var current = visible.find(function(t) { return t.classList.contains('active'); });
+                    var idx = current ? visible.indexOf(current) : -1;
+                    idx = idx >= visible.length - 1 ? 0 : idx + 1;
+                    var next = visible[idx];
+                    if (next) { setMainImage(next.getAttribute('data-src')); setActiveThumb(next); }
+                });
+            }
 
-                if (colorId === 'all') {
-                    // Show all slides
-                    allSlides.forEach(slide => {
-                        slide.classList.remove('color-hidden');
-                    });
-                } else {
-                    // Filter slides - show only matching color or unassigned images
-                    allSlides.forEach(slide => {
-                        const slideColorId = slide.getAttribute('data-color-id');
-                        if (slideColorId === colorId || slideColorId === 'all') {
-                            slide.classList.remove('color-hidden');
-                        } else {
-                            slide.classList.add('color-hidden');
-                        }
-                    });
-                }
+            if (colorSwatches.length > 0) {
+                colorSwatches.forEach(function(swatch) {
+                    swatch.addEventListener('click', function() {
+                        var colorId = this.getAttribute('data-color-id');
+                        colorSwatches.forEach(function(s) { s.classList.remove('active'); });
+                        this.classList.add('active');
 
-                // Try to refresh flexslider if it exists
-                if (typeof jQuery !== 'undefined' && jQuery('#product-slider').data('flexslider')) {
-                    const flex = jQuery('#product-slider').data('flexslider');
-
-                    // Find first visible slide
-                    let firstVisibleIndex = 0;
-                    allSlides.forEach((slide, index) => {
-                        if (!slide.classList.contains('color-hidden') && firstVisibleIndex === 0) {
-                            firstVisibleIndex = index;
-                        }
-                    });
-
-                    // Navigate to first visible slide
-                    flex.flexAnimate(firstVisibleIndex);
-
-                    // Update thumbnails visibility
-                    const thumbNav = slider.querySelector('.flex-control-thumbs');
-                    if (thumbNav) {
-                        const thumbs = thumbNav.querySelectorAll('li');
-                        thumbs.forEach((thumb, index) => {
-                            if (allSlides[index].classList.contains('color-hidden')) {
-                                thumb.style.display = 'none';
+                        thumbs.forEach(function(thumb) {
+                            var tid = thumb.getAttribute('data-color-id');
+                            if (colorId === 'all' || tid === colorId || tid === 'all') {
+                                thumb.classList.remove('color-hidden');
                             } else {
-                                thumb.style.display = '';
+                                thumb.classList.add('color-hidden');
                             }
                         });
-                    }
-                }
+
+                        var visible = getVisibleThumbs();
+                        var first = visible[0];
+                        if (first) {
+                            setMainImage(first.getAttribute('data-src'));
+                            setActiveThumb(first);
+                        }
+                    });
+                });
             }
         });
     </script>

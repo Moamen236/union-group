@@ -70,7 +70,6 @@
     <script src="{{ asset('user/js/owl.carousel.min.js') }}" defer></script>
     <script src="{{ asset('user/js/main.js') }}" defer></script>
     <script src="{{ asset('user/js/scroll-reveal.js') }}" defer></script>
-    <script src="{{ asset('user/js/zoom-scroll-fix.js') }}" defer></script>
 
     @stack('scripts')
 
