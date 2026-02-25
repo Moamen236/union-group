@@ -798,3 +798,9 @@ html[lang='ar'] ul.about-list li::before {
     cursor: default;
     background-color: #f4f4f4;
 }
+html[lang="ar"] .heading h4,
+html[lang="ar"] .sub-bnr h4,
+html[lang="ar"] .papular-block .item-name a,
+html[lang="ar"] .sub-bnr .breadcrumb li {
+	letter-spacing: 0 !important;
+}
