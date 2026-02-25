@@ -801,6 +801,11 @@ html[lang='ar'] ul.about-list li::before {
 html[lang="ar"] .heading h4,
 html[lang="ar"] .sub-bnr h4,
 html[lang="ar"] .papular-block .item-name a,
-html[lang="ar"] .sub-bnr .breadcrumb li {
+html[lang="ar"] .sub-bnr .breadcrumb li,
+html[lang="ar"] header .navbar li a,
+html[lang="ar"] header .navbar .nav li a,
+html[lang="ar"] header .navbar .nav .dropdown-menu li a,
+html[lang="ar"] .shop-detail h4,
+html[lang="ar"] .shop-detail .item-name a {
 	letter-spacing: 0 !important;
 }
