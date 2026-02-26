@@ -133,8 +133,7 @@
                                     <div class="item">
                                         <div class="about-showroom-slide">
                                             <img src="{{ $img['url'] }}" alt="{{ $img['alt'] }}"
-                                                class="img-responsive about-section-img about-showroom-img" loading="lazy"
-                                                decoding="async">
+                                                class="img-responsive about-section-img about-showroom-img" decoding="async">
                                         </div>
                                     </div>
                                 @empty

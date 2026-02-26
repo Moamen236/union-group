@@ -191,22 +191,20 @@ class UserController extends Controller
                 if ($basename === '' || $basename === '.') {
                     continue;
                 }
+                if ($file->getSize() === 0) {
+                    continue;
+                }
                 $ext = strtolower($file->getExtension());
                 if (in_array($ext, $extensions)) {
                     $entries[] = $basename;
                 }
             }
-            sort($entries, SORT_STRING);
-            // Exclude positions 9–17 (0-based indices 8–16) – those images do not display correctly
-            $entries = array_merge(
-                array_slice($entries, 0, 8),
-                array_slice($entries, 17)
-            );
+            natsort($entries);
+            $entries = array_values($entries);
             $baseUrl = rtrim(asset('images/showroom26'), '/');
             foreach ($entries as $i => $filename) {
-                $safePath = $baseUrl . '/' . rawurlencode($filename);
                 $showroomImages[] = [
-                    'url' => $safePath,
+                    'url' => $baseUrl . '/' . rawurlencode($filename),
                     'alt' => __('Our Exhibitions') . ' – ' . ($i + 1),
                 ];
             }
