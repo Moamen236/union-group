@@ -178,11 +178,6 @@
 
 @push('styles')
     <style>
-        .certificates-grid {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
         .certificate-card {
             background: transparent;
             box-shadow: none;
