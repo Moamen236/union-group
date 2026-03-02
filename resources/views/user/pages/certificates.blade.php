@@ -178,6 +178,20 @@
 
 @push('styles')
     <style>
+        /* Certificates grid: consistent card heights and clean alignment */
+        .certificates-grid {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+
+        .certificates-grid > [class*="col-"] {
+            display: flex;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
         .certificate-card {
             background: transparent;
             box-shadow: none;

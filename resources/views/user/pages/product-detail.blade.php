@@ -518,9 +518,11 @@
                         colorSwatches.forEach(function(s) { s.classList.remove('active'); });
                         this.classList.add('active');
 
+                        // Show only images for the selected color.
+                        // When "all" is selected, show everything.
                         thumbs.forEach(function(thumb) {
                             var tid = thumb.getAttribute('data-color-id');
-                            if (colorId === 'all' || tid === colorId || tid === 'all') {
+                            if (colorId === 'all' || tid === colorId) {
                                 thumb.classList.remove('color-hidden');
                             } else {
                                 thumb.classList.add('color-hidden');
@@ -528,11 +530,15 @@
                         });
 
                         var visible = getVisibleThumbs();
-                        var first = visible[0];
-                        if (first) {
-                            setMainImage(first.getAttribute('data-src'));
-                            setActiveThumb(first);
-                        }
+                        if (!visible.length) return;
+
+                        // Prefer an image whose color-id matches the selected color.
+                        var target = visible.find(function(t) {
+                            return t.getAttribute('data-color-id') === colorId;
+                        }) || visible[0];
+
+                        setMainImage(target.getAttribute('data-src'));
+                        setActiveThumb(target);
                     });
                 });
             }

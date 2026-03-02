@@ -124,6 +124,9 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     word-break: keep-all;
     overflow-wrap: normal;
     hyphens: none;
+    /* Remove extra tracking for Arabic so letters stay connected
+       and titles don't look broken, especially on mobile. */
+    letter-spacing: 0 !important;
 }
 
 /* Mobile: nav-right stays next to tabs (same row as hamburger); limit search width so it doesn’t overflow */
@@ -173,6 +176,13 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
         max-width: 100%;
         left: 0 !important;
         right: 0 !important;
+        /* In the collapsed mobile menu the dropdown should PUSH items below it,
+           not overlay them. Switch to static positioning so the height is
+           included in the normal flow. */
+        position: static !important;
+        float: none !important;
+        box-shadow: none;
+        border: none;
     }
     /* Override theme position: absolute; top: 40px so search stays in header row */
     header .navbar .nav-right {
@@ -258,7 +268,7 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     header .navbar .navbar-right > li {
         margin: 0;
     }
-    /* Language switcher: fixed position on mobile so dropdown is never clipped by header overflow */
+    /* Language switcher: no vertical scrollbar in navbar when dropdown is open; clean list UI */
     header .navbar .nav-right {
         overflow: visible !important;
     }
@@ -266,18 +276,18 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
         position: relative;
     }
     header .navbar .nav-right .dropdown-menu {
-        position: fixed !important;
-        top: 54px !important;
-        left: 16px !important;
-        right: auto !important;
-        min-width: 140px;
-        margin: 0 !important;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        min-width: 120px;
+        margin-top: 4px;
         padding: 8px 0;
         list-style: none;
         background: #fff;
         border: 1px solid #eee;
         border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         z-index: 1060;
     }
     header .navbar .nav-right .dropdown-menu li {
@@ -288,7 +298,7 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     }
     header .navbar .nav-right .dropdown-menu li a {
         display: block;
-        padding: 12px 16px;
+        padding: 10px 16px;
         white-space: nowrap;
         color: #333;
         text-decoration: none;
@@ -300,8 +310,8 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
         color: #222;
     }
     html[lang="ar"] header .navbar .nav-right .dropdown-menu {
-        left: auto !important;
-        right: 16px !important;
+        right: auto;
+        left: 0;
     }
     header .nav-right .nav-search input[type="search"] {
         width: 120px;
@@ -991,6 +1001,7 @@ html[lang="ar"] header .navbar li a,
 html[lang="ar"] header .navbar .nav li a,
 html[lang="ar"] header .navbar .nav .dropdown-menu li a,
 html[lang="ar"] .shop-detail h4,
-html[lang="ar"] .shop-detail .item-name a {
+html[lang="ar"] .shop-detail .item-name a,
+html[lang="ar"] .promise-card-caption h4 {
 	letter-spacing: 0 !important;
 }
