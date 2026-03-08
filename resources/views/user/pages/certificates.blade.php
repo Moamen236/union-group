@@ -28,9 +28,9 @@
                 </div>
 
                 @if ($certificates->count() > 0)
-                    <div class="row certificates-grid">
+                    <div class="certificates-grid">
                         @foreach ($certificates as $certificate)
-                            <div class="col-md-6 col-lg-4 margin-bottom-30">
+                            <div class="certificate-grid-item">
                                 <article class="certificate-card animate fadeInUp"
                                     data-wow-delay="{{ ($loop->index % 3) * 0.1 }}s">
 
@@ -178,24 +178,45 @@
 
 @push('styles')
     <style>
-        /* Certificates grid: consistent card heights and clean alignment */
+        /* Certificates grid: CSS Grid for proper alignment and centering */
         .certificates-grid {
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: -15px;
-            margin-right: -15px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 30px;
         }
 
-        .certificates-grid > [class*="col-"] {
+        @media (max-width: 991px) {
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .certificate-grid-item {
+                width: 100%;
+                max-width: 360px;
+            }
+        }
+
+        .certificate-grid-item {
             display: flex;
-            padding-left: 15px;
-            padding-right: 15px;
+            min-width: 0;
         }
 
         .certificate-card {
             background: transparent;
             box-shadow: none;
             transition: all 0.3s ease;
+            width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
