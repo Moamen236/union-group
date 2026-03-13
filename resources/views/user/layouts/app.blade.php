@@ -70,6 +70,39 @@
     <script src="{{ asset('user/js/owl.carousel.min.js') }}" defer></script>
     <script src="{{ asset('user/js/main.js') }}" defer></script>
     <script src="{{ asset('user/js/scroll-reveal.js') }}" defer></script>
+    <script>
+        (function() {
+            function initMobileNavDropdown() {
+                if (typeof jQuery === 'undefined') return;
+
+                // Products dropdown inside the collapsed nav (mobile)
+                jQuery(document).on('click', '#nav-open-btn .nav .dropdown .dropdown-toggle', function(e) {
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var $dropdown = jQuery(this).closest('.dropdown');
+                        $dropdown.toggleClass('open');
+                    }
+                });
+
+                // Language dropdown on the right side (mobile)
+                jQuery(document).on('click', '.nav-right .dropdown > .dropdown-toggle', function(e) {
+                    if (window.innerWidth <= 991) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var $dropdown = jQuery(this).closest('.dropdown');
+                        $dropdown.toggleClass('open');
+                    }
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileNavDropdown);
+            } else {
+                initMobileNavDropdown();
+            }
+        })();
+    </script>
 
     @stack('scripts')
 

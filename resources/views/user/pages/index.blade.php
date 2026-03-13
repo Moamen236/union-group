@@ -174,13 +174,13 @@
                         class="text-white">{{ __('What makes Union Group a trusted choice? It is our commitment to certified quality, advanced manufacturing, reliable service and long-term warranty. These pillars define the standard behind every Union Group product.') }}</span>
                 </div>
 
-                <!-- NEW ARRIVAL - Promise Slider -->
+                <!-- NEW ARRIVAL - Promise Slider (images in public/images/) -->
                 <div class="new-arrival-list">
                     <div class="owl-carousel owl-theme promise-slider">
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
+                                    <img class="img-responsive" src="{{ asset('images/promise-manufacturing.jpeg') }}"
                                         alt="{{ __('Manufacturing Excellence.') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
@@ -193,7 +193,7 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
+                                    <img class="img-responsive" src="{{ asset('images/promise-certified.png') }}"
                                         alt="{{ __('Certified & Government Approved') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
@@ -206,7 +206,7 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
+                                    <img class="img-responsive" src="{{ asset('images/promise-trusted-mega.jpeg') }}"
                                         alt="{{ __('Trusted in National Mega Projects') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
@@ -219,8 +219,8 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise1.avif') }}"
-                                        alt="{{ __('Sustainability & Water Efficiency') }}">
+                                    <img class="img-responsive" src="{{ asset('images/promise-sustainability.png') }}"
+                                        alt="{{ __('Sustainability & Water Efficiency') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
                                     <h4>{{ __('Sustainability & Water Efficiency') }}</h4>
@@ -232,7 +232,7 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise2.avif') }}"
+                                    <img class="img-responsive" src="{{ asset('images/promise-pricing.jpeg') }}"
                                         alt="{{ __('Competitive Pricing — Premium Quality') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
@@ -245,7 +245,7 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise3.avif') }}"
+                                    <img class="img-responsive" src="{{ asset('images/promise-after-sales.png') }}"
                                         alt="{{ __('After-Sales Support & Technical Service') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
@@ -258,7 +258,7 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('user/images/promise4.avif') }}"
+                                    <img class="img-responsive" src="{{ asset('images/promise-certified.png') }}"
                                         alt="{{ __('Warranty & Long-Term Reliability') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
