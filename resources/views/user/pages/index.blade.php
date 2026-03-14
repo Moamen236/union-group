@@ -233,19 +233,6 @@
                             <article class="promise-card">
                                 <div class="promise-card-img">
                                     <img class="img-responsive" src="{{ asset('images/promise-pricing.jpeg') }}"
-                                        alt="{{ __('Competitive Pricing — Premium Quality') }}" loading="lazy">
-                                </div>
-                                <div class="promise-card-caption">
-                                    <h4>{{ __('Competitive Pricing — Premium Quality') }}</h4>
-                                    <p>{{ __('International-standard quality delivered at highly competitive market pricing.') }}
-                                    </p>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="item">
-                            <article class="promise-card">
-                                <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('images/promise-after-sales.png') }}"
                                         alt="{{ __('After-Sales Support & Technical Service') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">
@@ -258,7 +245,7 @@
                         <div class="item">
                             <article class="promise-card">
                                 <div class="promise-card-img">
-                                    <img class="img-responsive" src="{{ asset('images/promise-certified.png') }}"
+                                    <img class="img-responsive" src="{{ asset('images/warranty.jpeg') }}"
                                         alt="{{ __('Warranty & Long-Term Reliability') }}" loading="lazy">
                                 </div>
                                 <div class="promise-card-caption">

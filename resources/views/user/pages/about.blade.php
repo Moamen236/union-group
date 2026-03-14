@@ -27,7 +27,7 @@
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <img src="{{ asset('user/images/slider2.jpg') }}" alt="{{ __('About Us') }}"
+                            <img src="{{ asset('images/aboutus1.jpeg') }}" alt="{{ __('About Us') }}"
                                 class="img-responsive about-section-img">
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <img src="{{ asset('user/images/promise2.avif') }}" alt="{{ __('Our Specialization') }}"
+                            <img src="{{ asset('images/specialization.jpeg') }}" alt="{{ __('Our Specialization') }}"
                                 class="img-responsive about-section-img">
                         </div>
                     </div>

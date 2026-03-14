@@ -256,6 +256,31 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
         white-space: normal;
         overflow: visible;
     }
+    /* Products dropdown: space between label and caret; easier tap targets */
+    header #nav-open-btn .nav .dropdown .dropdown-toggle .caret {
+        margin-left: 10px;
+        vertical-align: middle;
+    }
+    header #nav-open-btn .nav .dropdown-menu li a {
+        padding-left: 20px;
+        padding-right: 36px;
+        min-height: 44px;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+    header #nav-open-btn .nav .dropdown-menu li a:after {
+        right: 14px;
+    }
+    html[lang="ar"] header #nav-open-btn .nav .dropdown-menu li a {
+        padding-left: 36px;
+        padding-right: 20px;
+    }
+    html[lang="ar"] header #nav-open-btn .nav .dropdown-menu li a:after {
+        left: 14px;
+    }
     header .navbar .navbar-right {
         display: flex;
         align-items: center;
@@ -275,13 +300,14 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
     header .navbar .nav-right .dropdown {
         position: relative;
     }
+    /* Fixed position so menu is not clipped by navbar overflow (avoids "only scrollbar" on mobile) */
     header .navbar .nav-right .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        right: 0;
+        position: fixed !important;
+        top: 54px;
+        right: 16px;
         left: auto;
         min-width: 120px;
-        margin-top: 4px;
+        margin-top: 0;
         padding: 8px 0;
         list-style: none;
         background: #fff;
@@ -289,6 +315,10 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
         border-radius: 4px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         z-index: 1060;
+        display: none;
+    }
+    header .navbar .nav-right .dropdown.open .dropdown-menu {
+        display: block !important;
     }
     header .navbar .nav-right .dropdown-menu li {
         display: block;
@@ -309,9 +339,16 @@ html[lang="ar"] p, html[lang="ar"] span, html[lang="ar"] li {
         background: #f5f5f5;
         color: #222;
     }
+    header .navbar .nav-right .dropdown-menu li a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
     html[lang="ar"] header .navbar .nav-right .dropdown-menu {
         right: auto;
-        left: 0;
+        left: 16px;
     }
     header .nav-right .nav-search input[type="search"] {
         width: 120px;
@@ -621,6 +658,29 @@ html[lang='ar'] ul.about-list li::before {
 }
 
 /* ========== Home hero slider ========== */
+/* Mobile/tablet: image full width (cover), content and button use full width */
+@media (max-width: 991px) {
+    .home-hero-bg {
+        background-size: cover;
+        background-position: center center;
+        transform: none;
+    }
+    .home-hero-overlay .container {
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+    .home-hero-content {
+        width: 100%;
+    }
+    .home-hero-cta .btn {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
 .home-hero {
     position: relative;
     min-height: 600px;
@@ -655,6 +715,7 @@ html[lang='ar'] ul.about-list li::before {
     inset: 0;
     background-size: cover;
     background-position: center center;
+    background-repeat: no-repeat;
     transform: scale(1.02);
 }
 
@@ -732,7 +793,11 @@ html[lang='ar'] ul.about-list li::before {
         min-height: 420px;
     }
     .home-hero-overlay {
-        padding: 16px;
+        padding: 12px 0 16px;
+    }
+    .home-hero-overlay .container {
+        padding-left: 12px;
+        padding-right: 12px;
     }
     .home-hero-subtitle {
         font-size: 16px;

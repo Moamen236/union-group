@@ -72,26 +72,60 @@
     <script src="{{ asset('user/js/scroll-reveal.js') }}" defer></script>
     <script>
         (function() {
+            function isMobileNav() { return window.innerWidth <= 991; }
+
             function initMobileNavDropdown() {
                 if (typeof jQuery === 'undefined') return;
+                var $doc = jQuery(document);
 
-                // Products dropdown inside the collapsed nav (mobile)
-                jQuery(document).on('click', '#nav-open-btn .nav .dropdown .dropdown-toggle', function(e) {
-                    if (window.innerWidth <= 991) {
+                // Products dropdown: toggle on tap (prevent Bootstrap from also toggling so menu stays open)
+                $doc.on('click', '#nav-open-btn .nav .dropdown .dropdown-toggle', function(e) {
+                    if (isMobileNav()) {
                         e.preventDefault();
                         e.stopPropagation();
-                        var $dropdown = jQuery(this).closest('.dropdown');
-                        $dropdown.toggleClass('open');
+                        e.stopImmediatePropagation();
+                        jQuery(this).closest('.dropdown').toggleClass('open');
+                        return false;
                     }
                 });
 
-                // Language dropdown on the right side (mobile)
-                jQuery(document).on('click', '.nav-right .dropdown > .dropdown-toggle', function(e) {
-                    if (window.innerWidth <= 991) {
+                // Language: capture phase so we run before Bootstrap; position menu fixed below toggle
+                document.addEventListener('click', function langDropdownCapture(e) {
+                    if (!isMobileNav()) return;
+                    var target = e.target;
+                    var toggle = target.closest && target.closest('.nav-right .dropdown .dropdown-toggle');
+                    if (toggle) {
                         e.preventDefault();
                         e.stopPropagation();
-                        var $dropdown = jQuery(this).closest('.dropdown');
-                        $dropdown.toggleClass('open');
+                        var dropdown = toggle.closest('.dropdown');
+                        if (dropdown) {
+                            var menu = dropdown.querySelector('.dropdown-menu');
+                            var isOpening = !dropdown.classList.contains('open');
+                            dropdown.classList.toggle('open');
+                            if (menu && isOpening) {
+                                var rect = toggle.getBoundingClientRect();
+                                menu.style.top = (rect.bottom + 4) + 'px';
+                                menu.style.left = rect.left + 'px';
+                                menu.style.right = 'auto';
+                                if (document.documentElement.getAttribute('lang') === 'ar') {
+                                    menu.style.left = 'auto';
+                                    menu.style.right = (window.innerWidth - rect.right) + 'px';
+                                }
+                            }
+                        }
+                        return;
+                    }
+                    var inLang = target.closest && target.closest('.nav-right .dropdown');
+                    if (!inLang) {
+                        var open = document.querySelector('.nav-right .dropdown.open');
+                        if (open) open.classList.remove('open');
+                    }
+                }, true);
+
+                // Let dropdown menu links navigate on first tap (don’t close before click)
+                $doc.on('click', '#nav-open-btn .nav .dropdown-menu a[href]', function() {
+                    if (isMobileNav()) {
+                        // Allow default navigation; collapse will close when page changes
                     }
                 });
             }
