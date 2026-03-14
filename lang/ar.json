@@ -206,12 +206,8 @@
     "Failed to load certificate. Please try downloading it instead.": "فشل تحميل الشهادة. يرجى محاولة تحميلها بدلاً من ذلك.",
     "Certificate": "الشهادة",
     "Our Exhibitions": "معارضنا",
-<<<<<<< HEAD
-    "Showroom": "المعرض",
-=======
     "Factory": "المصنع",
     "Exhibitions": "المعرض",
->>>>>>> ed40820c36b669bfcaa9b6ae2c2282713d896328
     "We have participated in various exhibitions and events to showcase our products and services.": "شاركنا في معارض وفعاليات متنوعة لعرض منتجاتنا وخدماتنا.",
     "Exhibition": "معرض",
     "Cairo": "القاهرة",
@@ -236,11 +232,6 @@
     "Union Group products are backed by a manufacturer warranty, guaranteeing reliability, durability and customer peace of mind.": "منتجات يونيون جروب مدعومة بضمان الشركة المصنعة، مما يضمن الموثوقية والمتانة وراحة بال العملاء.",
     "Egypt": "مصر",
     "Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.": "على مدار السنوات، شاركنا بفاعلية في العديد من المعارض المحلية، التي شكّلت منصة لعرض منتجاتنا وإبراز خبراتنا والتزامنا بالجودة. وقد ساهمت هذه المشاركات في تعزيز حضورنا في السوق المحلي وبناء علاقات طويلة الأمد مع شركائنا وعملائنا. ومع استمرار هذه المسيرة، نواصل حرصنا على المشاركة في المزيد من المعارض المحلية واستكشاف فرص جديدة للنمو.",
-<<<<<<< HEAD
-    "Vision & Mission": "الرؤية والمهمة",
-    "Union Group products are trusted in some of the most important national, residential, healthcare, educational and hospitality projects across Egypt.": "منتجات يونيون جروب موثوقة في بعض المشاريع القومية والسكنية والصحية والتعليمية والفنادئية في جميع أنحاء مصر.",
-    "Our Showrooms": "معارضنا"
-=======
     "Our partners": "شركاؤنا",
     "Our Partners": "شركاؤنا",
     "Trusted by industry leaders. We work with renowned partners to deliver excellence.": "موثوقون من قادة الصناعة. نعمل مع شركاء مرموقين لتقديم التميز.",
@@ -261,5 +252,4 @@
     "Competitive Pricing – Premium Quality": "سعر تنافسي – جودة عالمية",
     "Previous": "السابق",
     "Next": "التالي"
->>>>>>> ed40820c36b669bfcaa9b6ae2c2282713d896328
 }

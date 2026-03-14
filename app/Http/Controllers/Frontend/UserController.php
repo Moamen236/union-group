@@ -81,12 +81,6 @@ class UserController extends Controller
             });
         }
 
-<<<<<<< HEAD
-        if ($request->filled('search')) {
-            $query->where('name_en', 'like', '%' . $request->search . '%')
-                ->orWhere('name_ar', 'like', '%' . $request->search . '%')
-                ->orWhere('code', 'like', '%' . $request->search . '%');
-=======
         // Search by product name (EN/AR) or code
         if ($request->filled('search')) {
             $search = trim($request->search);
@@ -95,7 +89,6 @@ class UserController extends Controller
                     ->orWhere('name_ar', 'like', "%{$search}%")
                     ->orWhere('code', 'like', "%{$search}%");
             });
->>>>>>> ed40820c36b669bfcaa9b6ae2c2282713d896328
         }
 
         // Sort products
