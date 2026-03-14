@@ -16,13 +16,13 @@ $("#loader").delay(3000).fadeOut("slow");
 /*-----------------------------------------------------------------------------------*/
 $('.full-screen').superslides({});
 /*-----------------------------------------------------------------------------------*/
-/*    Parallax
+/*    Parallax (disabled - was causing page to scroll on browser zoom)
 /*-----------------------------------------------------------------------------------*/
-jQuery.stellar({
-   horizontalScrolling: false,
-   scrollProperty: 'scroll',
-   positionProperty: 'position',
-});
+// jQuery.stellar({
+//    horizontalScrolling: false,
+//    scrollProperty: 'scroll',
+//    positionProperty: 'position',
+// });
 
 /*-----------------------------------------------------------------------------------*/
 /* 		Parallax
@@ -58,31 +58,6 @@ $('.block-slide').owlCarousel({
             items:4
         }
 }});
-/*-----------------------------------------------------------------------------------*/
-/* 	SLIDER REVOLUTION
-/*-----------------------------------------------------------------------------------*/
-jQuery('.tp-banner').show().revolution({
-	dottedOverlay:"none",
-	delay:10000,
-	startwidth:1170,
-	startheight:900,
-	navigationType:"",
-	navigationArrows:"solo",
-	navigationStyle:"preview1",
-	parallax:"mouse",
-	parallaxBgFreeze:"on",
-	parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
-	keyboardNavigation:"on",
-	shadow:0,
-	fullWidth:"on",
-	fullScreen:"off",
-	shuffle:"off",
-	autoHeight:"off",
-	forceFullWidth:"off",
-	fullScreenOffsetContainer:""
-});
-
-/*-----------------------------------------------------------------------------------*/
 /* 	TESTIMONIAL SLIDER
 /*-----------------------------------------------------------------------------------*/
 $(".single-slide").owlCarousel({

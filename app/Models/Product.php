@@ -157,18 +157,24 @@ class Product extends LocalizableModel
     }
 
     /**
-     * Get second image (for hover effect)
+     * Get second image (for hover effect).
+     * Uses the image explicitly set as "hover" in the dashboard, otherwise first non-main image, else main.
      */
     public function secondImage()
     {
         $mainImage = $this->mainImage();
 
-        // Get an image that's not the main one
+        // Prefer the image marked as hover in the dashboard
+        $hoverImage = $this->images()->where('is_hover', true)->first();
+        if ($hoverImage) {
+            return $hoverImage;
+        }
+
+        // Fallback: first image that's not the main one
         $secondImage = $this->images()
             ->when($mainImage, fn($q) => $q->where('id', '!=', $mainImage->id))
             ->first();
 
-        // Fall back to main image if no second image exists
         return $secondImage ?? $mainImage;
     }
 

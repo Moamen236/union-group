@@ -10,8 +10,6 @@
     <meta name="author" content="Union Group">
     <title>{{ $title ?? __('Home') }} - {{ __('Union Group') }}</title>
 
-    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('user/rs-plugin/css/settings.css') }}" media="screen" />
     <link rel="shortcut icon" href="{{ asset('user/images/logo.png') }}" type="image/x-icon">
 
     <!-- Bootstrap Core CSS -->
@@ -66,15 +64,79 @@
     </div>
 
     <script src="{{ asset('user/js/jquery-1.11.3.min.js') }}"></script>
-    <script src="{{ asset('user/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('user/js/own-menu.js') }}"></script>
-    <script src="{{ asset('user/js/jquery.lighter.js') }}"></script>
-    <script src="{{ asset('user/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('user/js/bootstrap.min.js') }}" defer></script>
+    <script src="{{ asset('user/js/own-menu.js') }}" defer></script>
+    <script src="{{ asset('user/js/jquery.lighter.js') }}" defer></script>
+    <script src="{{ asset('user/js/owl.carousel.min.js') }}" defer></script>
+    <script src="{{ asset('user/js/main.js') }}" defer></script>
+    <script src="{{ asset('user/js/scroll-reveal.js') }}" defer></script>
+    <script>
+        (function() {
+            function isMobileNav() { return window.innerWidth <= 991; }
 
-    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-    <script type="text/javascript" src="{{ asset('user/rs-plugin/js/jquery.tp.t.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('user/rs-plugin/js/jquery.tp.min.js') }}"></script>
-    <script src="{{ asset('user/js/main.js') }}"></script>
+            function initMobileNavDropdown() {
+                if (typeof jQuery === 'undefined') return;
+                var $doc = jQuery(document);
+
+                // Products dropdown: toggle on tap (prevent Bootstrap from also toggling so menu stays open)
+                $doc.on('click', '#nav-open-btn .nav .dropdown .dropdown-toggle', function(e) {
+                    if (isMobileNav()) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        e.stopImmediatePropagation();
+                        jQuery(this).closest('.dropdown').toggleClass('open');
+                        return false;
+                    }
+                });
+
+                // Language: capture phase so we run before Bootstrap; position menu fixed below toggle
+                document.addEventListener('click', function langDropdownCapture(e) {
+                    if (!isMobileNav()) return;
+                    var target = e.target;
+                    var toggle = target.closest && target.closest('.nav-right .dropdown .dropdown-toggle');
+                    if (toggle) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var dropdown = toggle.closest('.dropdown');
+                        if (dropdown) {
+                            var menu = dropdown.querySelector('.dropdown-menu');
+                            var isOpening = !dropdown.classList.contains('open');
+                            dropdown.classList.toggle('open');
+                            if (menu && isOpening) {
+                                var rect = toggle.getBoundingClientRect();
+                                menu.style.top = (rect.bottom + 4) + 'px';
+                                menu.style.left = rect.left + 'px';
+                                menu.style.right = 'auto';
+                                if (document.documentElement.getAttribute('lang') === 'ar') {
+                                    menu.style.left = 'auto';
+                                    menu.style.right = (window.innerWidth - rect.right) + 'px';
+                                }
+                            }
+                        }
+                        return;
+                    }
+                    var inLang = target.closest && target.closest('.nav-right .dropdown');
+                    if (!inLang) {
+                        var open = document.querySelector('.nav-right .dropdown.open');
+                        if (open) open.classList.remove('open');
+                    }
+                }, true);
+
+                // Let dropdown menu links navigate on first tap (don’t close before click)
+                $doc.on('click', '#nav-open-btn .nav .dropdown-menu a[href]', function() {
+                    if (isMobileNav()) {
+                        // Allow default navigation; collapse will close when page changes
+                    }
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileNavDropdown);
+            } else {
+                initMobileNavDropdown();
+            }
+        })();
+    </script>
 
     @stack('scripts')
 

@@ -20,7 +20,7 @@
   <div id="content">
 
     <!-- Projects Section -->
-    <section class="padding-top-100 padding-bottom-100">
+    <section class="padding-top-100 padding-bottom-100 reveal-on-scroll">
       <div class="container">
         <div class="heading text-center">
           <h4>{{ __('Our Portfolio') }}</h4>
@@ -34,9 +34,9 @@
             <article class="project-card animate fadeInUp" data-wow-delay="{{ ($loop->index % 3) * 0.1 }}s">
               <div class="project-image">
                 @if($project->image)
-                <img src="{{ $project->image_url }}" alt="{{ $project->name }}" class="img-responsive">
+                <img src="{{ $project->image_url }}" alt="{{ $project->name }}" class="img-responsive" loading="lazy">
                 @else
-                <img src="{{ asset('user/images/product-placeholder.jpg') }}" alt="{{ $project->name }}" class="img-responsive">
+                <img src="{{ asset('user/images/product-placeholder.jpg') }}" alt="{{ $project->name }}" class="img-responsive" loading="lazy">
                 @endif
                 <div class="project-overlay">
                   <div class="overlay-content">
@@ -66,10 +66,10 @@
           @endforeach
         </div>
 
-        <!-- Pagination -->
+        <!-- Pagination (same style as products/shop) -->
         @if($projects->hasPages())
-        <div class="text-center margin-top-50">
-          {{ $projects->links() }}
+        <div class="margin-top-50 pagination-wrap text-center">
+          {{ $projects->withQueryString()->links() }}
         </div>
         @endif
 
@@ -83,7 +83,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="small-about padding-top-150 padding-bottom-150">
+    <section class="small-about padding-top-150 padding-bottom-150 reveal-on-scroll">
       <div class="container">
         <div class="heading text-center">
           <h4>{{ __('Have a Project in Mind?') }}</h4>
@@ -96,7 +96,7 @@
     </section>
 
     {{-- <!-- Newsletter -->
-    <section class="news-letter padding-top-150 padding-bottom-150">
+    <section class="news-letter padding-top-150 padding-bottom-150 reveal-on-scroll">
       <div class="container">
         <div class="heading light-head text-center margin-bottom-30">
           <h4>{{ __('NEWSLETTER') }}</h4>

@@ -10,6 +10,7 @@ use App\Models\ContactMessage;
 use App\Models\ProductCategory;
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class UserController extends Controller
 {
@@ -80,10 +81,21 @@ class UserController extends Controller
             });
         }
 
+<<<<<<< HEAD
         if ($request->filled('search')) {
             $query->where('name_en', 'like', '%' . $request->search . '%')
                 ->orWhere('name_ar', 'like', '%' . $request->search . '%')
                 ->orWhere('code', 'like', '%' . $request->search . '%');
+=======
+        // Search by product name (EN/AR) or code
+        if ($request->filled('search')) {
+            $search = trim($request->search);
+            $query->where(function ($q) use ($search) {
+                $q->where('name_en', 'like', "%{$search}%")
+                    ->orWhere('name_ar', 'like', "%{$search}%")
+                    ->orWhere('code', 'like', "%{$search}%");
+            });
+>>>>>>> ed40820c36b669bfcaa9b6ae2c2282713d896328
         }
 
         // Sort products
@@ -116,12 +128,15 @@ class UserController extends Controller
             ? ProductCategory::where('slug', $request->category)->first()
             : null;
 
+        $totalProductsCount = Product::active()->count();
+
         return view('user.pages.shop', [
             'title' => $currentCategory ? $currentCategory->name : __('Shop'),
             'products' => $products,
             'categories' => $categories,
             'currentCategory' => $currentCategory,
             'currentSort' => $sort,
+            'totalProductsCount' => $totalProductsCount,
         ]);
     }
 
@@ -172,10 +187,41 @@ class UserController extends Controller
             ->take(6)
             ->get();
 
+        // Showroom images from public/images/showroom26 (Our Exhibitions slider)
+        $showroomPath = public_path('images/showroom26');
+        $showroomImages = [];
+        if (File::isDirectory($showroomPath)) {
+            $extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+            $entries = [];
+            foreach (File::files($showroomPath) as $file) {
+                $basename = $file->getFilename();
+                if ($basename === '' || $basename === '.') {
+                    continue;
+                }
+                if ($file->getSize() === 0) {
+                    continue;
+                }
+                $ext = strtolower($file->getExtension());
+                if (in_array($ext, $extensions)) {
+                    $entries[] = $basename;
+                }
+            }
+            natsort($entries);
+            $entries = array_values($entries);
+            $baseUrl = rtrim(asset('images/showroom26'), '/');
+            foreach ($entries as $i => $filename) {
+                $showroomImages[] = [
+                    'url' => $baseUrl . '/' . rawurlencode($filename),
+                    'alt' => __('Our Exhibitions') . ' – ' . ($i + 1),
+                ];
+            }
+        }
+
         return view('user.pages.about', [
             'title' => __('About Us'),
             'projects' => $projects,
             'certificates' => $certificates,
+            'showroomImages' => $showroomImages,
         ]);
     }
 

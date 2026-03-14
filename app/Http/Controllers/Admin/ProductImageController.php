@@ -61,12 +61,18 @@ class ProductImageController extends Controller
         }
 
         $data['is_main'] = $request->boolean('is_main', false);
+        $data['is_hover'] = $request->boolean('is_hover', false);
         $data['order'] = $data['order'] ?? ProductImage::where('product_id', $data['product_id'])->max('order') + 1;
 
         // If this is set as main, remove main from other images of the same product
         if ($data['is_main']) {
             ProductImage::where('product_id', $data['product_id'])
                 ->update(['is_main' => false]);
+        }
+        // If this is set as hover, remove hover from other images of the same product
+        if ($data['is_hover']) {
+            ProductImage::where('product_id', $data['product_id'])
+                ->update(['is_hover' => false]);
         }
 
         ProductImage::create($data);
@@ -110,12 +116,19 @@ class ProductImageController extends Controller
         }
 
         $data['is_main'] = $request->boolean('is_main', false);
+        $data['is_hover'] = $request->boolean('is_hover', false);
 
         // If this is set as main, remove main from other images of the same product
         if ($data['is_main']) {
             ProductImage::where('product_id', $data['product_id'])
                 ->where('id', '!=', $productImage->id)
                 ->update(['is_main' => false]);
+        }
+        // If this is set as hover, remove hover from other images of the same product
+        if ($data['is_hover']) {
+            ProductImage::where('product_id', $data['product_id'])
+                ->where('id', '!=', $productImage->id)
+                ->update(['is_hover' => false]);
         }
 
         $productImage->update($data);
@@ -154,6 +167,23 @@ class ProductImageController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'Main image set successfully.',
+        ]);
+    }
+
+    /**
+     * Set image as hover (image shown on product hover on the frontend).
+     */
+    public function setHover(ProductImage $productImage)
+    {
+        // Remove hover from other images of the same product
+        ProductImage::where('product_id', $productImage->product_id)
+            ->update(['is_hover' => false]);
+
+        $productImage->update(['is_hover' => true]);
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Hover image set successfully.',
         ]);
     }
 

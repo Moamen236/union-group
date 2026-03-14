@@ -27,6 +27,7 @@ class ProductImageRequest extends FormRequest
             'alt_en' => 'nullable|string|max:255',
             'alt_ar' => 'nullable|string|max:255',
             'is_main' => 'boolean',
+            'is_hover' => 'boolean',
             'order' => 'nullable|integer|min:0',
         ];
 

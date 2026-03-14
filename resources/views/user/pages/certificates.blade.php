@@ -20,7 +20,7 @@
     <div id="content">
 
         <!-- Certificates Section -->
-        <section class="padding-top-100 padding-bottom-100">
+        <section class="padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Quality Certifications') }}</h4>
@@ -28,15 +28,17 @@
                 </div>
 
                 @if ($certificates->count() > 0)
-                    <div class="row certificates-grid">
+                    <div class="certificates-grid">
                         @foreach ($certificates as $certificate)
-                            <div class="col-md-6 col-lg-4 margin-bottom-30">
+                            <div class="certificate-grid-item">
                                 <article class="certificate-card animate fadeInUp"
                                     data-wow-delay="{{ ($loop->index % 3) * 0.1 }}s">
 
                                     @if ($certificate->logo_url)
                                         <div class="certificate-logo">
-                                            <img src="{{ $certificate->logo_url }}" alt="{{ $certificate->name }}">
+                                            <div class="certificate-logo-circle">
+                                                <img src="{{ $certificate->logo_url }}" alt="{{ $certificate->name }}" loading="lazy">
+                                            </div>
                                         </div>
                                     @endif
                                     <div class="certificate-body">
@@ -65,9 +67,9 @@
                                     </div>
 
                                     <div class="certificate-footer">
-                                        @if ($certificate->file)
+                                        @if ($certificate->hasViewableResource())
                                             <a href="#" class="btn btn-view view-certificate-btn"
-                                                data-certificate-url="{{ $certificate->file_url }}"
+                                                data-certificate-url="{{ $certificate->view_url }}"
                                                 data-certificate-name="{{ $certificate->name }}"
                                                 data-is-pdf="{{ $certificate->isPdf() ? 'true' : 'false' }}">
                                                 <i class="fa fa-eye"></i>
@@ -96,7 +98,7 @@
         </section>
 
         <!-- Trust Section -->
-        <section class="light-gray-bg padding-top-100 padding-bottom-100">
+        <section class="light-gray-bg padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Why Our Certifications Matter') }}</h4>
@@ -139,7 +141,7 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="small-about padding-top-150 padding-bottom-150">
+        <section class="small-about padding-top-150 padding-bottom-150 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Need More Information?') }}</h4>
@@ -176,25 +178,54 @@
 
 @push('styles')
     <style>
+        /* Certificates grid: CSS Grid for proper alignment and centering */
         .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 991px) {
+            .certificates-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                max-width: 360px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .certificate-grid-item {
+                width: 100%;
+                max-width: 360px;
+            }
+        }
+
+        .certificate-grid-item {
             display: flex;
-            flex-wrap: wrap;
+            min-width: 0;
         }
 
         .certificate-card {
-            background: #fff;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+            background: transparent;
+            box-shadow: none;
             transition: all 0.3s ease;
+            width: 100%;
             height: 100%;
             display: flex;
             flex-direction: column;
-            border-radius: 8px;
-            overflow: hidden;
+            align-items: center;
         }
 
-        .certificate-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        .certificate-card:hover .certificate-logo-circle {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
 
         .certificate-header {
@@ -240,26 +271,37 @@
         }
 
         .certificate-logo {
-            padding: 20px 25px 0;
+            padding: 0;
             text-align: center;
-            min-height: 80px;
+        }
+
+        .certificate-logo-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .certificate-logo img {
-            max-height: 200px;
-            max-width: 120px;
+            max-width: 75%;
+            max-height: 75%;
             width: auto;
             height: auto;
             object-fit: contain;
         }
 
         .certificate-body {
-            padding: 25px;
+            padding: 10px 15px 0;
             padding-bottom: 0;
             flex-grow: 1;
+            text-align: center;
         }
 
         .certificate-body h5 {

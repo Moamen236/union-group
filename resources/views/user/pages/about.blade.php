@@ -19,7 +19,7 @@
     <div id="content">
 
         <!-- About Us Intro -->
-        <section class="history-block padding-top-100 padding-bottom-100">
+        <section class="history-block padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('About Us') }}</h4>
@@ -27,7 +27,7 @@
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <img src="{{ asset('user/images/slider2.jpg') }}" alt="{{ __('About Us') }}"
+                            <img src="{{ asset('images/aboutus1.jpeg') }}" alt="{{ __('About Us') }}"
                                 class="img-responsive about-section-img">
                         </div>
                     </div>
@@ -44,7 +44,7 @@
         </section>
 
         <!-- History -->
-        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('History') }}</h4>
@@ -123,12 +123,12 @@
         </section>
 
         <!-- Brand Evolution -->
-        <section class="about-intro padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Brand Evolution') }}</h4>
                 </div>
-                <div class="row about-section-with-img">
+                <div class="row about-section-with-img brand-evolution-row">
                     <div class="col-xs-12 col-sm-7 col-md-6 history-block">
                         <p class="about-support-p">
                             {{ __('Union Group\'s first registered trademark combined a gear and a water valve to represent the union between industry and product.') }}
@@ -147,8 +147,8 @@
             </div>
         </section>
 
-        <!-- Our Exhibitions -->
-        <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100">
+        <!-- Our Exhibitions / Showrooms -->
+        <section class="blog-list blog-list-3 light-gray-bg padding-top-100 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Our Showrooms') }}</h4>
@@ -156,56 +156,22 @@
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <div class="owl-carousel owl-theme about-history-slider">
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h1.png') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h2.jpeg') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h3.jpeg') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h4.jpeg') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h5.jpeg') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h6.jpeg') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
-                                <div class="item">
-                                    <img src="{{ asset('user/images/history/h7.jpeg') }}" alt="{{ __('Our Showrooms') }}"
-                                        class="img-responsive about-section-img">
-                                    <p class="about-support-p text-center">
-                                        {{ __('Over the years, we have actively participated in numerous local exhibitions, using these platforms to present our products, demonstrate our expertise, and reinforce our commitment to quality. These exhibitions have played a key role in strengthening our presence in the local market and building lasting relationships with partners and clients. As we continue this journey, we remain committed to expanding our participation in future local exhibitions and pursuing new opportunities for growth.') }}
-                                    </p>
-                                </div>
+                            <div class="owl-carousel owl-theme about-history-slider about-showrooms-slider">
+                                @forelse ($showroomImages as $img)
+                                    <div class="item">
+                                        <div class="about-showroom-slide">
+                                            <img src="{{ $img['url'] }}" alt="{{ $img['alt'] }}"
+                                                class="img-responsive about-section-img about-showroom-img" decoding="async">
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="item">
+                                        <div class="about-showroom-slide">
+                                            <img src="{{ asset('user/images/slider2.jpg') }}" alt="{{ __('Our Exhibitions') }}"
+                                                class="img-responsive about-section-img about-showroom-img">
+                                        </div>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -219,7 +185,7 @@
         </section>
 
         <!-- Vision & Mission -->
-        <section class="about-intro padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Vision & Mission') }}</h4>
@@ -261,7 +227,7 @@
         </section>
 
         <!-- Specialization -->
-        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80">
+        <section class="about-intro light-gray-bg padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('Specialization') }}</h4>
@@ -272,7 +238,7 @@
                 <div class="row about-section-with-img">
                     <div class="col-xs-12 col-sm-6 col-md-6 margin-bottom-30">
                         <div class="about-section-img-wrap">
-                            <img src="{{ asset('user/images/promise2.avif') }}" alt="{{ __('Our Specialization') }}"
+                            <img src="{{ asset('images/specialization.jpeg') }}" alt="{{ __('Our Specialization') }}"
                                 class="img-responsive about-section-img">
                         </div>
                     </div>
@@ -292,7 +258,7 @@
         </section>
 
         <!-- After-Sales & Warranty -->
-        <section class="about-intro padding-top-100 padding-bottom-80">
+        <section class="about-intro padding-top-100 padding-bottom-80 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center margin-bottom-50">
                     <h4>{{ __('After-Sales Service & Warranty') }}</h4>
@@ -320,7 +286,7 @@
 
         <!-- Projects Section -->
         {{-- @if ($projects->count() > 0)
-            <section class="padding-top-150 padding-bottom-100" id="projects">
+            <section class="padding-top-150 padding-bottom-100 reveal-on-scroll" id="projects">
                 <div class="container">
                     <div class="heading text-center">
                         <h4>{{ __('Our Projects') }}</h4>
@@ -362,7 +328,7 @@
 
 
         <!-- Why Choose Us -->
-        <section class="our-team padding-top-80 padding-bottom-100">
+        <section class="our-team padding-top-80 padding-bottom-100 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Why Choose Union Group') }}</h4>
@@ -408,7 +374,7 @@
         </section>
 
         <!-- Contact CTA -->
-        <section class="small-about padding-top-150 padding-bottom-150">
+        <section class="small-about padding-top-150 padding-bottom-150 reveal-on-scroll">
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('Get in Touch') }}</h4>

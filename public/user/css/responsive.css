@@ -813,7 +813,9 @@
 		text-align: left;
 	}
 
-	header .navbar li a {}
+	header .navbar li a {
+		text-align: right;
+	}
 
 	.top-right ul li {
 		float: none;

@@ -24,7 +24,7 @@ class CertificateRequest extends FormRequest
         $rules = [
             'name_en' => 'required|string|max:255',
             'name_ar' => 'required|string|max:255',
-            'type' => 'required|in:pdf,image',
+            'type' => 'nullable|in:pdf,image',
             'issuer_en' => 'nullable|string|max:255',
             'issuer_ar' => 'nullable|string|max:255',
             'issue_date' => 'nullable|date',
@@ -33,12 +33,10 @@ class CertificateRequest extends FormRequest
             'status' => 'boolean',
         ];
 
-        if ($this->isMethod('POST')) {
-            $rules['file'] = 'required|file|mimes:pdf,jpeg,png,jpg,gif,webp|max:5120';
-        } else {
-            $rules['file'] = 'nullable|file|mimes:pdf,jpeg,png,jpg,gif,webp|max:5120';
-        }
+        // Certificate file is now optional on create and update.
+        $rules['file'] = 'nullable|file|mimes:pdf,jpeg,png,jpg,gif,webp|max:5120';
 
+        // Logo is used as the image shown on the public website.
         $rules['logo'] = 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048';
 
         return $rules;

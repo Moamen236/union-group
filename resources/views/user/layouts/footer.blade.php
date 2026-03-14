@@ -10,9 +10,9 @@
             <div class="about-footer">
                 <img class="margin-bottom-30" src="{{ asset('user/images/logo.png') }}" alt="{{ __('Union Group') }}"
                     style="max-width: 100px;">
-                <p><i class="icon-pointer"></i>
+                <p><i class="icon-pointer"></i> {{ __('Factory and Headquarter') }}<br>
                     {{ __('Mohamed Badawy Khalil St., Industrial Area, Ghamra, Cairo, Egypt') }}</p>
-                <p><i class="icon-pointer"></i> {{ __('Exhibitions') }}<br>
+                <p><i class="icon-pointer"></i> {{ __('Showroom') }}<br>
                     {{ __('Kamel Sedky St. - Al-Fagala - Cairo') }}
                 </p>
                 <ul class="link social-footer">
@@ -46,23 +46,23 @@
             </ul>
         </div>
 
-        <!-- Follow Us -->
+        <!-- Contact & Phones -->
         <div class="col-md-3">
             <h6>{{ __('Contact Us') }}</h6>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Customer Services') }}:
+                <i class="icon-call-end" style="margin: 0 5px"></i>
+                <strong>{{ __('Customer Services') }}:</strong>
                 <a href="tel:022331414" style="color: inherit;">022331414</a>,
                 <a href="tel:022353598" style="color: inherit;">022353598</a>,
                 <a href="tel:01016194660" style="color: inherit;">01016194660</a>
             </p>
             <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('Sales') }}:
-                <a href="tel:01026578943" style="color: inherit;">01026578943</a>,
+                <i class="icon-call-end" style="margin: 0 5px"></i>
                 <a href="tel:01026347675" style="color: inherit;">01026347675</a>
             </p>
-            <p>
-                <i class="icon-call-end" style="margin: 0 5px"></i> {{ __('WhatsApp') }}: <a href="https://wa.me/201016194660" target="_blank" style="color: inherit;">01016194660</a>
-            </p>
+                <i class="icon-call-end" style="margin: 0 5px"></i>
+                <strong>{{ __('WhatsApp') }}:</strong>
+                <a href="https://wa.me/201016194660" target="_blank" style="color: inherit;">01016194660</a>
             <p>
                 <i class="icon-envelope" style="margin: 0 5px"></i> {{ __('Email') }}: <a href="mailto:info@uniongroup.com.eg"
                     style="color: inherit;">info@uniongroup.com.eg</a>
