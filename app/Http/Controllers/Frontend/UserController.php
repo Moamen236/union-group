@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ContactFormSubmitted;
 use App\Models\Product;
 use App\Models\Project;
 use App\Models\Certificate;
@@ -11,6 +12,7 @@ use App\Models\ProductCategory;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -272,7 +274,13 @@ class UserController extends Controller
         ]);
 
         // Store the contact message in the database
-        ContactMessage::create($validated);
+        $contactMessage = ContactMessage::create($validated);
+
+        // Also email the message to the configured recipient.
+        $contactRecipient = config('mail.contact_form_to');
+        if (!empty($contactRecipient)) {
+            Mail::to($contactRecipient)->send(new ContactFormSubmitted($contactMessage));
+        }
 
         return redirect()->route('user.contact')
             ->with('success', __('Thank you for your message. We will get back to you soon!'));
