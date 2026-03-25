@@ -123,6 +123,6 @@ return [
     | Address that receives contact form submissions from the website.
     |
     */
-    'contact_form_to' => env('CONTACT_FORM_TO_EMAIL'),
+    'contact_form_to' => env('CONTACT_FORM_TO_EMAIL', 'Ahmedhesham@uniongroup.com.eg'),
 
 ];
