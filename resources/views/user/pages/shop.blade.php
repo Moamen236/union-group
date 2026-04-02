@@ -7,7 +7,7 @@
         <div class="position-center-center">
             <div class="container">
                 <h4>{{ $currentCategory ? $currentCategory->name : __('Our Products') }}</h4>
-                <p>{{ $currentCategory ? $currentCategory->description : __('Explore our comprehensive range of premium paints, coatings, and specialty products.') }}
+                <p>{{ $currentCategory ? $currentCategory->description : __('Discover our comprehensive range of premium sanitaryware, mixers, and bathroom solutions, thoughtfully designed to combine performance, durability, and timeless elegance for every space.') }}
                 </p>
                 <ol class="breadcrumb">
                     <li><a href="{{ route('user.index') }}">{{ __('Home') }}</a></li>

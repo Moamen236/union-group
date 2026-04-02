@@ -135,7 +135,7 @@
             <div class="container">
                 <div class="heading text-center">
                     <h4>{{ __('About Union Group') }}</h4>
-                    <p>{{ __('Union Group is a leading manufacturer and supplier of premium paints, coatings, and industrial solutions in the Middle East. With decades of experience and a commitment to quality, we provide products that meet the highest international standards.') }}
+                    <p>{{ __('Union Group is one of Egypt’s leading manufacturers of premium sanitary fittings, established in 1950 with a clear mission: to deliver high-quality, reliable and affordable sanitary solutions to the Egyptian and regional markets.') }}
                     </p>
                 </div>
             </div>

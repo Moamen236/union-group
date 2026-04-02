@@ -24,7 +24,7 @@
       <div class="container">
         <div class="heading text-center">
           <h4>{{ __('Our Portfolio') }}</h4>
-          <span>{{ __('We have successfully delivered coating solutions for landmark projects across the region.') }}</span>
+          <span>{{ __('Our proven quality, certifications and technical reliability make us the preferred choice for large-scale developments and government-approved projects.') }}</span>
         </div>
 
         @if($projects->count() > 0)
